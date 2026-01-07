@@ -2,6 +2,12 @@
 
 ReportRabbit is a diagnostic utility that automates the generation of performance metrics, visualization dashboards, and SHAP-based interpretations to turn raw model outputs into comprehensive evaluation reports.
 
+## Contributors
+Raghav Gupta
+Joel Peterson
+Jennifer Tsang
+Ruth Adwowa Yankson
+
 ## Installation
 
 ```bash
