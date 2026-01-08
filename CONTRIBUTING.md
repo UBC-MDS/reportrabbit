@@ -87,31 +87,50 @@ To set up **ReportRabbit** for local development:
    cd reportrabbit
    ```
 
-3. Install `reportrabbit` using `poetry`:
+2. **Create and activate a Conda environment**
+   ```console
+   conda create -n reportrabbit python=3.12
+   conda activate reportrabbit
+   ```
+
+3. **Install dependencies using `poetry`**
 
     ```console
-    $ poetry install
+    poetry install
     ```
 
-4. Use `git` (or similar) to create a branch for local development and make your changes:
+4. **Create a feature or fix branch**
 
     ```console
-    $ git checkout -b name-of-your-bugfix-or-feature
+    git checkout -b feature/short-description
     ```
+## Development Guidelines
 
-5. When you're done making changes, check that your changes conform to any code formatting requirements and pass any tests.
+Contributions should follow these conventions:
 
-6. Commit your changes and open a pull request.
+- Follow **PEP 8** for Python code style and formatting
+- Use **NumPy-style docstrings** for all public functions and modules
+- Write clear, maintainable, and well-documented code
+- Prefer explicit, readable implementations over clever or opaque solutions
+- Keep functions focused, modular, and testable
+
+If applicable:
+- Add or update unit and integration tests
+- Update documentation alongside code changes
 
 ## Pull Request Guidelines
 
-Before you submit a pull request, check that it meets these guidelines:
+Before submitting a pull request, please ensure that:
 
-1. The pull request should include additional tests if appropriate.
-2. If the pull request adds functionality, the docs should be updated.
-3. The pull request should work for all currently supported operating systems and versions of Python.
+- All tests pass locally
+- New functionality includes appropriate unit and/or integration tests
+- Documentation is updated in case of any functionality changes or additions
+- The pull request clearly explains **what** was changed and **why**
+- Pull requests are small and focused rather than large, multi-purpose changes
 
 ## Code of Conduct
 
-Please note that the `reportrabbit` project is released with a
-[Code of Conduct](https://github.com/UBC-MDS/reportrabbit/blob/main/CONDUCT.md). By contributing to this project you agree to abide by its terms.
+ReportRabbit is an open and inclusive project.  
+By contributing, you agree to follow the project’s **[Code of Conduct](https://github.com/UBC-MDS/reportrabbit/blob/main/CONDUCT.md)** and to engage respectfully and professionally with other contributors.
+
+Thank you for helping make ReportRabbit better!🐇✨
