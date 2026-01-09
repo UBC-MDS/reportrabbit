@@ -1,7 +1,7 @@
-# Contributing to ReportRabbit 🐇📊
+# Contributing to ReportRabbit
 
 Thank you for your interest in contributing to **ReportRabbit**!  
-We welcome contributions of all kinds—bug reports, feature ideas, code, and documentation.  
+We welcome contributions of all kinds: bug reports, feature ideas, code, and documentation.  
 Every contribution helps make ReportRabbit more reliable, expressive, and useful for the data science community.
 
 This document outlines how to contribute effectively and respectfully.
@@ -36,7 +36,7 @@ Examples:
 
 ## Ways to Contribute
 
-### 🐞 Report Bugs
+### Report Bugs
 If you encounter a bug, please open an issue and include:
 
 - Your operating system and version
@@ -48,21 +48,19 @@ If you encounter a bug, please open an issue and include:
 
 Clear bug reports help us resolve issues faster.
 
-### 🔧 Fix Bugs
-Browse open GitHub issues labeled **`bug`** or **`help wanted`**.  
+### Fix Bugs
+Look through open GitHub issues labeled **`bug`** or **`help wanted`** : these are open to whoever wants to fix them.
 If you plan to work on an issue, please comment on it first to avoid duplication.
 
-### ✨ Implement Features
+### Implement Features
 We welcome feature contributions that align with ReportRabbit’s scope:
 **post-model reporting, evaluation, and interpretability**.
 
 When proposing a feature:
 - Clearly describe the problem it solves
 - Keep the scope focused and incremental
-- Explain how it integrates with the existing API
-- Consider backward compatibility
 
-### 📝 Improve Documentation
+### Improve Documentation
 Good documentation is as important as good code. Contributions may include:
 - Docstring improvements
 - README updates
@@ -70,7 +68,7 @@ Good documentation is as important as good code. Contributions may include:
 - Tutorials or explanatory guides
 - Diagrams or visuals that clarify workflows
 
-### 💬 Submit Feedback or Ideas
+### Submit Feedback or Ideas
 Feature ideas and design feedback are welcome.  
 When submitting feedback:
 - Be specific and constructive
@@ -104,12 +102,14 @@ To set up **ReportRabbit** for local development:
     ```console
     git checkout -b feature/short-description
     ```
+
+
 ## Development Guidelines
 
 Contributions should follow these conventions:
 
-- Follow **PEP 8** for Python code style and formatting
-- Use **NumPy-style docstrings** for all public functions and modules
+- Follow **[PEP 8](https://peps.python.org/pep-0008/)** for Python code style and formatting
+- Use **[NumPy-style docstrings](https://numpydoc.readthedocs.io/en/latest/format.html)** for all public functions and modules
 - Write clear, maintainable, and well-documented code
 - Prefer explicit, readable implementations over clever or opaque solutions
 - Keep functions focused, modular, and testable
@@ -120,17 +120,17 @@ If applicable:
 
 ## Pull Request Guidelines
 
-Before submitting a pull request, please ensure that:
+Before you submit a pull request, check that it meets these guidelines:
 
-- All tests pass locally
-- New functionality includes appropriate unit and/or integration tests
-- Documentation is updated in case of any functionality changes or additions
-- The pull request clearly explains **what** was changed and **why**
-- Pull requests are small and focused rather than large, multi-purpose changes
+1. The pull request should include additional tests if appropriate.
+2. Make sure that all tests pass locally.
+3. The documentation is updated in case of any functionality changes or additions
+4. The pull request clearly explains **what** was changed and **why**
+5. Pull requests are small and focused rather than large, multi-purpose changes
+6. The pull request should work for all currently supported operating systems and versions of Python.
 
 ## Code of Conduct
 
-ReportRabbit is an open and inclusive project.  
-By contributing, you agree to follow the project’s **[Code of Conduct](https://github.com/UBC-MDS/reportrabbit/blob/main/CONDUCT.md)** and to engage respectfully and professionally with other contributors.
+Please note that the ReportRabbit project is released with a **[Code of Conduct](https://github.com/UBC-MDS/reportrabbit/blob/main/CONDUCT.md)**. By contributing to this project you agree to abide by its terms.  
 
-Thank you for helping make ReportRabbit better!🐇✨
+Thank you for helping make ReportRabbit better!
