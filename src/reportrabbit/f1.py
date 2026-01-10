@@ -2,12 +2,13 @@
 
 def get_f1(y_true, y_pred):
     """
-    Calculates the F1 score of predictions.
-    and returns the result.
+    Calculates the F1 score of predictions and returns the result.
 
     The F1 score is the harmonic mean of precision and recall.
     It provides a balanced measure between precision and recall, useful when
     you want to balance the trade-off between false positives and false negatives.
+
+    Scoring is between 0 and 1 with a perfect F1 score being 1.
 
     Parameters
     ----------
