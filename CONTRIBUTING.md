@@ -54,7 +54,7 @@ If you plan to work on an issue, please comment on it first to avoid duplication
 
 ### Implement Features
 We welcome feature contributions that align with ReportRabbit’s scope:
-**post-model reporting, evaluation, and interpretability**.
+**post-model reporting**, and **evaluation**.
 
 When proposing a feature:
 - Clearly describe the problem it solves
@@ -100,9 +100,8 @@ To set up **ReportRabbit** for local development:
 4. **Create a feature or fix branch**
 
     ```console
-    git checkout -b feature/short-description
+    git switch -c feature/short_description
     ```
-
 
 ## Development Guidelines
 
@@ -113,6 +112,7 @@ Contributions should follow these conventions:
 - Write clear, maintainable, and well-documented code
 - Prefer explicit, readable implementations over clever or opaque solutions
 - Keep functions focused, modular, and testable
+- Begin each function name with `get_`, and a suitably descriptive name. E.g.: `get_mse` or `get_descriptive_report`.
 
 If applicable:
 - Add or update unit and integration tests
