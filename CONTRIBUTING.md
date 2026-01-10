@@ -100,9 +100,8 @@ To set up **ReportRabbit** for local development:
 4. **Create a feature or fix branch**
 
     ```console
-    git checkout -b feature/short-description
+    git switch -c feature/short_description
     ```
-
 
 ## Development Guidelines
 
