@@ -2,11 +2,11 @@
 
 def get_accuracy(y_true, y_pred):
     """
-    Calculates the accuracy of predictions.
-    and returns the result.
+    Calculates the accuracy of predictions and returns the result.
 
     Accuracy is the proportion of correct predictions out of all predictions made.
     It represents the overall correctness of the model.
+    Scores are between 0 and 1m with a perfect accuracy being 1.
 
     Parameters
     ----------
