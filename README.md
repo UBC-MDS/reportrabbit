@@ -13,13 +13,13 @@ This package contains the following nine methods:
 
 **Classification metrics:**
 
--   `get_accuracy(y_true, y_pred)`: Returns the **Accuracy score**...
+-   `get_accuracy(y_true, y_pred)`: Returns the **Accuracy score**, the proportion of correct predictions out of all predictions made.
 
--   `get_f1(y_true, y_pred)`: Returns the **F1 score**...
+-   `get_f1(y_true, y_pred)`: Returns the **F1 score**, the harmonic mean of precision and recall, providing a balanced measure between precision and recall
 
--   `get_precision(y_true, y_pred)`: Returns the **Precision score**...
+-   `get_precision(y_true, y_pred)`: Returns the **Precision score**, the proportion of positive predictions that were correct.
 
--   `get_recall(y_true, y_pred)`: Returns the **Recall score**...
+-   `get_recall(y_true, y_pred)`: Returns the **Recall score**, the proportion of actual positive cases that were correctly identified.
 
 **Regression metrics:**
 
