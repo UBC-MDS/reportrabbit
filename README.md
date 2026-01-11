@@ -7,13 +7,13 @@ This package contains the following nine methods:
 
 **Classification metrics:**
 
--   `get_accuracy(y_true, y_pred)`: Returns the **Accuracy score**...
+-   `get_accuracy(y_true, y_pred)`: Returns the **Accuracy score**, the proportion of correct predictions out of all predictions made.
 
--   `get_f1(y_true, y_pred)`: Returns the **F1 score**...
+-   `get_f1(y_true, y_pred)`: Returns the **F1 score**, the harmonic mean of precision and recall, providing a balanced measure between precision and recall
 
--   `get_precision(y_true, y_pred)`: Returns the **Precision score**...
+-   `get_precision(y_true, y_pred)`: Returns the **Precision score**, the proportion of positive predictions that were correct.
 
--   `get_recall(y_true, y_pred)`: Returns the **Recall score**...
+-   `get_recall(y_true, y_pred)`: Returns the **Recall score**, the proportion of actual positive cases that were correctly identified.
 
 **Regression metrics:**
 
@@ -21,13 +21,11 @@ This package contains the following nine methods:
 
 -   `get_r_square(y_true, y_pred)`: Returns the **Coefficient of determination (**$R^2$), the proportion of variance in Y explained by the linear model.
 
--   `get_rmse(y_true, y_pred)`: Returns the **Root Mean Squared Error**...
+-   `get_mse_rmse(y_true, y_pred, sample_weight=None)`: Returns both **Mean Squared Error (MSE)** and **Root Mean Squared Error (RMSE)** as `{"mse": float, "rmse": float}` in a single call for regression evaluation and supports optional `sample_weight` for weighted calculations.
 
--   `get_mse(y_true, y_pred)`: Returns the **Mean Squared Error**...
+-   `get_mae(y_true, y_pred)`: Returns the **Mean Absolute Error**, the average absolute difference between the observed values and the predicted values.
 
--   `get_mae(y_true, y_pred)`: Returns the **Mean Absolute Error**...
-
--   `get_mape(y_true, y_pred)`: Returns the **Mean Absolute Percentage Error**...
+-   `get_mape(y_true, y_pred)`: Returns the **Mean Absolute Percentage Error**, the average absolute percentage difference between the observed values and the predicted values.
 
 ReportRabbit is a simplified version of the [sklearn.metrics](https://scikit-learn.org/stable/api/sklearn.metrics.html) package that prioritizes readability and ease of use.
 It is model-agnostic and can evaluate results of models from any framework.
