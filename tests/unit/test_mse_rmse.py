@@ -66,9 +66,16 @@ def test_get_mse_rmse_with_weights():
     "func",
     [get_mse, get_rmse, get_mse_rmse],
 )
-def test_length_mismatch_raises_value_error(func):
-    """Test: ValueError raised when y_true and y_pred lengths differ."""
-    y_true, y_pred = [1.1, 2.0, 0.3], [0.1, 0.2, 0.3, 0.4]
+@pytest.mark.parametrize(
+    "args",
+    [
+        ([1, 2, 3], [1, 2]),  # y_true longer
+        ([1, 2], [1, 2, 3]),  # y_pred longer
+        (np.array([1.0]), np.array([1.0, 2.0])),  # numpy mismatch
+    ],
+)
+def test_length_mismatch_raises_value_error(func, args):
+    y_true, y_pred = args
     with pytest.raises(ValueError):
         func(y_true, y_pred)
 
