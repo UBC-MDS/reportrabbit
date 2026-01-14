@@ -1,7 +1,9 @@
+import numpy as np
+
 """
 A module that calculates the R^2 statistic (coefficient of determination).
+This function was first written manually, and then validated and improved with the use of LLMs.
 """
-
 def get_r2(y_true, y_pred):
     """
     Calculates the R^2 statistic (coefficient of determination) 
@@ -29,4 +31,26 @@ def get_r2(y_true, y_pred):
     >>> get_r2(y_true, y_pred)
     1.0
     """
-    pass
+    # Validation
+    if len(y_true) != len(y_pred):
+        raise ValueError("Input lengths must match.")
+    
+    if len(y_true) < 2:
+        warnings.warn("R^2 is undefined for fewer than 2 data points.")
+        return np.nan
+    
+    y_true = np.array(y_true)
+    y_pred = np.array(y_pred)
+    
+    y_mean = np.mean(y_true)
+    
+    sst = np.sum((y_true - y_mean)**2)
+    
+    ssr = np.sum((y_true - y_pred)**2)
+    
+    # Handle the edge case where ss_tot is 0 to avoid division by zero
+    if sst == 0:
+        return 0.0
+        
+    r2 = 1 - (ssr / sst)
+    return r2
