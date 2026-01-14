@@ -31,8 +31,8 @@ def get_r(y_true, y_pred):
     1.0
 
     >>> # Perfect negative correlation
-    >>> y_true = [1, 2, 3]
-    >>> y_pred = [3, 2, 1]
+    >>> y_true = [1.0, 2.0, 3.0]
+    >>> y_pred = [3.0, 2.0, 1.0]
     >>> get_r(y_true, y_pred)
     -1.0
     """
