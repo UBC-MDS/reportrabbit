@@ -36,10 +36,10 @@ keywords = []
 dependencies = []
 
 [project.urls]
-Homepage = "https://github.com/jentsang/reportrabbit"
-"Source Code" = "https://github.com/jentsang/reportrabbit"
-"Bug Tracker" = "https://github.com/jentsang/reportrabbit/issues"
-Documentation = "https://github.com/jentsang/pytest/blob/main/README.md"
+Homepage = "https://github.com/UBC-MDS/reportrabbit"
+"Source Code" = "https://github.com/UBC-MDS/jentsang/reportrabbit"
+"Bug Tracker" = "https://github.com/UBC-MDS/jentsang/reportrabbit/issues"
+Documentation = "https://github.com/UBC-MDS/reportrabbit/blob/main/README.md"
 Download = "https://pypi.org/project/reportrabbit/#files"
 
 [project.optional-dependencies]
