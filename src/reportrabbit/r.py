@@ -65,6 +65,6 @@ def get_r(y_true, y_pred):
 
     # Handle division by zero
     if denominator == 0:
-        return 0.0  # Correlation is undefined if there is no variance
+        return np.nan  # Correlation is undefined if there is no variance
 
     return numerator / denominator

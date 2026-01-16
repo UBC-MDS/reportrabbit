@@ -3,7 +3,7 @@ A test module that tests the get_r2() function.
 Note: these tests are written with the assitance of LLMs.
 """
 
-from reportrabbit.get_r2 import get_r2
+from reportrabbit.r2 import get_r2
 import pytest
 import numpy as np
 
@@ -33,6 +33,13 @@ def test_get_r2_length_mismatch():
 def test_get_r2_single_value():
     """Test: Edge case - R^2 is undefined for a single data point."""
     # Variance cannot be calculated for one point, leading to a division by zero/NaN
-    with pytest.warns(UserWarning): # Or check for NaN depending on your code
+    with pytest.warns(UserWarning): 
         out = get_r2([1], [1.1])
         assert np.isnan(out)
+
+def test_get_r2_zero_variance():
+    """Test: Edge case where y_true is constant (SST = 0)."""
+    y_true = [5, 5, 5, 5]
+    y_pred = [5, 6, 5, 6] 
+    
+    assert get_r2(y_true, y_pred) == 0.0

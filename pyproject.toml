@@ -33,7 +33,7 @@ classifiers = [
 # TODO: add keywords
 keywords = []
 # TODO: add dependencies
-dependencies = []
+dependencies = ["numpy"]
 
 [project.urls]
 Homepage = "https://github.com/UBC-MDS/reportrabbit"
