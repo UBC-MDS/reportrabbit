@@ -19,7 +19,7 @@ This package contains the following nine methods:
 
 -   **`get_r(y_true, y_pred)`**: Returns the **Pearson correlation coefficient (**$R$), the linear correlation between the true and predicted values.
 
--   **`get_r_square(y_true, y_pred)`**: Returns the **Coefficient of determination (**$R^2$), the proportion of variance in Y explained by the linear model.
+-   **`get_r2(y_true, y_pred)`**: Returns the **Coefficient of determination (**$R^2$), the proportion of variance in Y explained by the linear model.
 
 -   `get_mse_rmse(y_true, y_pred, sample_weight=None)`: Returns both **Mean Squared Error (MSE)** and **Root Mean Squared Error (RMSE)** as `{"mse": float, "rmse": float}` in a single call for regression evaluation and supports optional `sample_weight` for weighted calculations.
 
