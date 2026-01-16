@@ -1,27 +1,100 @@
+"""
+mse_rmse.py
+
+A module for computing regression squared-error metrics:
+Mean Squared Error (MSE) and Root Mean Squared Error (RMSE).
+"""
+
+from __future__ import annotations
+from typing import Any, Optional
+import numpy as np
+
+
 # --------------------------------------------------------------
 # Helper functions to compute MSE and RMSE
 # --------------------------------------------------------------
-def get_rmse(y_true, y_pred, *, sample_weight=None):
+
+
+def _to_1d_numeric_array(x: Any, name: str) -> np.ndarray:
     """
-    Compute Root Mean Squared Error (RMSE).
+    Convert input to a 1D NumPy float array.
+
+    Parameters
+    ----------
+    x : array-like
+        Input values.
+    name : str
+        Parameter name used for error messages.
+
+    Returns
+    -------
+    arr : numpy.ndarray of shape (n_samples,)
+        1D float array.
+
+    Raises
+    ------
+    ValueError
+        If `x` is empty or cannot be converted to a 1D numeric array.
+    """
+    try:
+        arr = np.asarray(x, dtype=float)
+    except (TypeError, ValueError) as e:
+        raise ValueError(f"{name} must contain only numeric values.") from e
+
+    # Disallow scalars and empty arrays
+    if arr.ndim == 0:
+        raise ValueError(f"{name} must be a 1D array-like of length >= 1.")
+    if arr.size == 0:
+        raise ValueError(f"{name} must not be empty.")
+
+    # Flatten to 1D; tests expect 1D behavior
+    return arr.ravel()
+
+
+def _validate_inputs(
+    y_true: Any,
+    y_pred: Any,
+    sample_weight: Optional[Any] = None,
+) -> tuple[np.ndarray, np.ndarray, Optional[np.ndarray]]:
+    """
+    Validate and coerce inputs for MSE/RMSE computations.
 
     Parameters
     ----------
     y_true : array-like of shape (n_samples,)
         True target values.
-
     y_pred : array-like of shape (n_samples,)
         Predicted target values.
-
     sample_weight : array-like of shape (n_samples,), optional
         Sample weights.
 
     Returns
     -------
-    rmse : float
-        Root Mean Squared Error.
+    yt : numpy.ndarray of shape (n_samples,)
+        Coerced y_true.
+    yp : numpy.ndarray of shape (n_samples,)
+        Coerced y_pred.
+    sw : Optional[numpy.ndarray] of shape (n_samples,)
+        Coerced sample_weight.
+
+    Raises
+    ------
+    ValueError
+        If shapes are incompatible, inputs are empty, or weights are invalid.
     """
-    pass
+    yt = _to_1d_numeric_array(y_true, "y_true")
+    yp = _to_1d_numeric_array(y_pred, "y_pred")
+
+    if yt.shape[0] != yp.shape[0]:
+        raise ValueError("Input lengths must match.")
+
+    sw = None
+    if sample_weight is not None:
+        sw = _to_1d_numeric_array(sample_weight, "sample_weight")
+        if sw.shape[0] != yt.shape[0]:
+            raise ValueError("sample_weight must have the same length as y_true and y_pred.")
+
+    return yt, yp, sw
 
 
 def get_mse(y_true, y_pred, *, sample_weight=None):
@@ -44,7 +117,37 @@ def get_mse(y_true, y_pred, *, sample_weight=None):
     mse : float
         Mean Squared Error.
     """
-    pass
+    yt, yp, sw = _validate_inputs(y_true, y_pred, sample_weight)
+
+    errors = (yt - yp) ** 2
+    if sw is None:
+        return float(np.mean(errors))
+
+    return float(np.average(errors, weights=sw))
+
+
+def get_rmse(y_true, y_pred, *, sample_weight=None):
+    """
+    Compute Root Mean Squared Error (RMSE).
+
+    Parameters
+    ----------
+    y_true : array-like of shape (n_samples,)
+        True target values.
+
+    y_pred : array-like of shape (n_samples,)
+        Predicted target values.
+
+    sample_weight : array-like of shape (n_samples,), optional
+        Sample weights.
+
+    Returns
+    -------
+    rmse : float
+        Root Mean Squared Error.
+    """
+    mse = get_mse(y_true, y_pred, sample_weight=sample_weight)
+    return float(np.sqrt(mse))
 
 
 # --------------------------------------------------------------
@@ -106,8 +209,6 @@ def get_mse_rmse(y_true, y_pred, *, sample_weight=None):
     >>> mr.get_mse_rmse(y_true, y_pred)
     {'mse': 0.31, 'rmse': 0.556776436283}
     """
-    pass
-
-    
-
-
+    mse = get_mse(y_true, y_pred, sample_weight=sample_weight)
+    rmse = float(np.sqrt(mse))
+    return {"mse": float(mse), "rmse": float(rmse)}

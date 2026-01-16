@@ -10,7 +10,7 @@ who remains fully responsible for correctness, coverage,
 and adherence to best practices.
 """
 
-from reportrabbit.mse_rmse import get_mse, get_rmse, get_mse_rmse
+import reportrabbit.mse_rmse as mr
 import pytest
 import numpy as np
 
@@ -33,14 +33,14 @@ import numpy as np
 )
 def test_get_mse_rmse_outputs(y_true, y_pred, expected_mse, expected_rmse):
     """Test: get_mse_rmse returns correct MSE and RMSE for valid numeric inputs."""
-    out = get_mse_rmse(y_true, y_pred)
+    out = mr.get_mse_rmse(y_true, y_pred)
     assert np.isclose(out["mse"], expected_mse)
     assert np.isclose(out["rmse"], expected_rmse)
 
 
 @pytest.mark.parametrize(
     "func",
-    [get_mse, get_rmse],
+    [mr.get_mse, mr.get_rmse],
 )
 def test_helpers_perfect_prediction(func):
     """Test: helper functions return 0.0 for perfect prediction."""
@@ -55,7 +55,7 @@ def test_get_mse_rmse_with_weights():
     y_true = [1, 2, 3]
     y_pred = [1, 2, 4]
     sample_weight = [1, 1, 2]
-    out = get_mse_rmse(y_true, y_pred, sample_weight=sample_weight)
+    out = mr.get_mse_rmse(y_true, y_pred, sample_weight=sample_weight)
     expected_out = {"mse": 0.5, "rmse": np.sqrt(0.5)}
     assert np.isclose(
         out["mse"], expected_out["mse"]
@@ -70,7 +70,7 @@ def test_get_mse_rmse_with_weights():
 # ----------------------------
 @pytest.mark.parametrize(
     "func",
-    [get_mse, get_rmse, get_mse_rmse],
+    [mr.get_mse, mr.get_rmse, mr.get_mse_rmse],
 )
 @pytest.mark.parametrize(
     "args",
@@ -92,12 +92,12 @@ def test_get_mse_rmse_weight_length_mismatch_raises_value_error():
     y_pred = [1.4, 0.2, 0.9]
     sample_weight = [1, 2]  # Incorrect length
     with pytest.raises(ValueError):
-        get_mse_rmse(y_true, y_pred, sample_weight=sample_weight)
+        mr.get_mse_rmse(y_true, y_pred, sample_weight=sample_weight)
 
 
 @pytest.mark.parametrize(
     "func",
-    [get_mse, get_rmse, get_mse_rmse],
+    [mr.get_mse, mr.get_rmse, mr.get_mse_rmse],
 )
 def test_empty_inputs_raises_value_error(func):
     """Test: ValueError raised for empty inputs."""
@@ -107,7 +107,7 @@ def test_empty_inputs_raises_value_error(func):
 
 @pytest.mark.parametrize(
     "func",
-    [get_mse, get_rmse, get_mse_rmse],
+    [mr.get_mse, mr.get_rmse, mr.get_mse_rmse],
 )
 def test_non_numeric_inputs_raises_value_error(func):
     """Test: ValueError raised when inputs contain non-numeric values."""
