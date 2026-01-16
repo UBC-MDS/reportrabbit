@@ -1,3 +1,55 @@
+# --------------------------------------------------------------
+# Helper functions to compute MSE and RMSE
+# --------------------------------------------------------------
+def get_rmse(y_true, y_pred, *, sample_weight=None):
+    """
+    Compute Root Mean Squared Error (RMSE).
+
+    Parameters
+    ----------
+    y_true : array-like of shape (n_samples,)
+        True target values.
+
+    y_pred : array-like of shape (n_samples,)
+        Predicted target values.
+
+    sample_weight : array-like of shape (n_samples,), optional
+        Sample weights.
+
+    Returns
+    -------
+    rmse : float
+        Root Mean Squared Error.
+    """
+    pass
+
+
+def get_mse(y_true, y_pred, *, sample_weight=None):
+    """
+    Compute Mean Squared Error (MSE).
+
+    Parameters
+    ----------
+    y_true : array-like of shape (n_samples,)
+        True target values.
+
+    y_pred : array-like of shape (n_samples,)
+        Predicted target values.
+
+    sample_weight : array-like of shape (n_samples,), optional
+        Sample weights.
+
+    Returns
+    -------
+    mse : float
+        Mean Squared Error.
+    """
+    pass
+
+
+# --------------------------------------------------------------
+# Main function to compute both MSE and RMSE
+# --------------------------------------------------------------
 def get_mse_rmse(y_true, y_pred, *, sample_weight=None):
     """
     Compute Mean Squared Error (MSE) and Root Mean Squared Error (RMSE).
@@ -55,3 +107,7 @@ def get_mse_rmse(y_true, y_pred, *, sample_weight=None):
     {'mse': 0.31, 'rmse': 0.556776436283}
     """
     pass
+
+    
+
+
