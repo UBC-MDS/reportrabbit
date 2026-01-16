@@ -14,9 +14,9 @@ def get_r(y_true, y_pred):
 
     Parameters
     ----------
-    y_true : array
+    y_true : array or list
         The actual observed values (ground truth).
-    y_pred : array
+    y_pred : array or list
         The model predicted values.
   
     Returns
@@ -40,11 +40,11 @@ def get_r(y_true, y_pred):
     """
     # Type Validation
     if not isinstance(y_true, (list, np.ndarray)) or not isinstance(y_pred, (list, np.ndarray)):
-        raise TypeError("Inputs must be list or numpy array.")
+        raise TypeError("Inputs must be list or numpy array!")
 
     # Length Validation
     if len(y_true) != len(y_pred):
-        raise ValueError("y_true and y_pred must have the same length.")
+        raise ValueError("True (y_true) and predicted (y_pred) values must have the same length!")
     
     # Content Validation (Empty lists)
     if len(y_true) == 0:
@@ -53,6 +53,7 @@ def get_r(y_true, y_pred):
     y_true = np.array(y_true)
     y_pred = np.array(y_pred)
 
+    # Use LLM to show me the formula for calculating the r value. 
     mean_true = np.mean(y_true)
     mean_pred = np.mean(y_pred)
 
@@ -65,6 +66,6 @@ def get_r(y_true, y_pred):
 
     # Handle division by zero
     if denominator == 0:
-        return 0.0  # Correlation is undefined if there is no variance
+        return np.nan  # Correlation is undefined if there is no variance
 
     return numerator / denominator
