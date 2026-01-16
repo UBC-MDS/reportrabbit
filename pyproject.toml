@@ -97,6 +97,8 @@ packages = ["src/reportrabbit"]
 testpaths = ["tests"] # Tells pytest what directory tests are in
 markers = ["raises"] # Tells pytest to not raise a warning if you use @pytest.mark.raises
 
+
+
 [tool.coverage.paths]
 source = [
     "src/reportrabbit",
