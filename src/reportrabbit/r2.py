@@ -1,3 +1,4 @@
+import warnings
 import numpy as np
 
 """
@@ -14,9 +15,9 @@ def get_r2(y_true, y_pred):
 
     Parameters
     ----------
-    y_true : array
+    y_true : array or list
         The actual observed values (ground truth).
-    y_pred : array
+    y_pred : array or list
         The model predicted values.
 
     Returns
@@ -44,6 +45,7 @@ def get_r2(y_true, y_pred):
     
     y_mean = np.mean(y_true)
     
+    # Use LLM to show me the formula for calculating the r^2 value. 
     sst = np.sum((y_true - y_mean)**2)
     
     ssr = np.sum((y_true - y_pred)**2)
