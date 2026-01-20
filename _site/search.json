@@ -1,291 +1,5 @@
 [
   {
-    "objectID": "reference/get_accuracy.html",
-    "href": "reference/get_accuracy.html",
-    "title": "get_accuracy",
-    "section": "",
-    "text": "get_accuracy(y_true, y_pred)\nCalculates the accuracy of predictions and returns the result. Accuracy is the proportion of correct predictions out of all predictions made. It represents the overall correctness of the model. Accuracy = (True Positives + True Negatives) / Total. Scores are between 0 and 1 with a perfect accuracy being 1.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ny_true\narray\nThe actual observed values (ground truth).\nrequired\n\n\ny_pred\narray\nThe model predicted values.\nrequired\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nfloat\nThe calculated accuracy score, ranging from 0.0 to 1.0.\n\n\n\n\n\n\n&gt;&gt;&gt; # Perfect accuracy\n&gt;&gt;&gt; y_true = [0, 1, 1, 0]\n&gt;&gt;&gt; y_pred = [0, 1, 1, 0]\n&gt;&gt;&gt; get_accuracy(y_true, y_pred)\n1.0\n&gt;&gt;&gt; # Partial accuracy\n&gt;&gt;&gt; y_true = [0, 1, 1, 0]\n&gt;&gt;&gt; y_pred = [0, 1, 0, 0]\n&gt;&gt;&gt; get_accuracy(y_true, y_pred)\n0.75",
-    "crumbs": [
-      "Reference",
-      "Functions",
-      "get_accuracy"
-    ]
-  },
-  {
-    "objectID": "reference/get_accuracy.html#parameters",
-    "href": "reference/get_accuracy.html#parameters",
-    "title": "get_accuracy",
-    "section": "",
-    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ny_true\narray\nThe actual observed values (ground truth).\nrequired\n\n\ny_pred\narray\nThe model predicted values.\nrequired",
-    "crumbs": [
-      "Reference",
-      "Functions",
-      "get_accuracy"
-    ]
-  },
-  {
-    "objectID": "reference/get_accuracy.html#returns",
-    "href": "reference/get_accuracy.html#returns",
-    "title": "get_accuracy",
-    "section": "",
-    "text": "Name\nType\nDescription\n\n\n\n\n\nfloat\nThe calculated accuracy score, ranging from 0.0 to 1.0.",
-    "crumbs": [
-      "Reference",
-      "Functions",
-      "get_accuracy"
-    ]
-  },
-  {
-    "objectID": "reference/get_accuracy.html#examples",
-    "href": "reference/get_accuracy.html#examples",
-    "title": "get_accuracy",
-    "section": "",
-    "text": "&gt;&gt;&gt; # Perfect accuracy\n&gt;&gt;&gt; y_true = [0, 1, 1, 0]\n&gt;&gt;&gt; y_pred = [0, 1, 1, 0]\n&gt;&gt;&gt; get_accuracy(y_true, y_pred)\n1.0\n&gt;&gt;&gt; # Partial accuracy\n&gt;&gt;&gt; y_true = [0, 1, 1, 0]\n&gt;&gt;&gt; y_pred = [0, 1, 0, 0]\n&gt;&gt;&gt; get_accuracy(y_true, y_pred)\n0.75",
-    "crumbs": [
-      "Reference",
-      "Functions",
-      "get_accuracy"
-    ]
-  },
-  {
-    "objectID": "reference/get_f1.html",
-    "href": "reference/get_f1.html",
-    "title": "get_f1",
-    "section": "",
-    "text": "get_f1(y_true, y_pred)\nCalculates the F1 score of predictions and returns the result. The F1 score is the harmonic mean of precision and recall. It provides a balanced measure between precision and recall, useful when you want to balance the trade-off between false positives and false negatives. F1 = 2 * ((Precision * Recall) / (Precision + Recall)). Scoring is between 0 and 1 with a perfect F1 score being 1.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ny_true\narray\nThe actual observed values (ground truth).\nrequired\n\n\ny_pred\narray\nThe model predicted values.\nrequired\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nfloat\nThe calculated F1 score, ranging from 0.0 to 1.0.\n\n\n\n\n\n\n&gt;&gt;&gt; # Perfect F1 score\n&gt;&gt;&gt; y_true = [0, 1, 1, 0]\n&gt;&gt;&gt; y_pred = [0, 1, 1, 0]\n&gt;&gt;&gt; get_f1(y_true, y_pred)\n1.0\n&gt;&gt;&gt; # Partial F1 score\n&gt;&gt;&gt; y_true = [0, 1, 1, 0]\n&gt;&gt;&gt; y_pred = [0, 1, 0, 0]\n&gt;&gt;&gt; get_f1(y_true, y_pred)\n0.6666666666666666",
-    "crumbs": [
-      "Reference",
-      "Functions",
-      "get_f1"
-    ]
-  },
-  {
-    "objectID": "reference/get_f1.html#parameters",
-    "href": "reference/get_f1.html#parameters",
-    "title": "get_f1",
-    "section": "",
-    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ny_true\narray\nThe actual observed values (ground truth).\nrequired\n\n\ny_pred\narray\nThe model predicted values.\nrequired",
-    "crumbs": [
-      "Reference",
-      "Functions",
-      "get_f1"
-    ]
-  },
-  {
-    "objectID": "reference/get_f1.html#returns",
-    "href": "reference/get_f1.html#returns",
-    "title": "get_f1",
-    "section": "",
-    "text": "Name\nType\nDescription\n\n\n\n\n\nfloat\nThe calculated F1 score, ranging from 0.0 to 1.0.",
-    "crumbs": [
-      "Reference",
-      "Functions",
-      "get_f1"
-    ]
-  },
-  {
-    "objectID": "reference/get_f1.html#examples",
-    "href": "reference/get_f1.html#examples",
-    "title": "get_f1",
-    "section": "",
-    "text": "&gt;&gt;&gt; # Perfect F1 score\n&gt;&gt;&gt; y_true = [0, 1, 1, 0]\n&gt;&gt;&gt; y_pred = [0, 1, 1, 0]\n&gt;&gt;&gt; get_f1(y_true, y_pred)\n1.0\n&gt;&gt;&gt; # Partial F1 score\n&gt;&gt;&gt; y_true = [0, 1, 1, 0]\n&gt;&gt;&gt; y_pred = [0, 1, 0, 0]\n&gt;&gt;&gt; get_f1(y_true, y_pred)\n0.6666666666666666",
-    "crumbs": [
-      "Reference",
-      "Functions",
-      "get_f1"
-    ]
-  },
-  {
-    "objectID": "CONTRIBUTING.html",
-    "href": "CONTRIBUTING.html",
-    "title": "Contributing to ReportRabbit",
-    "section": "",
-    "text": "Thank you for your interest in contributing to ReportRabbit!\nWe welcome contributions of all kinds: bug reports, feature ideas, code, and documentation.\nEvery contribution helps make ReportRabbit more reliable, expressive, and useful for the data science community.\nThis document outlines how to contribute effectively and respectfully.\n\n\nReportRabbit follows a GitHub Flow–based collaboration model:\n\nAll work is done on feature or fix branches created from main\nEach issue corresponds to a single task or function\nIssues are assigned to exactly one team member\nPull requests must be reviewed by at least one other team member before merging\nNo direct commits are made to main\nGitHub issues and project boards are used for all project-related communication\n\n\n\nCreate a new branch from main for each piece of work. Use consistent prefixes:\n\nfeature/&lt;short-description&gt; for new features\nfix/&lt;short-description&gt; for bug fixes\ndocs/&lt;short-description&gt; for documentation-only changes\ntest/&lt;short-description&gt; for tests\nchore/&lt;short-description&gt; for maintenance tasks\n\nExamples: - feature/metrics-report - fix/mape-zero-division - docs/readme-usage - test/plot-report-tests - chore/ci-update\n\n\n\n\n\n\nIf you encounter a bug, please open an issue and include:\n\nYour operating system and version\nPython version\nReportRabbit version\nA minimal, reproducible example\nExpected behavior vs. actual behavior\nAny relevant error messages or stack traces\n\nClear bug reports help us resolve issues faster.\n\n\n\nLook through open GitHub issues labeled bug or help wanted : these are open to whoever wants to fix them. If you plan to work on an issue, please comment on it first to avoid duplication.\n\n\n\nWe welcome feature contributions that align with ReportRabbit’s scope: post-model reporting, and evaluation.\nWhen proposing a feature: - Clearly describe the problem it solves - Keep the scope focused and incremental\n\n\n\nGood documentation is as important as good code. Contributions may include: - Docstring improvements - README updates - Usage examples - Tutorials or explanatory guides - Diagrams or visuals that clarify workflows\n\n\n\nFeature ideas and design feedback are welcome.\nWhen submitting feedback: - Be specific and constructive - Provide context or examples where possible - Keep proposals concise and actionable\n\n\n\n\nTo set up ReportRabbit for local development:\n\nClone the repository\ngit clone git@github.com:UBC-MDS/ReportRabbit.git\ncd reportrabbit\nCreate and activate a Conda environment\nconda create -n reportrabbit python=3.12\nconda activate reportrabbit\nInstall dependencies using poetry\npoetry install\nCreate a feature or fix branch\ngit switch -c feature/short_description\n\n\n\n\nContributions should follow these conventions:\n\nFollow PEP 8 for Python code style and formatting\nUse NumPy-style docstrings for all public functions and modules\nWrite clear, maintainable, and well-documented code\nPrefer explicit, readable implementations over clever or opaque solutions\nKeep functions focused, modular, and testable\nBegin each function name with get_, and a suitably descriptive name. E.g.: get_mse or get_descriptive_report.\n\nIf applicable: - Add or update unit and integration tests - Update documentation alongside code changes\n\n\n\n\nTip: Install in editable mode so tests run against your local changes:\npip install -e .\n\nBefore opening a pull request, please run the test suite locally:\npytest\nTo run a specific test file:\npytest tests/unit/test_specific_module.py\n\n\n\nBefore you submit a pull request, check that it meets these guidelines:\n\nThe pull request should include additional tests if appropriate.\nMake sure that all tests pass locally.\nThe documentation is updated in case of any functionality changes or additions\nThe pull request clearly explains what was changed and why\nPull requests are small and focused rather than large, multi-purpose changes\nThe pull request should work for all currently supported operating systems and versions of Python.\n\n\n\n\nPlease note that the ReportRabbit project is released with a Code of Conduct. By contributing to this project you agree to abide by its terms.\nThank you for helping make ReportRabbit better!"
-  },
-  {
-    "objectID": "CONTRIBUTING.html#collaboration-workflow",
-    "href": "CONTRIBUTING.html#collaboration-workflow",
-    "title": "Contributing to ReportRabbit",
-    "section": "",
-    "text": "ReportRabbit follows a GitHub Flow–based collaboration model:\n\nAll work is done on feature or fix branches created from main\nEach issue corresponds to a single task or function\nIssues are assigned to exactly one team member\nPull requests must be reviewed by at least one other team member before merging\nNo direct commits are made to main\nGitHub issues and project boards are used for all project-related communication\n\n\n\nCreate a new branch from main for each piece of work. Use consistent prefixes:\n\nfeature/&lt;short-description&gt; for new features\nfix/&lt;short-description&gt; for bug fixes\ndocs/&lt;short-description&gt; for documentation-only changes\ntest/&lt;short-description&gt; for tests\nchore/&lt;short-description&gt; for maintenance tasks\n\nExamples: - feature/metrics-report - fix/mape-zero-division - docs/readme-usage - test/plot-report-tests - chore/ci-update"
-  },
-  {
-    "objectID": "CONTRIBUTING.html#ways-to-contribute",
-    "href": "CONTRIBUTING.html#ways-to-contribute",
-    "title": "Contributing to ReportRabbit",
-    "section": "",
-    "text": "If you encounter a bug, please open an issue and include:\n\nYour operating system and version\nPython version\nReportRabbit version\nA minimal, reproducible example\nExpected behavior vs. actual behavior\nAny relevant error messages or stack traces\n\nClear bug reports help us resolve issues faster.\n\n\n\nLook through open GitHub issues labeled bug or help wanted : these are open to whoever wants to fix them. If you plan to work on an issue, please comment on it first to avoid duplication.\n\n\n\nWe welcome feature contributions that align with ReportRabbit’s scope: post-model reporting, and evaluation.\nWhen proposing a feature: - Clearly describe the problem it solves - Keep the scope focused and incremental\n\n\n\nGood documentation is as important as good code. Contributions may include: - Docstring improvements - README updates - Usage examples - Tutorials or explanatory guides - Diagrams or visuals that clarify workflows\n\n\n\nFeature ideas and design feedback are welcome.\nWhen submitting feedback: - Be specific and constructive - Provide context or examples where possible - Keep proposals concise and actionable"
-  },
-  {
-    "objectID": "CONTRIBUTING.html#development-setup",
-    "href": "CONTRIBUTING.html#development-setup",
-    "title": "Contributing to ReportRabbit",
-    "section": "",
-    "text": "To set up ReportRabbit for local development:\n\nClone the repository\ngit clone git@github.com:UBC-MDS/ReportRabbit.git\ncd reportrabbit\nCreate and activate a Conda environment\nconda create -n reportrabbit python=3.12\nconda activate reportrabbit\nInstall dependencies using poetry\npoetry install\nCreate a feature or fix branch\ngit switch -c feature/short_description"
-  },
-  {
-    "objectID": "CONTRIBUTING.html#development-guidelines",
-    "href": "CONTRIBUTING.html#development-guidelines",
-    "title": "Contributing to ReportRabbit",
-    "section": "",
-    "text": "Contributions should follow these conventions:\n\nFollow PEP 8 for Python code style and formatting\nUse NumPy-style docstrings for all public functions and modules\nWrite clear, maintainable, and well-documented code\nPrefer explicit, readable implementations over clever or opaque solutions\nKeep functions focused, modular, and testable\nBegin each function name with get_, and a suitably descriptive name. E.g.: get_mse or get_descriptive_report.\n\nIf applicable: - Add or update unit and integration tests - Update documentation alongside code changes"
-  },
-  {
-    "objectID": "CONTRIBUTING.html#running-tests",
-    "href": "CONTRIBUTING.html#running-tests",
-    "title": "Contributing to ReportRabbit",
-    "section": "",
-    "text": "Tip: Install in editable mode so tests run against your local changes:\npip install -e .\n\nBefore opening a pull request, please run the test suite locally:\npytest\nTo run a specific test file:\npytest tests/unit/test_specific_module.py"
-  },
-  {
-    "objectID": "CONTRIBUTING.html#pull-request-guidelines",
-    "href": "CONTRIBUTING.html#pull-request-guidelines",
-    "title": "Contributing to ReportRabbit",
-    "section": "",
-    "text": "Before you submit a pull request, check that it meets these guidelines:\n\nThe pull request should include additional tests if appropriate.\nMake sure that all tests pass locally.\nThe documentation is updated in case of any functionality changes or additions\nThe pull request clearly explains what was changed and why\nPull requests are small and focused rather than large, multi-purpose changes\nThe pull request should work for all currently supported operating systems and versions of Python."
-  },
-  {
-    "objectID": "CONTRIBUTING.html#code-of-conduct",
-    "href": "CONTRIBUTING.html#code-of-conduct",
-    "title": "Contributing to ReportRabbit",
-    "section": "",
-    "text": "Please note that the ReportRabbit project is released with a Code of Conduct. By contributing to this project you agree to abide by its terms.\nThank you for helping make ReportRabbit better!"
-  },
-  {
-    "objectID": "CODE_OF_CONDUCT.html",
-    "href": "CODE_OF_CONDUCT.html",
-    "title": "Contributor Covenant Code of Conduct",
-    "section": "",
-    "text": "We as members, contributors, and leaders pledge to make participation in our community a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, religion, or sexual identity and orientation.\nWe pledge to act and interact in ways that contribute to an open, welcoming, diverse, inclusive, and healthy community.\n\n\n\nExamples of behavior that contributes to a positive environment for our community include:\n\nDemonstrating empathy and kindness toward other people\nBeing respectful of differing opinions, viewpoints, and experiences\nGiving and gracefully accepting constructive feedback\nAccepting responsibility and apologizing to those affected by our mistakes, and learning from the experience\nFocusing on what is best not just for us as individuals, but for the overall community\n\nExamples of unacceptable behavior include:\n\nThe use of sexualized language or imagery, and sexual attention or advances of any kind\nTrolling, insulting or derogatory comments, and personal or political attacks\nPublic or private harassment\nPublishing others’ private information, such as a physical or email address, without their explicit permission\nOther conduct which could reasonably be considered inappropriate in a professional setting\n\n\n\n\nCommunity leaders are responsible for clarifying and enforcing our standards of acceptable behavior and will take appropriate and fair corrective action in response to any behavior that they deem inappropriate, threatening, offensive, or harmful.\nCommunity leaders have the right and responsibility to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned to this Code of Conduct, and will communicate reasons for moderation decisions when appropriate.\n\n\n\nThis Code of Conduct applies within all community spaces, and also applies when an individual is officially representing the community in public spaces. Examples of representing our community include using an official e-mail address, posting via an official social media account, or acting as an appointed representative at an online or offline event.\n\n\n\nInstances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement at [INSERT CONTACT METHOD]. All complaints will be reviewed and investigated promptly and fairly.\nAll community leaders are obligated to respect the privacy and security of the reporter of any incident.\n\n\n\nCommunity leaders will follow these Community Impact Guidelines in determining the consequences for any action they deem in violation of this Code of Conduct:\n\n\nCommunity Impact: Use of inappropriate language or other behavior deemed unprofessional or unwelcome in the community.\nConsequence: A private, written warning from community leaders, providing clarity around the nature of the violation and an explanation of why the behavior was inappropriate. A public apology may be requested.\n\n\n\nCommunity Impact: A violation through a single incident or series of actions.\nConsequence: A warning with consequences for continued behavior. No interaction with the people involved, including unsolicited interaction with those enforcing the Code of Conduct, for a specified period of time. This includes avoiding interactions in community spaces as well as external channels like social media. Violating these terms may lead to a temporary or permanent ban.\n\n\n\nCommunity Impact: A serious violation of community standards, including sustained inappropriate behavior.\nConsequence: A temporary ban from any sort of interaction or public communication with the community for a specified period of time. No public or private interaction with the people involved, including unsolicited interaction with those enforcing the Code of Conduct, is allowed during this period. Violating these terms may lead to a permanent ban.\n\n\n\nCommunity Impact: Demonstrating a pattern of violation of community standards, including sustained inappropriate behavior, harassment of an individual, or aggression toward or disparagement of classes of individuals.\nConsequence: A permanent ban from any sort of public interaction within the community.\n\n\n\n\nThis Code of Conduct is adapted from the Contributor Covenant, version 2.0, available at https://www.contributor-covenant.org/version/2/0/code_of_conduct.html.\nCommunity Impact Guidelines were inspired by Mozilla’s code of conduct enforcement ladder.\nFor answers to common questions about this code of conduct, see the FAQ at https://www.contributor-covenant.org/faq. Translations are available at https://www.contributor-covenant.org/translations."
-  },
-  {
-    "objectID": "CODE_OF_CONDUCT.html#our-pledge",
-    "href": "CODE_OF_CONDUCT.html#our-pledge",
-    "title": "Contributor Covenant Code of Conduct",
-    "section": "",
-    "text": "We as members, contributors, and leaders pledge to make participation in our community a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, religion, or sexual identity and orientation.\nWe pledge to act and interact in ways that contribute to an open, welcoming, diverse, inclusive, and healthy community."
-  },
-  {
-    "objectID": "CODE_OF_CONDUCT.html#our-standards",
-    "href": "CODE_OF_CONDUCT.html#our-standards",
-    "title": "Contributor Covenant Code of Conduct",
-    "section": "",
-    "text": "Examples of behavior that contributes to a positive environment for our community include:\n\nDemonstrating empathy and kindness toward other people\nBeing respectful of differing opinions, viewpoints, and experiences\nGiving and gracefully accepting constructive feedback\nAccepting responsibility and apologizing to those affected by our mistakes, and learning from the experience\nFocusing on what is best not just for us as individuals, but for the overall community\n\nExamples of unacceptable behavior include:\n\nThe use of sexualized language or imagery, and sexual attention or advances of any kind\nTrolling, insulting or derogatory comments, and personal or political attacks\nPublic or private harassment\nPublishing others’ private information, such as a physical or email address, without their explicit permission\nOther conduct which could reasonably be considered inappropriate in a professional setting"
-  },
-  {
-    "objectID": "CODE_OF_CONDUCT.html#enforcement-responsibilities",
-    "href": "CODE_OF_CONDUCT.html#enforcement-responsibilities",
-    "title": "Contributor Covenant Code of Conduct",
-    "section": "",
-    "text": "Community leaders are responsible for clarifying and enforcing our standards of acceptable behavior and will take appropriate and fair corrective action in response to any behavior that they deem inappropriate, threatening, offensive, or harmful.\nCommunity leaders have the right and responsibility to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned to this Code of Conduct, and will communicate reasons for moderation decisions when appropriate."
-  },
-  {
-    "objectID": "CODE_OF_CONDUCT.html#scope",
-    "href": "CODE_OF_CONDUCT.html#scope",
-    "title": "Contributor Covenant Code of Conduct",
-    "section": "",
-    "text": "This Code of Conduct applies within all community spaces, and also applies when an individual is officially representing the community in public spaces. Examples of representing our community include using an official e-mail address, posting via an official social media account, or acting as an appointed representative at an online or offline event."
-  },
-  {
-    "objectID": "CODE_OF_CONDUCT.html#enforcement",
-    "href": "CODE_OF_CONDUCT.html#enforcement",
-    "title": "Contributor Covenant Code of Conduct",
-    "section": "",
-    "text": "Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement at [INSERT CONTACT METHOD]. All complaints will be reviewed and investigated promptly and fairly.\nAll community leaders are obligated to respect the privacy and security of the reporter of any incident."
-  },
-  {
-    "objectID": "CODE_OF_CONDUCT.html#enforcement-guidelines",
-    "href": "CODE_OF_CONDUCT.html#enforcement-guidelines",
-    "title": "Contributor Covenant Code of Conduct",
-    "section": "",
-    "text": "Community leaders will follow these Community Impact Guidelines in determining the consequences for any action they deem in violation of this Code of Conduct:\n\n\nCommunity Impact: Use of inappropriate language or other behavior deemed unprofessional or unwelcome in the community.\nConsequence: A private, written warning from community leaders, providing clarity around the nature of the violation and an explanation of why the behavior was inappropriate. A public apology may be requested.\n\n\n\nCommunity Impact: A violation through a single incident or series of actions.\nConsequence: A warning with consequences for continued behavior. No interaction with the people involved, including unsolicited interaction with those enforcing the Code of Conduct, for a specified period of time. This includes avoiding interactions in community spaces as well as external channels like social media. Violating these terms may lead to a temporary or permanent ban.\n\n\n\nCommunity Impact: A serious violation of community standards, including sustained inappropriate behavior.\nConsequence: A temporary ban from any sort of interaction or public communication with the community for a specified period of time. No public or private interaction with the people involved, including unsolicited interaction with those enforcing the Code of Conduct, is allowed during this period. Violating these terms may lead to a permanent ban.\n\n\n\nCommunity Impact: Demonstrating a pattern of violation of community standards, including sustained inappropriate behavior, harassment of an individual, or aggression toward or disparagement of classes of individuals.\nConsequence: A permanent ban from any sort of public interaction within the community."
-  },
-  {
-    "objectID": "CODE_OF_CONDUCT.html#attribution",
-    "href": "CODE_OF_CONDUCT.html#attribution",
-    "title": "Contributor Covenant Code of Conduct",
-    "section": "",
-    "text": "This Code of Conduct is adapted from the Contributor Covenant, version 2.0, available at https://www.contributor-covenant.org/version/2/0/code_of_conduct.html.\nCommunity Impact Guidelines were inspired by Mozilla’s code of conduct enforcement ladder.\nFor answers to common questions about this code of conduct, see the FAQ at https://www.contributor-covenant.org/faq. Translations are available at https://www.contributor-covenant.org/translations."
-  },
-  {
-    "objectID": "CHANGELOG.html",
-    "href": "CHANGELOG.html",
-    "title": "Changelog",
-    "section": "",
-    "text": "First release of reportrabbit!"
-  },
-  {
-    "objectID": "CHANGELOG.html#v0.1.0-06012026",
-    "href": "CHANGELOG.html#v0.1.0-06012026",
-    "title": "Changelog",
-    "section": "",
-    "text": "First release of reportrabbit!"
-  },
-  {
-    "objectID": "CONDUCT.html",
-    "href": "CONDUCT.html",
-    "title": "Code of Conduct: DSCI 524: Group 11",
-    "section": "",
-    "text": "Code of Conduct: DSCI 524: Group 11\n\n\nIntroduction\nOur team is dedicated to fostering a collaborative, inclusive, and respectful environment where ideas can be shared openly and learning is encouraged. All participants, whether contributing through discussions, code, documentation, or reviews are expected to support a positive and constructive atmosphere.\nThis Code of Conduct applies to all project-related interactions.\n\n\nCommitment to Diversity and Inclusion\nOur project is open to people of all backgrounds, regardless of age, gender identity or expression, sexual orientation, disability, physical appearance, body size, ethnicity, nationality, race, religion, education, or any other personal characteristic. We are committed to creating an environment where everyone feels respected, valued, and comfortable contributing without fear of discrimination or exclusion.\n\n\nExpected Behaviour\nAll members of this project community are expected to act with professionalism, integrity, and openness. This includes: - Communicating with respect and consideration at all times - Being open to others’ perspectives and acknowledging their contributions - Offering and accepting feedback in a constructive and professional way - Participating in discussions that encourage teamwork and shared understanding\n\n\nInappropriate Behavior\n\nAny form of harassment toward participants\nIntentional intimidation, stalking, or persistent following\nThreatening or violent language directed at others\nSharing or displaying offensive, explicit, or inappropriate content\nUse of slurs, excessive profanity, or aggressive and hostile language\n\nAll members are expected to refrain from all forms of unacceptable conduct to maintain a respectful environment.\n\n\nConsequences for Unacceptable Behavior\nIf a participant engages in inappropriate behavior, they will be asked to stop and comply immediately. If the behavior persists or the issue is severe, it may be referred to the teaching team or course faculty. Ongoing violations may lead to removal from the project.\n\n\nReporting Concerns and Guidelines\nIf a participant violates this Code of Conduct, the incident may be reported by contacting Raghav Gupta at raghav90@student.ubc.ca. All reports will be treated seriously and handled with discretion. The Group 11 team will review the situation and take actions it considers appropriate given the circumstances.\nAdaptation Notes: Adapted from the Python Community Code of Conduct (https://policies.python.org/python.org/code-of-conduct/) and the UBC MDS 522 course."
-  },
-  {
-    "objectID": "reference/index.html",
-    "href": "reference/index.html",
-    "title": "Function reference",
-    "section": "",
-    "text": "Functions in ReportRabbit.\n\n\n\nget_accuracy\nCalculates the accuracy of predictions and returns the result.\n\n\nget_f1\nCalculates the F1 score of predictions and returns the result.\n\n\nget_precision\nCalculates the precision of predictions and returns the result.\n\n\nget_recall\nCalculates the recall of predictions and returns the result.\n\n\nget_mae\nCalculates the Mean Absolute Error (MAE) and returns the result.\n\n\nget_mape\nCalculates the Mean Absolute Percentage Error (MAPE) and returns the result.\n\n\nget_mse\nCompute Mean Squared Error (MSE).\n\n\nget_rmse\nCompute Root Mean Squared Error (RMSE).\n\n\nget_mse_rmse\nCompute Mean Squared Error (MSE) and Root Mean Squared Error (RMSE).\n\n\nget_r\nCalculates the Pearson correlation coefficient (R)\n\n\nget_r2\nCalculates the R^2 statistic (coefficient of determination)",
-    "crumbs": [
-      "Reference",
-      "Function reference"
-    ]
-  },
-  {
-    "objectID": "reference/index.html#some-functions",
-    "href": "reference/index.html#some-functions",
-    "title": "Function reference",
-    "section": "",
-    "text": "Functions to inspect docstrings.\n\n\n\nget_accuracy\nCalculates the accuracy of predictions and returns the result.\n\n\nget_f1\nCalculates the F1 score of predictions and returns the result.",
-    "crumbs": [
-      "Reference",
-      "Function reference"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "ReportRabbit",
-    "section": "",
-    "text": "Welcome to ReportRabbit!"
-  },
-  {
-    "objectID": "index.html#contributors",
-    "href": "index.html#contributors",
-    "title": "Welcome to ReportRabbit!",
-    "section": "Contributors",
-    "text": "Contributors\nRaghav Gupta, Joel Peterson, Jennifer Tsang, and Ruth Adwowa Yankson"
-  },
-  {
-    "objectID": "index.html#installation",
-    "href": "index.html#installation",
-    "title": "Welcome to ReportRabbit!",
-    "section": "Installation",
-    "text": "Installation\n$ pip install reportrabbit"
-  },
-  {
-    "objectID": "index.html#contributing",
-    "href": "index.html#contributing",
-    "title": "Welcome to ReportRabbit!",
-    "section": "Contributing",
-    "text": "Contributing\nInterested in contributing? Check out the contributing guidelines here. Please note that this project is released with a Code of Conduct. By contributing to this project, you agree to abide by its terms."
-  },
-  {
-    "objectID": "index.html#license",
-    "href": "index.html#license",
-    "title": "Welcome to ReportRabbit!",
-    "section": "License",
-    "text": "License\nIt is licensed under the terms of the MIT license."
-  },
-  {
     "objectID": "reference/get_mse_rmse.html",
     "href": "reference/get_mse_rmse.html",
     "title": "get_mse_rmse",
@@ -490,6 +204,54 @@
     ]
   },
   {
+    "objectID": "reference/get_f1.html",
+    "href": "reference/get_f1.html",
+    "title": "get_f1",
+    "section": "",
+    "text": "get_f1(y_true, y_pred)\nCalculates the F1 score of predictions and returns the result. The F1 score is the harmonic mean of precision and recall. It provides a balanced measure between precision and recall, useful when you want to balance the trade-off between false positives and false negatives. F1 = 2 * ((Precision * Recall) / (Precision + Recall)). Scoring is between 0 and 1 with a perfect F1 score being 1.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ny_true\narray\nThe actual observed values (ground truth).\nrequired\n\n\ny_pred\narray\nThe model predicted values.\nrequired\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nfloat\nThe calculated F1 score, ranging from 0.0 to 1.0.\n\n\n\n\n\n\n&gt;&gt;&gt; # Perfect F1 score\n&gt;&gt;&gt; y_true = [0, 1, 1, 0]\n&gt;&gt;&gt; y_pred = [0, 1, 1, 0]\n&gt;&gt;&gt; get_f1(y_true, y_pred)\n1.0\n&gt;&gt;&gt; # Partial F1 score\n&gt;&gt;&gt; y_true = [0, 1, 1, 0]\n&gt;&gt;&gt; y_pred = [0, 1, 0, 0]\n&gt;&gt;&gt; get_f1(y_true, y_pred)\n0.6666666666666666",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_f1"
+    ]
+  },
+  {
+    "objectID": "reference/get_f1.html#parameters",
+    "href": "reference/get_f1.html#parameters",
+    "title": "get_f1",
+    "section": "",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ny_true\narray\nThe actual observed values (ground truth).\nrequired\n\n\ny_pred\narray\nThe model predicted values.\nrequired",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_f1"
+    ]
+  },
+  {
+    "objectID": "reference/get_f1.html#returns",
+    "href": "reference/get_f1.html#returns",
+    "title": "get_f1",
+    "section": "",
+    "text": "Name\nType\nDescription\n\n\n\n\n\nfloat\nThe calculated F1 score, ranging from 0.0 to 1.0.",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_f1"
+    ]
+  },
+  {
+    "objectID": "reference/get_f1.html#examples",
+    "href": "reference/get_f1.html#examples",
+    "title": "get_f1",
+    "section": "",
+    "text": "&gt;&gt;&gt; # Perfect F1 score\n&gt;&gt;&gt; y_true = [0, 1, 1, 0]\n&gt;&gt;&gt; y_pred = [0, 1, 1, 0]\n&gt;&gt;&gt; get_f1(y_true, y_pred)\n1.0\n&gt;&gt;&gt; # Partial F1 score\n&gt;&gt;&gt; y_true = [0, 1, 1, 0]\n&gt;&gt;&gt; y_pred = [0, 1, 0, 0]\n&gt;&gt;&gt; get_f1(y_true, y_pred)\n0.6666666666666666",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_f1"
+    ]
+  },
+  {
     "objectID": "reference/get_r2.html",
     "href": "reference/get_r2.html",
     "title": "get_r2",
@@ -536,6 +298,167 @@
       "Functions",
       "get_r2"
     ]
+  },
+  {
+    "objectID": "CONDUCT.html",
+    "href": "CONDUCT.html",
+    "title": "Code of Conduct: DSCI 524: Group 11",
+    "section": "",
+    "text": "Code of Conduct: DSCI 524: Group 11\n\n\nIntroduction\nOur team is dedicated to fostering a collaborative, inclusive, and respectful environment where ideas can be shared openly and learning is encouraged. All participants, whether contributing through discussions, code, documentation, or reviews are expected to support a positive and constructive atmosphere.\nThis Code of Conduct applies to all project-related interactions.\n\n\nCommitment to Diversity and Inclusion\nOur project is open to people of all backgrounds, regardless of age, gender identity or expression, sexual orientation, disability, physical appearance, body size, ethnicity, nationality, race, religion, education, or any other personal characteristic. We are committed to creating an environment where everyone feels respected, valued, and comfortable contributing without fear of discrimination or exclusion.\n\n\nExpected Behaviour\nAll members of this project community are expected to act with professionalism, integrity, and openness. This includes: - Communicating with respect and consideration at all times - Being open to others’ perspectives and acknowledging their contributions - Offering and accepting feedback in a constructive and professional way - Participating in discussions that encourage teamwork and shared understanding\n\n\nInappropriate Behavior\n\nAny form of harassment toward participants\nIntentional intimidation, stalking, or persistent following\nThreatening or violent language directed at others\nSharing or displaying offensive, explicit, or inappropriate content\nUse of slurs, excessive profanity, or aggressive and hostile language\n\nAll members are expected to refrain from all forms of unacceptable conduct to maintain a respectful environment.\n\n\nConsequences for Unacceptable Behavior\nIf a participant engages in inappropriate behavior, they will be asked to stop and comply immediately. If the behavior persists or the issue is severe, it may be referred to the teaching team or course faculty. Ongoing violations may lead to removal from the project.\n\n\nReporting Concerns and Guidelines\nIf a participant violates this Code of Conduct, the incident may be reported by contacting Raghav Gupta at raghav90@student.ubc.ca. All reports will be treated seriously and handled with discretion. The Group 11 team will review the situation and take actions it considers appropriate given the circumstances.\nAdaptation Notes: Adapted from the Python Community Code of Conduct (https://policies.python.org/python.org/code-of-conduct/) and the UBC MDS 522 course."
+  },
+  {
+    "objectID": "index.html#contributors",
+    "href": "index.html#contributors",
+    "title": "Welcome to ReportRabbit!",
+    "section": "Contributors",
+    "text": "Contributors\nRaghav Gupta, Joel Peterson, Jennifer Tsang, and Ruth Adwowa Yankson"
+  },
+  {
+    "objectID": "index.html#installation",
+    "href": "index.html#installation",
+    "title": "Welcome to ReportRabbit!",
+    "section": "Installation",
+    "text": "Installation\n$ pip install reportrabbit"
+  },
+  {
+    "objectID": "index.html#contributing",
+    "href": "index.html#contributing",
+    "title": "Welcome to ReportRabbit!",
+    "section": "Contributing",
+    "text": "Contributing\nInterested in contributing? Check out the contributing guidelines here. Please note that this project is released with a Code of Conduct. By contributing to this project, you agree to abide by its terms."
+  },
+  {
+    "objectID": "index.html#license",
+    "href": "index.html#license",
+    "title": "Welcome to ReportRabbit!",
+    "section": "License",
+    "text": "License\nIt is licensed under the terms of the MIT license."
+  },
+  {
+    "objectID": "CODE_OF_CONDUCT.html",
+    "href": "CODE_OF_CONDUCT.html",
+    "title": "Contributor Covenant Code of Conduct",
+    "section": "",
+    "text": "We as members, contributors, and leaders pledge to make participation in our community a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, religion, or sexual identity and orientation.\nWe pledge to act and interact in ways that contribute to an open, welcoming, diverse, inclusive, and healthy community.\n\n\n\nExamples of behavior that contributes to a positive environment for our community include:\n\nDemonstrating empathy and kindness toward other people\nBeing respectful of differing opinions, viewpoints, and experiences\nGiving and gracefully accepting constructive feedback\nAccepting responsibility and apologizing to those affected by our mistakes, and learning from the experience\nFocusing on what is best not just for us as individuals, but for the overall community\n\nExamples of unacceptable behavior include:\n\nThe use of sexualized language or imagery, and sexual attention or advances of any kind\nTrolling, insulting or derogatory comments, and personal or political attacks\nPublic or private harassment\nPublishing others’ private information, such as a physical or email address, without their explicit permission\nOther conduct which could reasonably be considered inappropriate in a professional setting\n\n\n\n\nCommunity leaders are responsible for clarifying and enforcing our standards of acceptable behavior and will take appropriate and fair corrective action in response to any behavior that they deem inappropriate, threatening, offensive, or harmful.\nCommunity leaders have the right and responsibility to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned to this Code of Conduct, and will communicate reasons for moderation decisions when appropriate.\n\n\n\nThis Code of Conduct applies within all community spaces, and also applies when an individual is officially representing the community in public spaces. Examples of representing our community include using an official e-mail address, posting via an official social media account, or acting as an appointed representative at an online or offline event.\n\n\n\nInstances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement at [INSERT CONTACT METHOD]. All complaints will be reviewed and investigated promptly and fairly.\nAll community leaders are obligated to respect the privacy and security of the reporter of any incident.\n\n\n\nCommunity leaders will follow these Community Impact Guidelines in determining the consequences for any action they deem in violation of this Code of Conduct:\n\n\nCommunity Impact: Use of inappropriate language or other behavior deemed unprofessional or unwelcome in the community.\nConsequence: A private, written warning from community leaders, providing clarity around the nature of the violation and an explanation of why the behavior was inappropriate. A public apology may be requested.\n\n\n\nCommunity Impact: A violation through a single incident or series of actions.\nConsequence: A warning with consequences for continued behavior. No interaction with the people involved, including unsolicited interaction with those enforcing the Code of Conduct, for a specified period of time. This includes avoiding interactions in community spaces as well as external channels like social media. Violating these terms may lead to a temporary or permanent ban.\n\n\n\nCommunity Impact: A serious violation of community standards, including sustained inappropriate behavior.\nConsequence: A temporary ban from any sort of interaction or public communication with the community for a specified period of time. No public or private interaction with the people involved, including unsolicited interaction with those enforcing the Code of Conduct, is allowed during this period. Violating these terms may lead to a permanent ban.\n\n\n\nCommunity Impact: Demonstrating a pattern of violation of community standards, including sustained inappropriate behavior, harassment of an individual, or aggression toward or disparagement of classes of individuals.\nConsequence: A permanent ban from any sort of public interaction within the community.\n\n\n\n\nThis Code of Conduct is adapted from the Contributor Covenant, version 2.0, available at https://www.contributor-covenant.org/version/2/0/code_of_conduct.html.\nCommunity Impact Guidelines were inspired by Mozilla’s code of conduct enforcement ladder.\nFor answers to common questions about this code of conduct, see the FAQ at https://www.contributor-covenant.org/faq. Translations are available at https://www.contributor-covenant.org/translations."
+  },
+  {
+    "objectID": "CODE_OF_CONDUCT.html#our-pledge",
+    "href": "CODE_OF_CONDUCT.html#our-pledge",
+    "title": "Contributor Covenant Code of Conduct",
+    "section": "",
+    "text": "We as members, contributors, and leaders pledge to make participation in our community a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, religion, or sexual identity and orientation.\nWe pledge to act and interact in ways that contribute to an open, welcoming, diverse, inclusive, and healthy community."
+  },
+  {
+    "objectID": "CODE_OF_CONDUCT.html#our-standards",
+    "href": "CODE_OF_CONDUCT.html#our-standards",
+    "title": "Contributor Covenant Code of Conduct",
+    "section": "",
+    "text": "Examples of behavior that contributes to a positive environment for our community include:\n\nDemonstrating empathy and kindness toward other people\nBeing respectful of differing opinions, viewpoints, and experiences\nGiving and gracefully accepting constructive feedback\nAccepting responsibility and apologizing to those affected by our mistakes, and learning from the experience\nFocusing on what is best not just for us as individuals, but for the overall community\n\nExamples of unacceptable behavior include:\n\nThe use of sexualized language or imagery, and sexual attention or advances of any kind\nTrolling, insulting or derogatory comments, and personal or political attacks\nPublic or private harassment\nPublishing others’ private information, such as a physical or email address, without their explicit permission\nOther conduct which could reasonably be considered inappropriate in a professional setting"
+  },
+  {
+    "objectID": "CODE_OF_CONDUCT.html#enforcement-responsibilities",
+    "href": "CODE_OF_CONDUCT.html#enforcement-responsibilities",
+    "title": "Contributor Covenant Code of Conduct",
+    "section": "",
+    "text": "Community leaders are responsible for clarifying and enforcing our standards of acceptable behavior and will take appropriate and fair corrective action in response to any behavior that they deem inappropriate, threatening, offensive, or harmful.\nCommunity leaders have the right and responsibility to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned to this Code of Conduct, and will communicate reasons for moderation decisions when appropriate."
+  },
+  {
+    "objectID": "CODE_OF_CONDUCT.html#scope",
+    "href": "CODE_OF_CONDUCT.html#scope",
+    "title": "Contributor Covenant Code of Conduct",
+    "section": "",
+    "text": "This Code of Conduct applies within all community spaces, and also applies when an individual is officially representing the community in public spaces. Examples of representing our community include using an official e-mail address, posting via an official social media account, or acting as an appointed representative at an online or offline event."
+  },
+  {
+    "objectID": "CODE_OF_CONDUCT.html#enforcement",
+    "href": "CODE_OF_CONDUCT.html#enforcement",
+    "title": "Contributor Covenant Code of Conduct",
+    "section": "",
+    "text": "Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement at [INSERT CONTACT METHOD]. All complaints will be reviewed and investigated promptly and fairly.\nAll community leaders are obligated to respect the privacy and security of the reporter of any incident."
+  },
+  {
+    "objectID": "CODE_OF_CONDUCT.html#enforcement-guidelines",
+    "href": "CODE_OF_CONDUCT.html#enforcement-guidelines",
+    "title": "Contributor Covenant Code of Conduct",
+    "section": "",
+    "text": "Community leaders will follow these Community Impact Guidelines in determining the consequences for any action they deem in violation of this Code of Conduct:\n\n\nCommunity Impact: Use of inappropriate language or other behavior deemed unprofessional or unwelcome in the community.\nConsequence: A private, written warning from community leaders, providing clarity around the nature of the violation and an explanation of why the behavior was inappropriate. A public apology may be requested.\n\n\n\nCommunity Impact: A violation through a single incident or series of actions.\nConsequence: A warning with consequences for continued behavior. No interaction with the people involved, including unsolicited interaction with those enforcing the Code of Conduct, for a specified period of time. This includes avoiding interactions in community spaces as well as external channels like social media. Violating these terms may lead to a temporary or permanent ban.\n\n\n\nCommunity Impact: A serious violation of community standards, including sustained inappropriate behavior.\nConsequence: A temporary ban from any sort of interaction or public communication with the community for a specified period of time. No public or private interaction with the people involved, including unsolicited interaction with those enforcing the Code of Conduct, is allowed during this period. Violating these terms may lead to a permanent ban.\n\n\n\nCommunity Impact: Demonstrating a pattern of violation of community standards, including sustained inappropriate behavior, harassment of an individual, or aggression toward or disparagement of classes of individuals.\nConsequence: A permanent ban from any sort of public interaction within the community."
+  },
+  {
+    "objectID": "CODE_OF_CONDUCT.html#attribution",
+    "href": "CODE_OF_CONDUCT.html#attribution",
+    "title": "Contributor Covenant Code of Conduct",
+    "section": "",
+    "text": "This Code of Conduct is adapted from the Contributor Covenant, version 2.0, available at https://www.contributor-covenant.org/version/2/0/code_of_conduct.html.\nCommunity Impact Guidelines were inspired by Mozilla’s code of conduct enforcement ladder.\nFor answers to common questions about this code of conduct, see the FAQ at https://www.contributor-covenant.org/faq. Translations are available at https://www.contributor-covenant.org/translations."
+  },
+  {
+    "objectID": "CHANGELOG.html",
+    "href": "CHANGELOG.html",
+    "title": "Changelog",
+    "section": "",
+    "text": "First release of reportrabbit!"
+  },
+  {
+    "objectID": "CHANGELOG.html#v0.1.0-06012026",
+    "href": "CHANGELOG.html#v0.1.0-06012026",
+    "title": "Changelog",
+    "section": "",
+    "text": "First release of reportrabbit!"
+  },
+  {
+    "objectID": "CONTRIBUTING.html",
+    "href": "CONTRIBUTING.html",
+    "title": "Contributing to ReportRabbit",
+    "section": "",
+    "text": "Thank you for your interest in contributing to ReportRabbit!\nWe welcome contributions of all kinds: bug reports, feature ideas, code, and documentation.\nEvery contribution helps make ReportRabbit more reliable, expressive, and useful for the data science community.\nThis document outlines how to contribute effectively and respectfully.\n\n\nReportRabbit follows a GitHub Flow–based collaboration model:\n\nAll work is done on feature or fix branches created from main\nEach issue corresponds to a single task or function\nIssues are assigned to exactly one team member\nPull requests must be reviewed by at least one other team member before merging\nNo direct commits are made to main\nGitHub issues and project boards are used for all project-related communication\n\n\n\nCreate a new branch from main for each piece of work. Use consistent prefixes:\n\nfeature/&lt;short-description&gt; for new features\nfix/&lt;short-description&gt; for bug fixes\ndocs/&lt;short-description&gt; for documentation-only changes\ntest/&lt;short-description&gt; for tests\nchore/&lt;short-description&gt; for maintenance tasks\n\nExamples: - feature/metrics-report - fix/mape-zero-division - docs/readme-usage - test/plot-report-tests - chore/ci-update\n\n\n\n\n\n\nIf you encounter a bug, please open an issue and include:\n\nYour operating system and version\nPython version\nReportRabbit version\nA minimal, reproducible example\nExpected behavior vs. actual behavior\nAny relevant error messages or stack traces\n\nClear bug reports help us resolve issues faster.\n\n\n\nLook through open GitHub issues labeled bug or help wanted : these are open to whoever wants to fix them. If you plan to work on an issue, please comment on it first to avoid duplication.\n\n\n\nWe welcome feature contributions that align with ReportRabbit’s scope: post-model reporting, and evaluation.\nWhen proposing a feature: - Clearly describe the problem it solves - Keep the scope focused and incremental\n\n\n\nGood documentation is as important as good code. Contributions may include: - Docstring improvements - README updates - Usage examples - Tutorials or explanatory guides - Diagrams or visuals that clarify workflows\n\n\n\nFeature ideas and design feedback are welcome.\nWhen submitting feedback: - Be specific and constructive - Provide context or examples where possible - Keep proposals concise and actionable\n\n\n\n\nTo set up ReportRabbit for local development:\n\nClone the repository\ngit clone git@github.com:UBC-MDS/ReportRabbit.git\ncd reportrabbit\nCreate and activate a Conda environment\nconda create -n reportrabbit python=3.12\nconda activate reportrabbit\nInstall dependencies using poetry\npoetry install\nCreate a feature or fix branch\ngit switch -c feature/short_description\n\n\n\n\nContributions should follow these conventions:\n\nFollow PEP 8 for Python code style and formatting\nUse NumPy-style docstrings for all public functions and modules\nWrite clear, maintainable, and well-documented code\nPrefer explicit, readable implementations over clever or opaque solutions\nKeep functions focused, modular, and testable\nBegin each function name with get_, and a suitably descriptive name. E.g.: get_mse or get_descriptive_report.\n\nIf applicable: - Add or update unit and integration tests - Update documentation alongside code changes\n\n\n\n\nTip: Install in editable mode so tests run against your local changes:\npip install -e .\n\nBefore opening a pull request, please run the test suite locally:\npytest\nTo run a specific test file:\npytest tests/unit/test_specific_module.py\n\n\n\nBefore you submit a pull request, check that it meets these guidelines:\n\nThe pull request should include additional tests if appropriate.\nMake sure that all tests pass locally.\nThe documentation is updated in case of any functionality changes or additions\nThe pull request clearly explains what was changed and why\nPull requests are small and focused rather than large, multi-purpose changes\nThe pull request should work for all currently supported operating systems and versions of Python.\n\n\n\n\nPlease note that the ReportRabbit project is released with a Code of Conduct. By contributing to this project you agree to abide by its terms.\nThank you for helping make ReportRabbit better!"
+  },
+  {
+    "objectID": "CONTRIBUTING.html#collaboration-workflow",
+    "href": "CONTRIBUTING.html#collaboration-workflow",
+    "title": "Contributing to ReportRabbit",
+    "section": "",
+    "text": "ReportRabbit follows a GitHub Flow–based collaboration model:\n\nAll work is done on feature or fix branches created from main\nEach issue corresponds to a single task or function\nIssues are assigned to exactly one team member\nPull requests must be reviewed by at least one other team member before merging\nNo direct commits are made to main\nGitHub issues and project boards are used for all project-related communication\n\n\n\nCreate a new branch from main for each piece of work. Use consistent prefixes:\n\nfeature/&lt;short-description&gt; for new features\nfix/&lt;short-description&gt; for bug fixes\ndocs/&lt;short-description&gt; for documentation-only changes\ntest/&lt;short-description&gt; for tests\nchore/&lt;short-description&gt; for maintenance tasks\n\nExamples: - feature/metrics-report - fix/mape-zero-division - docs/readme-usage - test/plot-report-tests - chore/ci-update"
+  },
+  {
+    "objectID": "CONTRIBUTING.html#ways-to-contribute",
+    "href": "CONTRIBUTING.html#ways-to-contribute",
+    "title": "Contributing to ReportRabbit",
+    "section": "",
+    "text": "If you encounter a bug, please open an issue and include:\n\nYour operating system and version\nPython version\nReportRabbit version\nA minimal, reproducible example\nExpected behavior vs. actual behavior\nAny relevant error messages or stack traces\n\nClear bug reports help us resolve issues faster.\n\n\n\nLook through open GitHub issues labeled bug or help wanted : these are open to whoever wants to fix them. If you plan to work on an issue, please comment on it first to avoid duplication.\n\n\n\nWe welcome feature contributions that align with ReportRabbit’s scope: post-model reporting, and evaluation.\nWhen proposing a feature: - Clearly describe the problem it solves - Keep the scope focused and incremental\n\n\n\nGood documentation is as important as good code. Contributions may include: - Docstring improvements - README updates - Usage examples - Tutorials or explanatory guides - Diagrams or visuals that clarify workflows\n\n\n\nFeature ideas and design feedback are welcome.\nWhen submitting feedback: - Be specific and constructive - Provide context or examples where possible - Keep proposals concise and actionable"
+  },
+  {
+    "objectID": "CONTRIBUTING.html#development-setup",
+    "href": "CONTRIBUTING.html#development-setup",
+    "title": "Contributing to ReportRabbit",
+    "section": "",
+    "text": "To set up ReportRabbit for local development:\n\nClone the repository\ngit clone git@github.com:UBC-MDS/ReportRabbit.git\ncd reportrabbit\nCreate and activate a Conda environment\nconda create -n reportrabbit python=3.12\nconda activate reportrabbit\nInstall dependencies using poetry\npoetry install\nCreate a feature or fix branch\ngit switch -c feature/short_description"
+  },
+  {
+    "objectID": "CONTRIBUTING.html#development-guidelines",
+    "href": "CONTRIBUTING.html#development-guidelines",
+    "title": "Contributing to ReportRabbit",
+    "section": "",
+    "text": "Contributions should follow these conventions:\n\nFollow PEP 8 for Python code style and formatting\nUse NumPy-style docstrings for all public functions and modules\nWrite clear, maintainable, and well-documented code\nPrefer explicit, readable implementations over clever or opaque solutions\nKeep functions focused, modular, and testable\nBegin each function name with get_, and a suitably descriptive name. E.g.: get_mse or get_descriptive_report.\n\nIf applicable: - Add or update unit and integration tests - Update documentation alongside code changes"
+  },
+  {
+    "objectID": "CONTRIBUTING.html#running-tests",
+    "href": "CONTRIBUTING.html#running-tests",
+    "title": "Contributing to ReportRabbit",
+    "section": "",
+    "text": "Tip: Install in editable mode so tests run against your local changes:\npip install -e .\n\nBefore opening a pull request, please run the test suite locally:\npytest\nTo run a specific test file:\npytest tests/unit/test_specific_module.py"
+  },
+  {
+    "objectID": "CONTRIBUTING.html#pull-request-guidelines",
+    "href": "CONTRIBUTING.html#pull-request-guidelines",
+    "title": "Contributing to ReportRabbit",
+    "section": "",
+    "text": "Before you submit a pull request, check that it meets these guidelines:\n\nThe pull request should include additional tests if appropriate.\nMake sure that all tests pass locally.\nThe documentation is updated in case of any functionality changes or additions\nThe pull request clearly explains what was changed and why\nPull requests are small and focused rather than large, multi-purpose changes\nThe pull request should work for all currently supported operating systems and versions of Python."
+  },
+  {
+    "objectID": "CONTRIBUTING.html#code-of-conduct",
+    "href": "CONTRIBUTING.html#code-of-conduct",
+    "title": "Contributing to ReportRabbit",
+    "section": "",
+    "text": "Please note that the ReportRabbit project is released with a Code of Conduct. By contributing to this project you agree to abide by its terms.\nThank you for helping make ReportRabbit better!"
   },
   {
     "objectID": "reference/get_rmse.html",
@@ -619,6 +542,17 @@
       "Reference",
       "Functions",
       "get_r"
+    ]
+  },
+  {
+    "objectID": "reference/index.html",
+    "href": "reference/index.html",
+    "title": "Function reference",
+    "section": "",
+    "text": "Functions in ReportRabbit.\n\n\n\nget_accuracy\nCalculates the accuracy of predictions and returns the result.\n\n\nget_f1\nCalculates the F1 score of predictions and returns the result.\n\n\nget_precision\nCalculates the precision of predictions and returns the result.\n\n\nget_recall\nCalculates the recall of predictions and returns the result.\n\n\nget_mae\nCalculates the Mean Absolute Error (MAE) and returns the result.\n\n\nget_mape\nCalculates the Mean Absolute Percentage Error (MAPE) and returns the result.\n\n\nget_mse\nCompute Mean Squared Error (MSE).\n\n\nget_rmse\nCompute Root Mean Squared Error (RMSE).\n\n\nget_mse_rmse\nCompute Mean Squared Error (MSE) and Root Mean Squared Error (RMSE).\n\n\nget_r\nCalculates the Pearson correlation coefficient (R)\n\n\nget_r2\nCalculates the R^2 statistic (coefficient of determination)",
+    "crumbs": [
+      "Reference",
+      "Function reference"
     ]
   },
   {
@@ -726,6 +660,54 @@
       "Reference",
       "Functions",
       "get_precision"
+    ]
+  },
+  {
+    "objectID": "reference/get_accuracy.html",
+    "href": "reference/get_accuracy.html",
+    "title": "get_accuracy",
+    "section": "",
+    "text": "get_accuracy(y_true, y_pred)\nCalculates the accuracy of predictions and returns the result. Accuracy is the proportion of correct predictions out of all predictions made. It represents the overall correctness of the model. Accuracy = (True Positives + True Negatives) / Total. Scores are between 0 and 1 with a perfect accuracy being 1.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ny_true\narray\nThe actual observed values (ground truth).\nrequired\n\n\ny_pred\narray\nThe model predicted values.\nrequired\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nfloat\nThe calculated accuracy score, ranging from 0.0 to 1.0.\n\n\n\n\n\n\n&gt;&gt;&gt; # Perfect accuracy\n&gt;&gt;&gt; y_true = [0, 1, 1, 0]\n&gt;&gt;&gt; y_pred = [0, 1, 1, 0]\n&gt;&gt;&gt; get_accuracy(y_true, y_pred)\n1.0\n&gt;&gt;&gt; # Partial accuracy\n&gt;&gt;&gt; y_true = [0, 1, 1, 0]\n&gt;&gt;&gt; y_pred = [0, 1, 0, 0]\n&gt;&gt;&gt; get_accuracy(y_true, y_pred)\n0.75",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_accuracy"
+    ]
+  },
+  {
+    "objectID": "reference/get_accuracy.html#parameters",
+    "href": "reference/get_accuracy.html#parameters",
+    "title": "get_accuracy",
+    "section": "",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ny_true\narray\nThe actual observed values (ground truth).\nrequired\n\n\ny_pred\narray\nThe model predicted values.\nrequired",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_accuracy"
+    ]
+  },
+  {
+    "objectID": "reference/get_accuracy.html#returns",
+    "href": "reference/get_accuracy.html#returns",
+    "title": "get_accuracy",
+    "section": "",
+    "text": "Name\nType\nDescription\n\n\n\n\n\nfloat\nThe calculated accuracy score, ranging from 0.0 to 1.0.",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_accuracy"
+    ]
+  },
+  {
+    "objectID": "reference/get_accuracy.html#examples",
+    "href": "reference/get_accuracy.html#examples",
+    "title": "get_accuracy",
+    "section": "",
+    "text": "&gt;&gt;&gt; # Perfect accuracy\n&gt;&gt;&gt; y_true = [0, 1, 1, 0]\n&gt;&gt;&gt; y_pred = [0, 1, 1, 0]\n&gt;&gt;&gt; get_accuracy(y_true, y_pred)\n1.0\n&gt;&gt;&gt; # Partial accuracy\n&gt;&gt;&gt; y_true = [0, 1, 1, 0]\n&gt;&gt;&gt; y_pred = [0, 1, 0, 0]\n&gt;&gt;&gt; get_accuracy(y_true, y_pred)\n0.75",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_accuracy"
     ]
   }
 ]
