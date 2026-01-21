@@ -1,0 +1,10 @@
+repos:
+  - repo: https://github.com/UBC-MDS/reportrabbit
+    rev: v4.5.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-added-large-files
+
+      
