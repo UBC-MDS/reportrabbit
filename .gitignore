@@ -1,3 +1,7 @@
+# Documentation website
+_site
+docs
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -140,3 +144,4 @@ dmypy.json
 
 # MacOS
 .DS_Store
+/.quarto/

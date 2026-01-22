@@ -1,0 +1,8 @@
+name: reportrabbit
+channels:
+  - conda-forge
+dependencies:
+  - python
+  - hatch
+  - pytest
+  - pip

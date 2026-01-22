@@ -1,0 +1,21 @@
+# get_mse { #reportrabbit.get_mse }
+
+```python
+get_mse(y_true, y_pred, *, sample_weight=None)
+```
+
+Compute Mean Squared Error (MSE).
+
+## Parameters {.doc-section .doc-section-parameters}
+
+| Name          | Type                             | Description              | Default    |
+|---------------|----------------------------------|--------------------------|------------|
+| y_true        | array-like of shape (n_samples,) | True target values.      | _required_ |
+| y_pred        | array-like of shape (n_samples,) | Predicted target values. | _required_ |
+| sample_weight | array-like of shape (n_samples,) | Sample weights.          | `None`     |
+
+## Returns {.doc-section .doc-section-returns}
+
+| Name   | Type   | Description         |
+|--------|--------|---------------------|
+| mse    | float  | Mean Squared Error. |

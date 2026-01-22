@@ -1,0 +1,40 @@
+# get_f1 { #reportrabbit.get_f1 }
+
+```python
+get_f1(y_true, y_pred)
+```
+
+Calculates the F1 score of predictions and returns the result.
+The F1 score is the harmonic mean of precision and recall.
+It provides a balanced measure between precision and recall, useful when
+you want to balance the trade-off between false positives and false negatives.
+F1 = 2 * ((Precision * Recall) / (Precision + Recall)).
+Scoring is between 0 and 1 with a perfect F1 score being 1.
+
+## Parameters {.doc-section .doc-section-parameters}
+
+| Name   | Type   | Description                                | Default    |
+|--------|--------|--------------------------------------------|------------|
+| y_true | array  | The actual observed values (ground truth). | _required_ |
+| y_pred | array  | The model predicted values.                | _required_ |
+
+## Returns {.doc-section .doc-section-returns}
+
+| Name   | Type   | Description                                       |
+|--------|--------|---------------------------------------------------|
+|        | float  | The calculated F1 score, ranging from 0.0 to 1.0. |
+
+## Examples {.doc-section .doc-section-examples}
+
+```python
+>>> # Perfect F1 score
+>>> y_true = [0, 1, 1, 0]
+>>> y_pred = [0, 1, 1, 0]
+>>> get_f1(y_true, y_pred)
+1.0
+>>> # Partial F1 score
+>>> y_true = [0, 1, 1, 0]
+>>> y_pred = [0, 1, 0, 0]
+>>> get_f1(y_true, y_pred)
+0.6666666666666666
+```

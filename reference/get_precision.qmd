@@ -1,0 +1,39 @@
+# get_precision { #reportrabbit.get_precision }
+
+```python
+get_precision(y_true, y_pred)
+```
+
+Calculates the precision of predictions and returns the result.
+Precision is the proportion of positive predictions that were correct.
+It answers: "Of all the items we predicted as positive, how many were actually positive?"
+Precision = True Positives / (True Positives + False Positives).    
+Scoring is between 0 and 1 with a perfect precision being 1.
+
+## Parameters {.doc-section .doc-section-parameters}
+
+| Name   | Type   | Description                                | Default    |
+|--------|--------|--------------------------------------------|------------|
+| y_true | array  | The actual observed values (ground truth). | _required_ |
+| y_pred | array  | The model predicted values.                | _required_ |
+
+## Returns {.doc-section .doc-section-returns}
+
+| Name   | Type   | Description                                              |
+|--------|--------|----------------------------------------------------------|
+|        | float  | The calculated precision score, ranging from 0.0 to 1.0. |
+
+## Examples {.doc-section .doc-section-examples}
+
+```python
+>>> # Perfect precision
+>>> y_true = [0, 1, 1, 0]
+>>> y_pred = [0, 1, 1, 0]
+>>> get_precision(y_true, y_pred)
+1.0
+>>> # Partial precision
+>>> y_true = [0, 1, 1, 0]
+>>> y_pred = [0, 1, 0, 0]
+>>> get_precision(y_true, y_pred)
+0.75
+```

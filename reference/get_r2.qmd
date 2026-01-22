@@ -1,0 +1,33 @@
+# get_r2 { #reportrabbit.get_r2 }
+
+```python
+get_r2(y_true, y_pred)
+```
+
+Calculates the R^2 statistic (coefficient of determination) 
+and return the result.
+
+The R^2 statistics meansures the proportion of variability 
+in Y (the response) that is explained by the linear model.
+
+## Parameters {.doc-section .doc-section-parameters}
+
+| Name   | Type          | Description                                | Default    |
+|--------|---------------|--------------------------------------------|------------|
+| y_true | array or list | The actual observed values (ground truth). | _required_ |
+| y_pred | array or list | The model predicted values.                | _required_ |
+
+## Returns {.doc-section .doc-section-returns}
+
+| Name   | Type   | Description                   |
+|--------|--------|-------------------------------|
+|        | float  | The calculated R^2 statistic. |
+
+## Examples {.doc-section .doc-section-examples}
+
+```python
+>>> y_true = [1.0, 2.0, 3.0]
+>>> y_pred = [1.0, 2.0, 3.0]
+>>> get_r2(y_true, y_pred)
+1.0
+```
