@@ -48,7 +48,7 @@ Download = "https://pypi.org/project/reportrabbit/#files"
 # in Mid November 2025.
 dev = [
     "hatch",
-    "pre-commit",
+    "ruff>=0.1.0",
 ]
 
 docs = [
@@ -177,3 +177,12 @@ features = [
 
 [tool.hatch.envs.audit.scripts]
 check = ["pip-audit"]
+
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"  # or whatever your min Python version is
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]  # Errors, pyflakes, warnings, imports
+ignore = ["E501"]  # Line too long (handled by formatter)
