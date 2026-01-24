@@ -1,0 +1,32 @@
+# get_mae { #reportrabbit.get_mae }
+
+```python
+get_mae(y_true, y_pred)
+```
+
+Calculates the Mean Absolute Error (MAE) and returns the result.
+
+MAE measures the average absolute difference between the
+observed values and the predicted values.
+
+## Parameters {.doc-section .doc-section-parameters}
+
+| Name   | Type   | Description                                | Default    |
+|--------|--------|--------------------------------------------|------------|
+| y_true | array  | The actual observed values (ground truth). | _required_ |
+| y_pred | array  | The model predicted values.                | _required_ |
+
+## Returns {.doc-section .doc-section-returns}
+
+| Name   | Type   | Description                         |
+|--------|--------|-------------------------------------|
+|        | float  | The calculated Mean Absolute Error. |
+
+## Examples {.doc-section .doc-section-examples}
+
+```python
+>>> y_true = [1.0, 2.0, 3.0]
+>>> y_pred = [2.0, 2.0, 4.0]
+>>> get_mae(y_true, y_pred)
+0.6666666666666666
+```

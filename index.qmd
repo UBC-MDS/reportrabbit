@@ -1,0 +1,3 @@
+# Welcome to ReportRabbit!
+
+{{< include README.md >}}

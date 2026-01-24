@@ -1,0 +1,19 @@
+website:
+  sidebar:
+  - contents:
+    - reference/index.qmd
+    - contents:
+      - reference/get_accuracy.qmd
+      - reference/get_f1.qmd
+      - reference/get_precision.qmd
+      - reference/get_recall.qmd
+      - reference/get_mae.qmd
+      - reference/get_mape.qmd
+      - reference/get_mse.qmd
+      - reference/get_rmse.qmd
+      - reference/get_mse_rmse.qmd
+      - reference/get_r.qmd
+      - reference/get_r2.qmd
+      section: Functions
+    id: reference
+  - id: dummy-sidebar

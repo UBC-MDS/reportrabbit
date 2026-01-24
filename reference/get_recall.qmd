@@ -1,0 +1,39 @@
+# get_recall { #reportrabbit.get_recall }
+
+```python
+get_recall(y_true, y_pred)
+```
+
+Calculates the recall of predictions and returns the result.
+Recall is the proportion of actual positive cases that were correctly identified.
+It answers: "Of all the items that were actually positive, how many did we catch?"
+Recall = True Positives / (True Positives + False Negatives).
+Scoring is between 0 and 1 with a perfect recall being 1.
+
+## Parameters {.doc-section .doc-section-parameters}
+
+| Name   | Type   | Description                                | Default    |
+|--------|--------|--------------------------------------------|------------|
+| y_true | array  | The actual observed values (ground truth). | _required_ |
+| y_pred | array  | The model predicted values.                | _required_ |
+
+## Returns {.doc-section .doc-section-returns}
+
+| Name   | Type   | Description                                           |
+|--------|--------|-------------------------------------------------------|
+|        | float  | The calculated recall score, ranging from 0.0 to 1.0. |
+
+## Examples {.doc-section .doc-section-examples}
+
+```python
+>>> # Perfect recall
+>>> y_true = [0, 1, 1, 0]
+>>> y_pred = [0, 1, 1, 0]
+>>> get_recall(y_true, y_pred)
+1.0
+>>> # Partial recall
+>>> y_true = [0, 1, 1, 0]
+>>> y_pred = [0, 1, 0, 0]
+>>> get_recall(y_true, y_pred)
+0.5
+```

@@ -1,0 +1,19 @@
+# Function reference {.doc .doc-index}
+
+## Functions
+
+Functions in ReportRabbit.
+
+| | |
+| --- | --- |
+| [get_accuracy](get_accuracy.qmd#reportrabbit.get_accuracy) | Calculates the accuracy of predictions and returns the result. |
+| [get_f1](get_f1.qmd#reportrabbit.get_f1) | Calculates the F1 score of predictions and returns the result. |
+| [get_precision](get_precision.qmd#reportrabbit.get_precision) | Calculates the precision of predictions and returns the result. |
+| [get_recall](get_recall.qmd#reportrabbit.get_recall) | Calculates the recall of predictions and returns the result. |
+| [get_mae](get_mae.qmd#reportrabbit.get_mae) | Calculates the Mean Absolute Error (MAE) and returns the result. |
+| [get_mape](get_mape.qmd#reportrabbit.get_mape) | Calculates the Mean Absolute Percentage Error (MAPE) and returns the result. |
+| [get_mse](get_mse.qmd#reportrabbit.get_mse) | Compute Mean Squared Error (MSE). |
+| [get_rmse](get_rmse.qmd#reportrabbit.get_rmse) | Compute Root Mean Squared Error (RMSE). |
+| [get_mse_rmse](get_mse_rmse.qmd#reportrabbit.get_mse_rmse) | Compute Mean Squared Error (MSE) and Root Mean Squared Error (RMSE). |
+| [get_r](get_r.qmd#reportrabbit.get_r) | Calculates the Pearson correlation coefficient (R) |
+| [get_r2](get_r2.qmd#reportrabbit.get_r2) | Calculates the R^2 statistic (coefficient of determination)  |
