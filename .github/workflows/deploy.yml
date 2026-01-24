@@ -1,4 +1,7 @@
-#this file is created using Prof. Daniel Chen class lecture notes/code
+# This file was created using Prof. Daniel Chen’s class lecture notes and code,
+# from the ttimbers repository:
+# https://github.com/ttimbers/pycounts_tt_2024/blob/main/.github/workflows/ci-cd.yml and LLM.
+
 name: deploy
 
 on:
