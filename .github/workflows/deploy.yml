@@ -26,6 +26,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install -e ".[dev,tests,docs]"
 
+      - name: Style checks (ruff)
+        run: |
+          ruff check .    
+
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
         
