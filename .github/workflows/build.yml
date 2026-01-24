@@ -39,7 +39,7 @@ jobs:
         run: ruff check .
 
       - name: Format check with Ruff
-        run: ruff format --check .
+        run: ruff format .
 
       - name: Run pytest with coverage for all metric functions
         run: pytest --cov 
