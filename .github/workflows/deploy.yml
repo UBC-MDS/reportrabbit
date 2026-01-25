@@ -1,0 +1,79 @@
+# This file was created using Prof. Daniel Chen’s class lecture notes and code,
+# from the ttimbers repository:
+# https://github.com/ttimbers/pycounts_tt_2024/blob/main/.github/workflows/ci-cd.yml and LLM.
+
+name: deploy
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check-out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Install package + dev + test dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev,tests,docs]"
+ 
+      - name: Format check with Ruff
+        run: | 
+          ruff format .
+          ruff check . --fix || true     
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+        
+      - name: Build documentation
+        run: |
+          hatch run docs:build
+
+      - name: Run tests
+        run: |
+          pytest --cov=reportrabbit --cov-report=term-missing --cov-report=xml
+
+      - name: Build package (hatch)
+        run: |
+          hatch build
+
+  publish-testpypi:
+    needs: ci
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+
+    steps:
+      - name: Check-out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Install build tooling
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev]"
+
+      - name: Build package (hatch)
+        run: |
+          hatch build
+
+      - name: Publish to TestPyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          repository-url: https://test.pypi.org/legacy/
+          password: ${{ secrets.TEST_PYPI_API_TOKEN }}
