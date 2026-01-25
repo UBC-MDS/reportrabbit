@@ -92,12 +92,14 @@ def _validate_inputs(
     if sample_weight is not None:
         sw = _to_1d_numeric_array(sample_weight, "sample_weight")
         if sw.shape[0] != yt.shape[0]:
-            raise ValueError("sample_weight must have the same length as y_true and y_pred.")
+            raise ValueError(
+                "sample_weight must have the same length as y_true and y_pred."
+            )
 
     return yt, yp, sw
 
 
-def get_mse(y_true, y_pred, *, sample_weight=None):
+def get_mse(y_true: Any, y_pred: Any, *, sample_weight: Optional[Any] = None) -> float:
     """
     Compute Mean Squared Error (MSE).
 

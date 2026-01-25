@@ -86,13 +86,14 @@ def test_length_mismatch_raises_value_error(func, args):
         func(y_true, y_pred)
 
 
-def test_get_mse_rmse_weight_length_mismatch_raises_value_error():
-    """Test: ValueError raised when sample_weight length differs from y_true/y_pred."""
-    y_true = [1.0, 2.9, 3.4]
-    y_pred = [1.4, 0.2, 0.9]
-    sample_weight = [1, 2]  # Incorrect length
+@pytest.mark.parametrize("func", [mr.get_mse, mr.get_rmse, mr.get_mse_rmse])
+def test_sample_weight_length_mismatch_raises_value_error(func):
+    """Test: ValueError raised when sample_weight length mismatches y_true/y_pred."""
+    y_true = [1.0, 2.0, 3.0]
+    y_pred = [1.0, 2.0, 3.0]
+    sample_weight = [1.0, 2.0]  # incorrect length
     with pytest.raises(ValueError):
-        mr.get_mse_rmse(y_true, y_pred, sample_weight=sample_weight)
+        func(y_true, y_pred, sample_weight=sample_weight)
 
 
 @pytest.mark.parametrize(
@@ -113,3 +114,47 @@ def test_non_numeric_inputs_raises_value_error(func):
     """Test: ValueError raised when inputs contain non-numeric values."""
     with pytest.raises(ValueError):
         func([1, 2, "a"], [1, 2, 3])
+
+
+def test_get_mse_rmse_non_numeric_sample_weight_raises_value_error():
+    """
+    Test: get_mse_rmse raises ValueError when sample_weight contains
+    non-numeric values.
+    """
+    y_true = [1.0, 2.0, 3.0]
+    y_pred = [1.0, 2.0, 3.0]
+    sample_weight = [1.0, "a", 1.0]
+    with pytest.raises(ValueError):
+        mr.get_mse_rmse(y_true, y_pred, sample_weight=sample_weight)
+
+
+def test_get_mse_scalar_input_raises_value_error():
+    """
+    Test: get_mse raises ValueError when given scalar input
+    instead of array-like.
+    """
+    with pytest.raises(ValueError):
+        mr.get_mse(1.0, [1.0])
+
+
+def test_get_mse_rmse_2d_inputs_are_flattened():
+    """
+    Test: get_mse_rmse flattens 2D inputs and computes metrics correctly.
+    """
+    y_true = [[1, 2, 3]]
+    y_pred = [[1, 2, 4]]
+    out = mr.get_mse_rmse(y_true, y_pred)
+
+    expected_mse = 1.0 / 3.0
+    expected_rmse = np.sqrt(expected_mse)
+
+    assert np.isclose(out["mse"], expected_mse)
+    assert np.isclose(out["rmse"], expected_rmse)
+
+
+def test_get_mse_rmse_scalar_sample_weight_raises_value_error():
+    """Test: get_mse_rmse raises ValueError when sample_weight is a scalar."""
+    y_true = [1.0, 2.0, 3.0]
+    y_pred = [1.0, 2.0, 3.0]
+    with pytest.raises(ValueError):
+        mr.get_mse_rmse(y_true, y_pred, sample_weight=1.0)
