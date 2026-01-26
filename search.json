@@ -1,354 +1,5 @@
 [
   {
-    "objectID": "reference/get_mse_rmse.html",
-    "href": "reference/get_mse_rmse.html",
-    "title": "get_mse_rmse",
-    "section": "",
-    "text": "get_mse_rmse(y_true, y_pred, *, sample_weight=None)\nCompute Mean Squared Error (MSE) and Root Mean Squared Error (RMSE).\nThis function is a convenience wrapper that returns both Mean Squared Error (MSE) and Root Mean Squared Error (RMSE) in a single call for streamlined regression model evaluation.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ny_true\narray-like of shape (n_samples,)\nTrue target values (e.g., list, NumPy array, or pandas Series).\nrequired\n\n\ny_pred\narray-like of shape (n_samples,)\nPredicted target values (same shape as y_true).\nrequired\n\n\nsample_weight\narray-like of shape (n_samples,)\nSample weights (e.g., list, NumPy array, or pandas Series). If provided, errors are aggregated using a weighted mean.\nNone\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\nmetrics\ndict\nDictionary with: - \"mse\" : float Mean Squared Error computed as the mean of squared residuals. - \"rmse\" : float Root Mean Squared Error computed as the square root of MSE.\n\n\n\n\n\n\n\nMSE is defined as: mean((y_true - y_pred)**2).\nRMSE is defined as: sqrt(MSE).\nInputs are expected to be one-dimensional (1D) and of equal length.\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nValueError\nIf y_true and y_pred have different lengths, are empty, or cannot be converted into compatible numeric arrays.\n\n\n\n\n\n\n&gt;&gt;&gt; from reportrabbit import mse_rmse as mr\n&gt;&gt;&gt; y_true = [3.0, -0.5, 2.0, 7.0]\n&gt;&gt;&gt; y_pred = [2.5, 0.0, 2.0, 8.0]\n&gt;&gt;&gt; mr.get_mse_rmse(y_true, y_pred)\n{'mse': 0.375, 'rmse': 0.6123724357}\nUsing NumPy arrays:\n&gt;&gt;&gt; import numpy as np\n&gt;&gt;&gt; y_true = np.array([1.0, 2.0, 3.0])\n&gt;&gt;&gt; y_pred = np.array([1.5, 1.8, 2.2])\n&gt;&gt;&gt; mr.get_mse_rmse(y_true, y_pred)\n{'mse': 0.31, 'rmse': 0.556776436283}",
-    "crumbs": [
-      "Reference",
-      "Functions",
-      "get_mse_rmse"
-    ]
-  },
-  {
-    "objectID": "reference/get_mse_rmse.html#parameters",
-    "href": "reference/get_mse_rmse.html#parameters",
-    "title": "get_mse_rmse",
-    "section": "",
-    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ny_true\narray-like of shape (n_samples,)\nTrue target values (e.g., list, NumPy array, or pandas Series).\nrequired\n\n\ny_pred\narray-like of shape (n_samples,)\nPredicted target values (same shape as y_true).\nrequired\n\n\nsample_weight\narray-like of shape (n_samples,)\nSample weights (e.g., list, NumPy array, or pandas Series). If provided, errors are aggregated using a weighted mean.\nNone",
-    "crumbs": [
-      "Reference",
-      "Functions",
-      "get_mse_rmse"
-    ]
-  },
-  {
-    "objectID": "reference/get_mse_rmse.html#returns",
-    "href": "reference/get_mse_rmse.html#returns",
-    "title": "get_mse_rmse",
-    "section": "",
-    "text": "Name\nType\nDescription\n\n\n\n\nmetrics\ndict\nDictionary with: - \"mse\" : float Mean Squared Error computed as the mean of squared residuals. - \"rmse\" : float Root Mean Squared Error computed as the square root of MSE.",
-    "crumbs": [
-      "Reference",
-      "Functions",
-      "get_mse_rmse"
-    ]
-  },
-  {
-    "objectID": "reference/get_mse_rmse.html#notes",
-    "href": "reference/get_mse_rmse.html#notes",
-    "title": "get_mse_rmse",
-    "section": "",
-    "text": "MSE is defined as: mean((y_true - y_pred)**2).\nRMSE is defined as: sqrt(MSE).\nInputs are expected to be one-dimensional (1D) and of equal length.",
-    "crumbs": [
-      "Reference",
-      "Functions",
-      "get_mse_rmse"
-    ]
-  },
-  {
-    "objectID": "reference/get_mse_rmse.html#raises",
-    "href": "reference/get_mse_rmse.html#raises",
-    "title": "get_mse_rmse",
-    "section": "",
-    "text": "Name\nType\nDescription\n\n\n\n\n\nValueError\nIf y_true and y_pred have different lengths, are empty, or cannot be converted into compatible numeric arrays.",
-    "crumbs": [
-      "Reference",
-      "Functions",
-      "get_mse_rmse"
-    ]
-  },
-  {
-    "objectID": "reference/get_mse_rmse.html#examples",
-    "href": "reference/get_mse_rmse.html#examples",
-    "title": "get_mse_rmse",
-    "section": "",
-    "text": "&gt;&gt;&gt; from reportrabbit import mse_rmse as mr\n&gt;&gt;&gt; y_true = [3.0, -0.5, 2.0, 7.0]\n&gt;&gt;&gt; y_pred = [2.5, 0.0, 2.0, 8.0]\n&gt;&gt;&gt; mr.get_mse_rmse(y_true, y_pred)\n{'mse': 0.375, 'rmse': 0.6123724357}\nUsing NumPy arrays:\n&gt;&gt;&gt; import numpy as np\n&gt;&gt;&gt; y_true = np.array([1.0, 2.0, 3.0])\n&gt;&gt;&gt; y_pred = np.array([1.5, 1.8, 2.2])\n&gt;&gt;&gt; mr.get_mse_rmse(y_true, y_pred)\n{'mse': 0.31, 'rmse': 0.556776436283}",
-    "crumbs": [
-      "Reference",
-      "Functions",
-      "get_mse_rmse"
-    ]
-  },
-  {
-    "objectID": "reference/get_mse.html",
-    "href": "reference/get_mse.html",
-    "title": "get_mse",
-    "section": "",
-    "text": "get_mse(y_true, y_pred, *, sample_weight=None)\nCompute Mean Squared Error (MSE).\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ny_true\narray-like of shape (n_samples,)\nTrue target values.\nrequired\n\n\ny_pred\narray-like of shape (n_samples,)\nPredicted target values.\nrequired\n\n\nsample_weight\narray-like of shape (n_samples,)\nSample weights.\nNone\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\nmse\nfloat\nMean Squared Error.",
-    "crumbs": [
-      "Reference",
-      "Functions",
-      "get_mse"
-    ]
-  },
-  {
-    "objectID": "reference/get_mse.html#parameters",
-    "href": "reference/get_mse.html#parameters",
-    "title": "get_mse",
-    "section": "",
-    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ny_true\narray-like of shape (n_samples,)\nTrue target values.\nrequired\n\n\ny_pred\narray-like of shape (n_samples,)\nPredicted target values.\nrequired\n\n\nsample_weight\narray-like of shape (n_samples,)\nSample weights.\nNone",
-    "crumbs": [
-      "Reference",
-      "Functions",
-      "get_mse"
-    ]
-  },
-  {
-    "objectID": "reference/get_mse.html#returns",
-    "href": "reference/get_mse.html#returns",
-    "title": "get_mse",
-    "section": "",
-    "text": "Name\nType\nDescription\n\n\n\n\nmse\nfloat\nMean Squared Error.",
-    "crumbs": [
-      "Reference",
-      "Functions",
-      "get_mse"
-    ]
-  },
-  {
-    "objectID": "reference/get_recall.html",
-    "href": "reference/get_recall.html",
-    "title": "get_recall",
-    "section": "",
-    "text": "get_recall(y_true, y_pred)\nCalculates the recall of predictions and returns the result. Recall is the proportion of actual positive cases that were correctly identified. It answers: “Of all the items that were actually positive, how many did we catch?” Recall = True Positives / (True Positives + False Negatives). Scoring is between 0 and 1 with a perfect recall being 1.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ny_true\narray\nThe actual observed values (ground truth).\nrequired\n\n\ny_pred\narray\nThe model predicted values.\nrequired\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nfloat\nThe calculated recall score, ranging from 0.0 to 1.0.\n\n\n\n\n\n\n&gt;&gt;&gt; # Perfect recall\n&gt;&gt;&gt; y_true = [0, 1, 1, 0]\n&gt;&gt;&gt; y_pred = [0, 1, 1, 0]\n&gt;&gt;&gt; get_recall(y_true, y_pred)\n1.0\n&gt;&gt;&gt; # Partial recall\n&gt;&gt;&gt; y_true = [0, 1, 1, 0]\n&gt;&gt;&gt; y_pred = [0, 1, 0, 0]\n&gt;&gt;&gt; get_recall(y_true, y_pred)\n0.5",
-    "crumbs": [
-      "Reference",
-      "Functions",
-      "get_recall"
-    ]
-  },
-  {
-    "objectID": "reference/get_recall.html#parameters",
-    "href": "reference/get_recall.html#parameters",
-    "title": "get_recall",
-    "section": "",
-    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ny_true\narray\nThe actual observed values (ground truth).\nrequired\n\n\ny_pred\narray\nThe model predicted values.\nrequired",
-    "crumbs": [
-      "Reference",
-      "Functions",
-      "get_recall"
-    ]
-  },
-  {
-    "objectID": "reference/get_recall.html#returns",
-    "href": "reference/get_recall.html#returns",
-    "title": "get_recall",
-    "section": "",
-    "text": "Name\nType\nDescription\n\n\n\n\n\nfloat\nThe calculated recall score, ranging from 0.0 to 1.0.",
-    "crumbs": [
-      "Reference",
-      "Functions",
-      "get_recall"
-    ]
-  },
-  {
-    "objectID": "reference/get_recall.html#examples",
-    "href": "reference/get_recall.html#examples",
-    "title": "get_recall",
-    "section": "",
-    "text": "&gt;&gt;&gt; # Perfect recall\n&gt;&gt;&gt; y_true = [0, 1, 1, 0]\n&gt;&gt;&gt; y_pred = [0, 1, 1, 0]\n&gt;&gt;&gt; get_recall(y_true, y_pred)\n1.0\n&gt;&gt;&gt; # Partial recall\n&gt;&gt;&gt; y_true = [0, 1, 1, 0]\n&gt;&gt;&gt; y_pred = [0, 1, 0, 0]\n&gt;&gt;&gt; get_recall(y_true, y_pred)\n0.5",
-    "crumbs": [
-      "Reference",
-      "Functions",
-      "get_recall"
-    ]
-  },
-  {
-    "objectID": "reference/get_mae.html",
-    "href": "reference/get_mae.html",
-    "title": "get_mae",
-    "section": "",
-    "text": "get_mae(y_true, y_pred)\nCalculates the Mean Absolute Error (MAE) and returns the result.\nMAE measures the average absolute difference between the observed values and the predicted values.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ny_true\narray\nThe actual observed values (ground truth).\nrequired\n\n\ny_pred\narray\nThe model predicted values.\nrequired\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nfloat\nThe calculated Mean Absolute Error.\n\n\n\n\n\n\n&gt;&gt;&gt; y_true = [1.0, 2.0, 3.0]\n&gt;&gt;&gt; y_pred = [2.0, 2.0, 4.0]\n&gt;&gt;&gt; get_mae(y_true, y_pred)\n0.6666666666666666",
-    "crumbs": [
-      "Reference",
-      "Functions",
-      "get_mae"
-    ]
-  },
-  {
-    "objectID": "reference/get_mae.html#parameters",
-    "href": "reference/get_mae.html#parameters",
-    "title": "get_mae",
-    "section": "",
-    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ny_true\narray\nThe actual observed values (ground truth).\nrequired\n\n\ny_pred\narray\nThe model predicted values.\nrequired",
-    "crumbs": [
-      "Reference",
-      "Functions",
-      "get_mae"
-    ]
-  },
-  {
-    "objectID": "reference/get_mae.html#returns",
-    "href": "reference/get_mae.html#returns",
-    "title": "get_mae",
-    "section": "",
-    "text": "Name\nType\nDescription\n\n\n\n\n\nfloat\nThe calculated Mean Absolute Error.",
-    "crumbs": [
-      "Reference",
-      "Functions",
-      "get_mae"
-    ]
-  },
-  {
-    "objectID": "reference/get_mae.html#examples",
-    "href": "reference/get_mae.html#examples",
-    "title": "get_mae",
-    "section": "",
-    "text": "&gt;&gt;&gt; y_true = [1.0, 2.0, 3.0]\n&gt;&gt;&gt; y_pred = [2.0, 2.0, 4.0]\n&gt;&gt;&gt; get_mae(y_true, y_pred)\n0.6666666666666666",
-    "crumbs": [
-      "Reference",
-      "Functions",
-      "get_mae"
-    ]
-  },
-  {
-    "objectID": "reference/get_f1.html",
-    "href": "reference/get_f1.html",
-    "title": "get_f1",
-    "section": "",
-    "text": "get_f1(y_true, y_pred)\nCalculates the F1 score of predictions and returns the result. The F1 score is the harmonic mean of precision and recall. It provides a balanced measure between precision and recall, useful when you want to balance the trade-off between false positives and false negatives. F1 = 2 * ((Precision * Recall) / (Precision + Recall)). Scoring is between 0 and 1 with a perfect F1 score being 1.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ny_true\narray\nThe actual observed values (ground truth).\nrequired\n\n\ny_pred\narray\nThe model predicted values.\nrequired\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nfloat\nThe calculated F1 score, ranging from 0.0 to 1.0.\n\n\n\n\n\n\n&gt;&gt;&gt; # Perfect F1 score\n&gt;&gt;&gt; y_true = [0, 1, 1, 0]\n&gt;&gt;&gt; y_pred = [0, 1, 1, 0]\n&gt;&gt;&gt; get_f1(y_true, y_pred)\n1.0\n&gt;&gt;&gt; # Partial F1 score\n&gt;&gt;&gt; y_true = [0, 1, 1, 0]\n&gt;&gt;&gt; y_pred = [0, 1, 0, 0]\n&gt;&gt;&gt; get_f1(y_true, y_pred)\n0.6666666666666666",
-    "crumbs": [
-      "Reference",
-      "Functions",
-      "get_f1"
-    ]
-  },
-  {
-    "objectID": "reference/get_f1.html#parameters",
-    "href": "reference/get_f1.html#parameters",
-    "title": "get_f1",
-    "section": "",
-    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ny_true\narray\nThe actual observed values (ground truth).\nrequired\n\n\ny_pred\narray\nThe model predicted values.\nrequired",
-    "crumbs": [
-      "Reference",
-      "Functions",
-      "get_f1"
-    ]
-  },
-  {
-    "objectID": "reference/get_f1.html#returns",
-    "href": "reference/get_f1.html#returns",
-    "title": "get_f1",
-    "section": "",
-    "text": "Name\nType\nDescription\n\n\n\n\n\nfloat\nThe calculated F1 score, ranging from 0.0 to 1.0.",
-    "crumbs": [
-      "Reference",
-      "Functions",
-      "get_f1"
-    ]
-  },
-  {
-    "objectID": "reference/get_f1.html#examples",
-    "href": "reference/get_f1.html#examples",
-    "title": "get_f1",
-    "section": "",
-    "text": "&gt;&gt;&gt; # Perfect F1 score\n&gt;&gt;&gt; y_true = [0, 1, 1, 0]\n&gt;&gt;&gt; y_pred = [0, 1, 1, 0]\n&gt;&gt;&gt; get_f1(y_true, y_pred)\n1.0\n&gt;&gt;&gt; # Partial F1 score\n&gt;&gt;&gt; y_true = [0, 1, 1, 0]\n&gt;&gt;&gt; y_pred = [0, 1, 0, 0]\n&gt;&gt;&gt; get_f1(y_true, y_pred)\n0.6666666666666666",
-    "crumbs": [
-      "Reference",
-      "Functions",
-      "get_f1"
-    ]
-  },
-  {
-    "objectID": "reference/get_r2.html",
-    "href": "reference/get_r2.html",
-    "title": "get_r2",
-    "section": "",
-    "text": "get_r2(y_true, y_pred)\nCalculates the R^2 statistic (coefficient of determination) and return the result.\nThe R^2 statistics meansures the proportion of variability in Y (the response) that is explained by the linear model.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ny_true\narray or list\nThe actual observed values (ground truth).\nrequired\n\n\ny_pred\narray or list\nThe model predicted values.\nrequired\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nfloat\nThe calculated R^2 statistic.\n\n\n\n\n\n\n&gt;&gt;&gt; y_true = [1.0, 2.0, 3.0]\n&gt;&gt;&gt; y_pred = [1.0, 2.0, 3.0]\n&gt;&gt;&gt; get_r2(y_true, y_pred)\n1.0",
-    "crumbs": [
-      "Reference",
-      "Functions",
-      "get_r2"
-    ]
-  },
-  {
-    "objectID": "reference/get_r2.html#parameters",
-    "href": "reference/get_r2.html#parameters",
-    "title": "get_r2",
-    "section": "",
-    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ny_true\narray or list\nThe actual observed values (ground truth).\nrequired\n\n\ny_pred\narray or list\nThe model predicted values.\nrequired",
-    "crumbs": [
-      "Reference",
-      "Functions",
-      "get_r2"
-    ]
-  },
-  {
-    "objectID": "reference/get_r2.html#returns",
-    "href": "reference/get_r2.html#returns",
-    "title": "get_r2",
-    "section": "",
-    "text": "Name\nType\nDescription\n\n\n\n\n\nfloat\nThe calculated R^2 statistic.",
-    "crumbs": [
-      "Reference",
-      "Functions",
-      "get_r2"
-    ]
-  },
-  {
-    "objectID": "reference/get_r2.html#examples",
-    "href": "reference/get_r2.html#examples",
-    "title": "get_r2",
-    "section": "",
-    "text": "&gt;&gt;&gt; y_true = [1.0, 2.0, 3.0]\n&gt;&gt;&gt; y_pred = [1.0, 2.0, 3.0]\n&gt;&gt;&gt; get_r2(y_true, y_pred)\n1.0",
-    "crumbs": [
-      "Reference",
-      "Functions",
-      "get_r2"
-    ]
-  },
-  {
-    "objectID": "CONDUCT.html",
-    "href": "CONDUCT.html",
-    "title": "Code of Conduct: DSCI 524: Group 11",
-    "section": "",
-    "text": "Code of Conduct: DSCI 524: Group 11\n\n\nIntroduction\nOur team is dedicated to fostering a collaborative, inclusive, and respectful environment where ideas can be shared openly and learning is encouraged. All participants, whether contributing through discussions, code, documentation, or reviews are expected to support a positive and constructive atmosphere.\nThis Code of Conduct applies to all project-related interactions.\n\n\nCommitment to Diversity and Inclusion\nOur project is open to people of all backgrounds, regardless of age, gender identity or expression, sexual orientation, disability, physical appearance, body size, ethnicity, nationality, race, religion, education, or any other personal characteristic. We are committed to creating an environment where everyone feels respected, valued, and comfortable contributing without fear of discrimination or exclusion.\n\n\nExpected Behaviour\nAll members of this project community are expected to act with professionalism, integrity, and openness. This includes: - Communicating with respect and consideration at all times - Being open to others’ perspectives and acknowledging their contributions - Offering and accepting feedback in a constructive and professional way - Participating in discussions that encourage teamwork and shared understanding\n\n\nInappropriate Behavior\n\nAny form of harassment toward participants\nIntentional intimidation, stalking, or persistent following\nThreatening or violent language directed at others\nSharing or displaying offensive, explicit, or inappropriate content\nUse of slurs, excessive profanity, or aggressive and hostile language\n\nAll members are expected to refrain from all forms of unacceptable conduct to maintain a respectful environment.\n\n\nConsequences for Unacceptable Behavior\nIf a participant engages in inappropriate behavior, they will be asked to stop and comply immediately. If the behavior persists or the issue is severe, it may be referred to the teaching team or course faculty. Ongoing violations may lead to removal from the project.\n\n\nReporting Concerns and Guidelines\nIf a participant violates this Code of Conduct, the incident may be reported by contacting Raghav Gupta at raghav90@student.ubc.ca. All reports will be treated seriously and handled with discretion. The Group 11 team will review the situation and take actions it considers appropriate given the circumstances.\nAdaptation Notes: Adapted from the Python Community Code of Conduct (https://policies.python.org/python.org/code-of-conduct/) and the UBC MDS 522 course."
-  },
-  {
-    "objectID": "index.html#contributors",
-    "href": "index.html#contributors",
-    "title": "Welcome to ReportRabbit!",
-    "section": "Contributors",
-    "text": "Contributors\nRaghav Gupta, Joel Peterson, Jennifer Tsang, and Ruth Adwowa Yankson"
-  },
-  {
-    "objectID": "index.html#set-up-environment",
-    "href": "index.html#set-up-environment",
-    "title": "Welcome to ReportRabbit!",
-    "section": "Set up environment",
-    "text": "Set up environment"
-  },
-  {
-    "objectID": "index.html#installation",
-    "href": "index.html#installation",
-    "title": "Welcome to ReportRabbit!",
-    "section": "Installation",
-    "text": "Installation\n$ pip install reportrabbit"
-  },
-  {
-    "objectID": "index.html#documentation",
-    "href": "index.html#documentation",
-    "title": "Welcome to ReportRabbit!",
-    "section": "Documentation",
-    "text": "Documentation\nThe documentation for ReportRabbit can be viewed here. # add in website link"
-  },
-  {
-    "objectID": "index.html#contributing",
-    "href": "index.html#contributing",
-    "title": "Welcome to ReportRabbit!",
-    "section": "Contributing",
-    "text": "Contributing\nInterested in contributing? Check out the contributing guidelines here. Please note that this project is released with a Code of Conduct. By contributing to this project, you agree to abide by its terms."
-  },
-  {
-    "objectID": "index.html#license",
-    "href": "index.html#license",
-    "title": "Welcome to ReportRabbit!",
-    "section": "License",
-    "text": "License\nIt is licensed under the terms of the MIT license."
-  },
-  {
     "objectID": "CODE_OF_CONDUCT.html",
     "href": "CODE_OF_CONDUCT.html",
     "title": "Contributor Covenant Code of Conduct",
@@ -405,112 +56,6 @@
     "text": "This Code of Conduct is adapted from the Contributor Covenant, version 2.0, available at https://www.contributor-covenant.org/version/2/0/code_of_conduct.html.\nCommunity Impact Guidelines were inspired by Mozilla’s code of conduct enforcement ladder.\nFor answers to common questions about this code of conduct, see the FAQ at https://www.contributor-covenant.org/faq. Translations are available at https://www.contributor-covenant.org/translations."
   },
   {
-    "objectID": "CHANGELOG.html",
-    "href": "CHANGELOG.html",
-    "title": "Changelog",
-    "section": "",
-    "text": "First release of reportrabbit!"
-  },
-  {
-    "objectID": "CHANGELOG.html#v0.1.0-06012026",
-    "href": "CHANGELOG.html#v0.1.0-06012026",
-    "title": "Changelog",
-    "section": "",
-    "text": "First release of reportrabbit!"
-  },
-  {
-    "objectID": "CONTRIBUTING.html",
-    "href": "CONTRIBUTING.html",
-    "title": "Contributing to ReportRabbit",
-    "section": "",
-    "text": "Thank you for your interest in contributing to ReportRabbit!\nWe welcome contributions of all kinds: bug reports, feature ideas, code, and documentation.\nEvery contribution helps make ReportRabbit more reliable, expressive, and useful for the data science community.\nThis document outlines how to contribute effectively and respectfully.\n\n\nReportRabbit follows a GitHub Flow–based collaboration model:\n\nAll work is done on feature or fix branches created from main\nEach issue corresponds to a single task or function\nIssues are assigned to exactly one team member\nPull requests must be reviewed by at least one other team member before merging\nNo direct commits are made to main\nGitHub issues and project boards are used for all project-related communication\n\n\n\nCreate a new branch from main for each piece of work. Use consistent prefixes:\n\nfeature/&lt;short-description&gt; for new features\nfix/&lt;short-description&gt; for bug fixes\ndocs/&lt;short-description&gt; for documentation-only changes\ntest/&lt;short-description&gt; for tests\nchore/&lt;short-description&gt; for maintenance tasks\n\nExamples: - feature/metrics-report - fix/mape-zero-division - docs/readme-usage - test/plot-report-tests - chore/ci-update\n\n\n\n\n\n\nIf you encounter a bug, please open an issue and include:\n\nYour operating system and version\nPython version\nReportRabbit version\nA minimal, reproducible example\nExpected behavior vs. actual behavior\nAny relevant error messages or stack traces\n\nClear bug reports help us resolve issues faster.\n\n\n\nLook through open GitHub issues labeled bug or help wanted : these are open to whoever wants to fix them. If you plan to work on an issue, please comment on it first to avoid duplication.\n\n\n\nWe welcome feature contributions that align with ReportRabbit’s scope: post-model reporting, and evaluation.\nWhen proposing a feature: - Clearly describe the problem it solves - Keep the scope focused and incremental\n\n\n\nGood documentation is as important as good code. Contributions may include: - Docstring improvements - README updates - Usage examples - Tutorials or explanatory guides - Diagrams or visuals that clarify workflows\n\n\n\nFeature ideas and design feedback are welcome.\nWhen submitting feedback: - Be specific and constructive - Provide context or examples where possible - Keep proposals concise and actionable\n\n\n\n\nTo set up ReportRabbit for local development:\n\nClone the repository\ngit clone git@github.com:UBC-MDS/ReportRabbit.git\ncd reportrabbit\nCreate and activate a Conda environment\nconda create -n reportrabbit python=3.12\nconda activate reportrabbit\nInstall dependencies using poetry\npoetry install\nCreate a feature or fix branch\ngit switch -c feature/short_description\n\n\n\n\nContributions should follow these conventions:\n\nFollow PEP 8 for Python code style and formatting\nUse NumPy-style docstrings for all public functions and modules\nWrite clear, maintainable, and well-documented code\nPrefer explicit, readable implementations over clever or opaque solutions\nKeep functions focused, modular, and testable\nBegin each function name with get_, and a suitably descriptive name. E.g.: get_mse or get_descriptive_report.\n\nIf applicable: - Add or update unit and integration tests - Update documentation alongside code changes\n\n\n\n\nTip: Install in editable mode so tests run against your local changes:\npip install -e .\n\nBefore opening a pull request, please run the test suite locally:\npytest\nTo run a specific test file:\npytest tests/unit/test_specific_module.py\n\n\n\nBefore you submit a pull request, check that it meets these guidelines:\n\nThe pull request should include additional tests if appropriate.\nMake sure that all tests pass locally.\nThe documentation is updated in case of any functionality changes or additions\nThe pull request clearly explains what was changed and why\nPull requests are small and focused rather than large, multi-purpose changes\nThe pull request should work for all currently supported operating systems and versions of Python.\n\n\n\n\nPlease note that the ReportRabbit project is released with a Code of Conduct. By contributing to this project you agree to abide by its terms.\nThank you for helping make ReportRabbit better!"
-  },
-  {
-    "objectID": "CONTRIBUTING.html#collaboration-workflow",
-    "href": "CONTRIBUTING.html#collaboration-workflow",
-    "title": "Contributing to ReportRabbit",
-    "section": "",
-    "text": "ReportRabbit follows a GitHub Flow–based collaboration model:\n\nAll work is done on feature or fix branches created from main\nEach issue corresponds to a single task or function\nIssues are assigned to exactly one team member\nPull requests must be reviewed by at least one other team member before merging\nNo direct commits are made to main\nGitHub issues and project boards are used for all project-related communication\n\n\n\nCreate a new branch from main for each piece of work. Use consistent prefixes:\n\nfeature/&lt;short-description&gt; for new features\nfix/&lt;short-description&gt; for bug fixes\ndocs/&lt;short-description&gt; for documentation-only changes\ntest/&lt;short-description&gt; for tests\nchore/&lt;short-description&gt; for maintenance tasks\n\nExamples: - feature/metrics-report - fix/mape-zero-division - docs/readme-usage - test/plot-report-tests - chore/ci-update"
-  },
-  {
-    "objectID": "CONTRIBUTING.html#ways-to-contribute",
-    "href": "CONTRIBUTING.html#ways-to-contribute",
-    "title": "Contributing to ReportRabbit",
-    "section": "",
-    "text": "If you encounter a bug, please open an issue and include:\n\nYour operating system and version\nPython version\nReportRabbit version\nA minimal, reproducible example\nExpected behavior vs. actual behavior\nAny relevant error messages or stack traces\n\nClear bug reports help us resolve issues faster.\n\n\n\nLook through open GitHub issues labeled bug or help wanted : these are open to whoever wants to fix them. If you plan to work on an issue, please comment on it first to avoid duplication.\n\n\n\nWe welcome feature contributions that align with ReportRabbit’s scope: post-model reporting, and evaluation.\nWhen proposing a feature: - Clearly describe the problem it solves - Keep the scope focused and incremental\n\n\n\nGood documentation is as important as good code. Contributions may include: - Docstring improvements - README updates - Usage examples - Tutorials or explanatory guides - Diagrams or visuals that clarify workflows\n\n\n\nFeature ideas and design feedback are welcome.\nWhen submitting feedback: - Be specific and constructive - Provide context or examples where possible - Keep proposals concise and actionable"
-  },
-  {
-    "objectID": "CONTRIBUTING.html#development-setup",
-    "href": "CONTRIBUTING.html#development-setup",
-    "title": "Contributing to ReportRabbit",
-    "section": "",
-    "text": "To set up ReportRabbit for local development:\n\nClone the repository\ngit clone git@github.com:UBC-MDS/ReportRabbit.git\ncd reportrabbit\nCreate and activate a Conda environment\nconda create -n reportrabbit python=3.12\nconda activate reportrabbit\nInstall dependencies using poetry\npoetry install\nCreate a feature or fix branch\ngit switch -c feature/short_description"
-  },
-  {
-    "objectID": "CONTRIBUTING.html#development-guidelines",
-    "href": "CONTRIBUTING.html#development-guidelines",
-    "title": "Contributing to ReportRabbit",
-    "section": "",
-    "text": "Contributions should follow these conventions:\n\nFollow PEP 8 for Python code style and formatting\nUse NumPy-style docstrings for all public functions and modules\nWrite clear, maintainable, and well-documented code\nPrefer explicit, readable implementations over clever or opaque solutions\nKeep functions focused, modular, and testable\nBegin each function name with get_, and a suitably descriptive name. E.g.: get_mse or get_descriptive_report.\n\nIf applicable: - Add or update unit and integration tests - Update documentation alongside code changes"
-  },
-  {
-    "objectID": "CONTRIBUTING.html#running-tests",
-    "href": "CONTRIBUTING.html#running-tests",
-    "title": "Contributing to ReportRabbit",
-    "section": "",
-    "text": "Tip: Install in editable mode so tests run against your local changes:\npip install -e .\n\nBefore opening a pull request, please run the test suite locally:\npytest\nTo run a specific test file:\npytest tests/unit/test_specific_module.py"
-  },
-  {
-    "objectID": "CONTRIBUTING.html#pull-request-guidelines",
-    "href": "CONTRIBUTING.html#pull-request-guidelines",
-    "title": "Contributing to ReportRabbit",
-    "section": "",
-    "text": "Before you submit a pull request, check that it meets these guidelines:\n\nThe pull request should include additional tests if appropriate.\nMake sure that all tests pass locally.\nThe documentation is updated in case of any functionality changes or additions\nThe pull request clearly explains what was changed and why\nPull requests are small and focused rather than large, multi-purpose changes\nThe pull request should work for all currently supported operating systems and versions of Python."
-  },
-  {
-    "objectID": "CONTRIBUTING.html#code-of-conduct",
-    "href": "CONTRIBUTING.html#code-of-conduct",
-    "title": "Contributing to ReportRabbit",
-    "section": "",
-    "text": "Please note that the ReportRabbit project is released with a Code of Conduct. By contributing to this project you agree to abide by its terms.\nThank you for helping make ReportRabbit better!"
-  },
-  {
-    "objectID": "reference/get_rmse.html",
-    "href": "reference/get_rmse.html",
-    "title": "get_rmse",
-    "section": "",
-    "text": "get_rmse(y_true, y_pred, *, sample_weight=None)\nCompute Root Mean Squared Error (RMSE).\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ny_true\narray-like of shape (n_samples,)\nTrue target values.\nrequired\n\n\ny_pred\narray-like of shape (n_samples,)\nPredicted target values.\nrequired\n\n\nsample_weight\narray-like of shape (n_samples,)\nSample weights.\nNone\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\nrmse\nfloat\nRoot Mean Squared Error.",
-    "crumbs": [
-      "Reference",
-      "Functions",
-      "get_rmse"
-    ]
-  },
-  {
-    "objectID": "reference/get_rmse.html#parameters",
-    "href": "reference/get_rmse.html#parameters",
-    "title": "get_rmse",
-    "section": "",
-    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ny_true\narray-like of shape (n_samples,)\nTrue target values.\nrequired\n\n\ny_pred\narray-like of shape (n_samples,)\nPredicted target values.\nrequired\n\n\nsample_weight\narray-like of shape (n_samples,)\nSample weights.\nNone",
-    "crumbs": [
-      "Reference",
-      "Functions",
-      "get_rmse"
-    ]
-  },
-  {
-    "objectID": "reference/get_rmse.html#returns",
-    "href": "reference/get_rmse.html#returns",
-    "title": "get_rmse",
-    "section": "",
-    "text": "Name\nType\nDescription\n\n\n\n\nrmse\nfloat\nRoot Mean Squared Error.",
-    "crumbs": [
-      "Reference",
-      "Functions",
-      "get_rmse"
-    ]
-  },
-  {
     "objectID": "reference/get_r.html",
     "href": "reference/get_r.html",
     "title": "get_r",
@@ -559,73 +104,135 @@
     ]
   },
   {
-    "objectID": "reference/index.html",
-    "href": "reference/index.html",
-    "title": "Function reference",
+    "objectID": "reference/get_mse.html",
+    "href": "reference/get_mse.html",
+    "title": "get_mse",
     "section": "",
-    "text": "Functions in ReportRabbit.\n\n\n\nget_accuracy\nCalculates the accuracy of predictions and returns the result.\n\n\nget_f1\nCalculates the F1 score of predictions and returns the result.\n\n\nget_precision\nCalculates the precision of predictions and returns the result.\n\n\nget_recall\nCalculates the recall of predictions and returns the result.\n\n\nget_mae\nCalculates the Mean Absolute Error (MAE) and returns the result.\n\n\nget_mape\nCalculates the Mean Absolute Percentage Error (MAPE) and returns the result.\n\n\nget_mse\nCompute Mean Squared Error (MSE).\n\n\nget_rmse\nCompute Root Mean Squared Error (RMSE).\n\n\nget_mse_rmse\nCompute Mean Squared Error (MSE) and Root Mean Squared Error (RMSE).\n\n\nget_r\nCalculates the Pearson correlation coefficient (R)\n\n\nget_r2\nCalculates the R^2 statistic (coefficient of determination)",
-    "crumbs": [
-      "Reference",
-      "Function reference"
-    ]
-  },
-  {
-    "objectID": "reference/index.html#functions",
-    "href": "reference/index.html#functions",
-    "title": "Function reference",
-    "section": "",
-    "text": "Functions in ReportRabbit.\n\n\n\nget_accuracy\nCalculates the accuracy of predictions and returns the result.\n\n\nget_f1\nCalculates the F1 score of predictions and returns the result.\n\n\nget_precision\nCalculates the precision of predictions and returns the result.\n\n\nget_recall\nCalculates the recall of predictions and returns the result.\n\n\nget_mae\nCalculates the Mean Absolute Error (MAE) and returns the result.\n\n\nget_mape\nCalculates the Mean Absolute Percentage Error (MAPE) and returns the result.\n\n\nget_mse\nCompute Mean Squared Error (MSE).\n\n\nget_rmse\nCompute Root Mean Squared Error (RMSE).\n\n\nget_mse_rmse\nCompute Mean Squared Error (MSE) and Root Mean Squared Error (RMSE).\n\n\nget_r\nCalculates the Pearson correlation coefficient (R)\n\n\nget_r2\nCalculates the R^2 statistic (coefficient of determination)",
-    "crumbs": [
-      "Reference",
-      "Function reference"
-    ]
-  },
-  {
-    "objectID": "reference/get_mape.html",
-    "href": "reference/get_mape.html",
-    "title": "get_mape",
-    "section": "",
-    "text": "get_mape(y_true, y_pred)\nCalculates the Mean Absolute Percentage Error (MAPE) and returns the result.\nMAPE measures the average absolute percentage difference between the observed values and the predicted values.\nNote: MAPE is undefined if any element of y_true is equal to zero, due to division by zero in the MAPE formula.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ny_true\narray\nThe actual observed values (ground truth).\nrequired\n\n\ny_pred\narray\nThe model predicted values.\nrequired\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nfloat\nThe calculated Mean Absolute Percentage Error (in percentage).\n\n\n\n\n\n\n&gt;&gt;&gt; y_true = [100.0, 200.0, 300.0]\n&gt;&gt;&gt; y_pred = [90.0, 210.0, 330.0]\n&gt;&gt;&gt; get_mape(y_true, y_pred)\n8.333333333333332",
+    "text": "get_mse(y_true, y_pred, *, sample_weight=None)\nCompute Mean Squared Error (MSE).\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ny_true\narray-like of shape (n_samples,)\nTrue target values.\nrequired\n\n\ny_pred\narray-like of shape (n_samples,)\nPredicted target values.\nrequired\n\n\nsample_weight\narray-like of shape (n_samples,)\nSample weights.\nNone\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\nmse\nfloat\nMean Squared Error.",
     "crumbs": [
       "Reference",
       "Functions",
-      "get_mape"
+      "get_mse"
     ]
   },
   {
-    "objectID": "reference/get_mape.html#parameters",
-    "href": "reference/get_mape.html#parameters",
-    "title": "get_mape",
+    "objectID": "reference/get_mse.html#parameters",
+    "href": "reference/get_mse.html#parameters",
+    "title": "get_mse",
+    "section": "",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ny_true\narray-like of shape (n_samples,)\nTrue target values.\nrequired\n\n\ny_pred\narray-like of shape (n_samples,)\nPredicted target values.\nrequired\n\n\nsample_weight\narray-like of shape (n_samples,)\nSample weights.\nNone",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_mse"
+    ]
+  },
+  {
+    "objectID": "reference/get_mse.html#returns",
+    "href": "reference/get_mse.html#returns",
+    "title": "get_mse",
+    "section": "",
+    "text": "Name\nType\nDescription\n\n\n\n\nmse\nfloat\nMean Squared Error.",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_mse"
+    ]
+  },
+  {
+    "objectID": "reference/get_mae.html",
+    "href": "reference/get_mae.html",
+    "title": "get_mae",
+    "section": "",
+    "text": "get_mae(y_true, y_pred)\nCalculates the Mean Absolute Error (MAE) and returns the result.\nMAE measures the average absolute difference between the observed values and the predicted values.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ny_true\narray\nThe actual observed values (ground truth).\nrequired\n\n\ny_pred\narray\nThe model predicted values.\nrequired\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nfloat\nThe calculated Mean Absolute Error.\n\n\n\n\n\n\n&gt;&gt;&gt; y_true = [1.0, 2.0, 3.0]\n&gt;&gt;&gt; y_pred = [2.0, 2.0, 4.0]\n&gt;&gt;&gt; get_mae(y_true, y_pred)\n0.6666666666666666",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_mae"
+    ]
+  },
+  {
+    "objectID": "reference/get_mae.html#parameters",
+    "href": "reference/get_mae.html#parameters",
+    "title": "get_mae",
     "section": "",
     "text": "Name\nType\nDescription\nDefault\n\n\n\n\ny_true\narray\nThe actual observed values (ground truth).\nrequired\n\n\ny_pred\narray\nThe model predicted values.\nrequired",
     "crumbs": [
       "Reference",
       "Functions",
-      "get_mape"
+      "get_mae"
     ]
   },
   {
-    "objectID": "reference/get_mape.html#returns",
-    "href": "reference/get_mape.html#returns",
-    "title": "get_mape",
+    "objectID": "reference/get_mae.html#returns",
+    "href": "reference/get_mae.html#returns",
+    "title": "get_mae",
     "section": "",
-    "text": "Name\nType\nDescription\n\n\n\n\n\nfloat\nThe calculated Mean Absolute Percentage Error (in percentage).",
+    "text": "Name\nType\nDescription\n\n\n\n\n\nfloat\nThe calculated Mean Absolute Error.",
     "crumbs": [
       "Reference",
       "Functions",
-      "get_mape"
+      "get_mae"
     ]
   },
   {
-    "objectID": "reference/get_mape.html#examples",
-    "href": "reference/get_mape.html#examples",
-    "title": "get_mape",
+    "objectID": "reference/get_mae.html#examples",
+    "href": "reference/get_mae.html#examples",
+    "title": "get_mae",
     "section": "",
-    "text": "&gt;&gt;&gt; y_true = [100.0, 200.0, 300.0]\n&gt;&gt;&gt; y_pred = [90.0, 210.0, 330.0]\n&gt;&gt;&gt; get_mape(y_true, y_pred)\n8.333333333333332",
+    "text": "&gt;&gt;&gt; y_true = [1.0, 2.0, 3.0]\n&gt;&gt;&gt; y_pred = [2.0, 2.0, 4.0]\n&gt;&gt;&gt; get_mae(y_true, y_pred)\n0.6666666666666666",
     "crumbs": [
       "Reference",
       "Functions",
-      "get_mape"
+      "get_mae"
+    ]
+  },
+  {
+    "objectID": "reference/get_r2.html",
+    "href": "reference/get_r2.html",
+    "title": "get_r2",
+    "section": "",
+    "text": "get_r2(y_true, y_pred)\nCalculates the R^2 statistic (coefficient of determination) and return the result.\nThe R^2 statistics meansures the proportion of variability in Y (the response) that is explained by the linear model.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ny_true\narray or list\nThe actual observed values (ground truth).\nrequired\n\n\ny_pred\narray or list\nThe model predicted values.\nrequired\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nfloat\nThe calculated R^2 statistic.\n\n\n\n\n\n\n&gt;&gt;&gt; y_true = [1.0, 2.0, 3.0]\n&gt;&gt;&gt; y_pred = [1.0, 2.0, 3.0]\n&gt;&gt;&gt; get_r2(y_true, y_pred)\n1.0",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_r2"
+    ]
+  },
+  {
+    "objectID": "reference/get_r2.html#parameters",
+    "href": "reference/get_r2.html#parameters",
+    "title": "get_r2",
+    "section": "",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ny_true\narray or list\nThe actual observed values (ground truth).\nrequired\n\n\ny_pred\narray or list\nThe model predicted values.\nrequired",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_r2"
+    ]
+  },
+  {
+    "objectID": "reference/get_r2.html#returns",
+    "href": "reference/get_r2.html#returns",
+    "title": "get_r2",
+    "section": "",
+    "text": "Name\nType\nDescription\n\n\n\n\n\nfloat\nThe calculated R^2 statistic.",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_r2"
+    ]
+  },
+  {
+    "objectID": "reference/get_r2.html#examples",
+    "href": "reference/get_r2.html#examples",
+    "title": "get_r2",
+    "section": "",
+    "text": "&gt;&gt;&gt; y_true = [1.0, 2.0, 3.0]\n&gt;&gt;&gt; y_pred = [1.0, 2.0, 3.0]\n&gt;&gt;&gt; get_r2(y_true, y_pred)\n1.0",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_r2"
     ]
   },
   {
@@ -723,5 +330,398 @@
       "Functions",
       "get_accuracy"
     ]
+  },
+  {
+    "objectID": "index.html#contributors",
+    "href": "index.html#contributors",
+    "title": "Welcome to ReportRabbit!",
+    "section": "Contributors",
+    "text": "Contributors\nRaghav Gupta, Joel Peterson, Jennifer Tsang, and Ruth Adwowa Yankson"
+  },
+  {
+    "objectID": "index.html#set-up-environment",
+    "href": "index.html#set-up-environment",
+    "title": "Welcome to ReportRabbit!",
+    "section": "Set up environment",
+    "text": "Set up environment\nCreate the environment directly from environment.yml:\nconda env create -f environment.yml\nconda activate reportrabbit"
+  },
+  {
+    "objectID": "index.html#get-started",
+    "href": "index.html#get-started",
+    "title": "Welcome to ReportRabbit!",
+    "section": "Get started",
+    "text": "Get started\nYou can install this package into your preferred Python environment using pip:\npip install git+https://github.com/UBC-MDS/reportrabbit.git\nTo use reportrabbit in your code:\n&gt;&gt;&gt; from reportrabbit.accuracy import get_accuracy\n&gt;&gt;&gt; get_accuracy(y_true, y_pred)\n&gt;&gt;&gt; import reportrabbit as rr\n&gt;&gt;&gt; \n&gt;&gt;&gt; y_true = [0, 1, 1, 0]\n&gt;&gt;&gt; y_pred = [0, 1, 0, 0]\n&gt;&gt;&gt; accuracy = 0\n&gt;&gt;&gt; \n&gt;&gt;&gt; accuracy = rr.get_accuracy(y_true, y_pred)"
+  },
+  {
+    "objectID": "index.html#documentation",
+    "href": "index.html#documentation",
+    "title": "Welcome to ReportRabbit!",
+    "section": "Documentation",
+    "text": "Documentation\nThe documentation for ReportRabbit can be viewed here."
+  },
+  {
+    "objectID": "index.html#contributing",
+    "href": "index.html#contributing",
+    "title": "Welcome to ReportRabbit!",
+    "section": "Contributing",
+    "text": "Contributing\nInterested in contributing? Check out the contributing guidelines here. Please note that this project is released with a Code of Conduct. By contributing to this project, you agree to abide by its terms."
+  },
+  {
+    "objectID": "index.html#copyright",
+    "href": "index.html#copyright",
+    "title": "Welcome to ReportRabbit!",
+    "section": "Copyright",
+    "text": "Copyright\nCopyright © 2026 Raghav Gupta, Joel Peterson, Jennifer Tsang, Ruth Adwowa Yankson. Free software distributed under the MIT license."
+  },
+  {
+    "objectID": "CHANGELOG.html",
+    "href": "CHANGELOG.html",
+    "title": "Changelog",
+    "section": "",
+    "text": "First release of reportrabbit!"
+  },
+  {
+    "objectID": "CHANGELOG.html#v0.1.0-06012026",
+    "href": "CHANGELOG.html#v0.1.0-06012026",
+    "title": "Changelog",
+    "section": "",
+    "text": "First release of reportrabbit!"
+  },
+  {
+    "objectID": "CONTRIBUTING.html",
+    "href": "CONTRIBUTING.html",
+    "title": "Contributing to ReportRabbit",
+    "section": "",
+    "text": "Thank you for your interest in contributing to ReportRabbit!\nWe welcome contributions of all kinds: bug reports, feature ideas, code, and documentation.\nEvery contribution helps make ReportRabbit more reliable, expressive, and useful for the data science community.\nThis document outlines how to contribute effectively and respectfully.\n\n\nReportRabbit follows a GitHub Flow–based collaboration model:\n\nAll work is done on feature or fix branches created from main\nEach issue corresponds to a single task or function\nIssues are assigned to exactly one team member\nPull requests must be reviewed by at least one other team member before merging\nNo direct commits are made to main\nGitHub issues and project boards are used for all project-related communication\n\n\n\nCreate a new branch from main for each piece of work. Use consistent prefixes:\n\nfeature/&lt;short-description&gt; for new features\nfix/&lt;short-description&gt; for bug fixes\ndocs/&lt;short-description&gt; for documentation-only changes\ntest/&lt;short-description&gt; for tests\nchore/&lt;short-description&gt; for maintenance tasks\n\nExamples: - feature/metrics-report - fix/mape-zero-division - docs/readme-usage - test/plot-report-tests - chore/ci-update\n\n\n\n\n\n\nIf you encounter a bug, please open an issue and include:\n\nYour operating system and version\nPython version\nReportRabbit version\nA minimal, reproducible example\nExpected behavior vs. actual behavior\nAny relevant error messages or stack traces\n\nClear bug reports help us resolve issues faster.\n\n\n\nLook through open GitHub issues labeled bug or help wanted : these are open to whoever wants to fix them. If you plan to work on an issue, please comment on it first to avoid duplication.\n\n\n\nWe welcome feature contributions that align with ReportRabbit’s scope: post-model reporting, and evaluation.\nWhen proposing a feature: - Clearly describe the problem it solves - Keep the scope focused and incremental\n\n\n\nGood documentation is as important as good code. Contributions may include: - Docstring improvements - README updates - Usage examples - Tutorials or explanatory guides - Diagrams or visuals that clarify workflows\n\n\n\nFeature ideas and design feedback are welcome.\nWhen submitting feedback: - Be specific and constructive - Provide context or examples where possible - Keep proposals concise and actionable\n\n\n\n\nTo set up ReportRabbit for local development:\n\nClone the repository\ngit clone git@github.com:UBC-MDS/ReportRabbit.git\ncd reportrabbit\nCreate and activate a Conda environment\nconda create -n reportrabbit python=3.12\nconda activate reportrabbit\nInstall dependencies using poetry\npoetry install\nCreate a feature or fix branch\ngit switch -c feature/short_description\n\n\n\n\nContributions should follow these conventions:\n\nFollow PEP 8 for Python code style and formatting\nUse NumPy-style docstrings for all public functions and modules\nWrite clear, maintainable, and well-documented code\nPrefer explicit, readable implementations over clever or opaque solutions\nKeep functions focused, modular, and testable\nBegin each function name with get_, and a suitably descriptive name. E.g.: get_mse or get_descriptive_report.\n\nIf applicable: - Add or update unit and integration tests - Update documentation alongside code changes\n\n\n\n\nTip: Install in editable mode so tests run against your local changes:\npip install -e .\n\nBefore opening a pull request, please run the test suite locally:\npytest\nTo run a specific test file:\npytest tests/unit/test_specific_module.py\n\n\n\nBefore you submit a pull request, check that it meets these guidelines:\n\nThe pull request should include additional tests if appropriate.\nMake sure that all tests pass locally.\nThe documentation is updated in case of any functionality changes or additions\nThe pull request clearly explains what was changed and why\nPull requests are small and focused rather than large, multi-purpose changes\nThe pull request should work for all currently supported operating systems and versions of Python.\n\n\n\n\nPlease note that the ReportRabbit project is released with a Code of Conduct. By contributing to this project you agree to abide by its terms.\nThank you for helping make ReportRabbit better!"
+  },
+  {
+    "objectID": "CONTRIBUTING.html#collaboration-workflow",
+    "href": "CONTRIBUTING.html#collaboration-workflow",
+    "title": "Contributing to ReportRabbit",
+    "section": "",
+    "text": "ReportRabbit follows a GitHub Flow–based collaboration model:\n\nAll work is done on feature or fix branches created from main\nEach issue corresponds to a single task or function\nIssues are assigned to exactly one team member\nPull requests must be reviewed by at least one other team member before merging\nNo direct commits are made to main\nGitHub issues and project boards are used for all project-related communication\n\n\n\nCreate a new branch from main for each piece of work. Use consistent prefixes:\n\nfeature/&lt;short-description&gt; for new features\nfix/&lt;short-description&gt; for bug fixes\ndocs/&lt;short-description&gt; for documentation-only changes\ntest/&lt;short-description&gt; for tests\nchore/&lt;short-description&gt; for maintenance tasks\n\nExamples: - feature/metrics-report - fix/mape-zero-division - docs/readme-usage - test/plot-report-tests - chore/ci-update"
+  },
+  {
+    "objectID": "CONTRIBUTING.html#ways-to-contribute",
+    "href": "CONTRIBUTING.html#ways-to-contribute",
+    "title": "Contributing to ReportRabbit",
+    "section": "",
+    "text": "If you encounter a bug, please open an issue and include:\n\nYour operating system and version\nPython version\nReportRabbit version\nA minimal, reproducible example\nExpected behavior vs. actual behavior\nAny relevant error messages or stack traces\n\nClear bug reports help us resolve issues faster.\n\n\n\nLook through open GitHub issues labeled bug or help wanted : these are open to whoever wants to fix them. If you plan to work on an issue, please comment on it first to avoid duplication.\n\n\n\nWe welcome feature contributions that align with ReportRabbit’s scope: post-model reporting, and evaluation.\nWhen proposing a feature: - Clearly describe the problem it solves - Keep the scope focused and incremental\n\n\n\nGood documentation is as important as good code. Contributions may include: - Docstring improvements - README updates - Usage examples - Tutorials or explanatory guides - Diagrams or visuals that clarify workflows\n\n\n\nFeature ideas and design feedback are welcome.\nWhen submitting feedback: - Be specific and constructive - Provide context or examples where possible - Keep proposals concise and actionable"
+  },
+  {
+    "objectID": "CONTRIBUTING.html#development-setup",
+    "href": "CONTRIBUTING.html#development-setup",
+    "title": "Contributing to ReportRabbit",
+    "section": "",
+    "text": "To set up ReportRabbit for local development:\n\nClone the repository\ngit clone git@github.com:UBC-MDS/ReportRabbit.git\ncd reportrabbit\nCreate and activate a Conda environment\nconda create -n reportrabbit python=3.12\nconda activate reportrabbit\nInstall dependencies using poetry\npoetry install\nCreate a feature or fix branch\ngit switch -c feature/short_description"
+  },
+  {
+    "objectID": "CONTRIBUTING.html#development-guidelines",
+    "href": "CONTRIBUTING.html#development-guidelines",
+    "title": "Contributing to ReportRabbit",
+    "section": "",
+    "text": "Contributions should follow these conventions:\n\nFollow PEP 8 for Python code style and formatting\nUse NumPy-style docstrings for all public functions and modules\nWrite clear, maintainable, and well-documented code\nPrefer explicit, readable implementations over clever or opaque solutions\nKeep functions focused, modular, and testable\nBegin each function name with get_, and a suitably descriptive name. E.g.: get_mse or get_descriptive_report.\n\nIf applicable: - Add or update unit and integration tests - Update documentation alongside code changes"
+  },
+  {
+    "objectID": "CONTRIBUTING.html#running-tests",
+    "href": "CONTRIBUTING.html#running-tests",
+    "title": "Contributing to ReportRabbit",
+    "section": "",
+    "text": "Tip: Install in editable mode so tests run against your local changes:\npip install -e .\n\nBefore opening a pull request, please run the test suite locally:\npytest\nTo run a specific test file:\npytest tests/unit/test_specific_module.py"
+  },
+  {
+    "objectID": "CONTRIBUTING.html#pull-request-guidelines",
+    "href": "CONTRIBUTING.html#pull-request-guidelines",
+    "title": "Contributing to ReportRabbit",
+    "section": "",
+    "text": "Before you submit a pull request, check that it meets these guidelines:\n\nThe pull request should include additional tests if appropriate.\nMake sure that all tests pass locally.\nThe documentation is updated in case of any functionality changes or additions\nThe pull request clearly explains what was changed and why\nPull requests are small and focused rather than large, multi-purpose changes\nThe pull request should work for all currently supported operating systems and versions of Python."
+  },
+  {
+    "objectID": "CONTRIBUTING.html#code-of-conduct",
+    "href": "CONTRIBUTING.html#code-of-conduct",
+    "title": "Contributing to ReportRabbit",
+    "section": "",
+    "text": "Please note that the ReportRabbit project is released with a Code of Conduct. By contributing to this project you agree to abide by its terms.\nThank you for helping make ReportRabbit better!"
+  },
+  {
+    "objectID": "reference/get_mape.html",
+    "href": "reference/get_mape.html",
+    "title": "get_mape",
+    "section": "",
+    "text": "get_mape(y_true, y_pred)\nCalculates the Mean Absolute Percentage Error (MAPE) and returns the result.\nMAPE measures the average absolute percentage difference between the observed values and the predicted values.\nNote: MAPE is undefined if any element of y_true is equal to zero, due to division by zero in the MAPE formula.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ny_true\narray\nThe actual observed values (ground truth).\nrequired\n\n\ny_pred\narray\nThe model predicted values.\nrequired\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nfloat\nThe calculated Mean Absolute Percentage Error (in percentage).\n\n\n\n\n\n\n&gt;&gt;&gt; y_true = [100.0, 200.0, 300.0]\n&gt;&gt;&gt; y_pred = [90.0, 210.0, 330.0]\n&gt;&gt;&gt; get_mape(y_true, y_pred)\n8.333333333333332",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_mape"
+    ]
+  },
+  {
+    "objectID": "reference/get_mape.html#parameters",
+    "href": "reference/get_mape.html#parameters",
+    "title": "get_mape",
+    "section": "",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ny_true\narray\nThe actual observed values (ground truth).\nrequired\n\n\ny_pred\narray\nThe model predicted values.\nrequired",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_mape"
+    ]
+  },
+  {
+    "objectID": "reference/get_mape.html#returns",
+    "href": "reference/get_mape.html#returns",
+    "title": "get_mape",
+    "section": "",
+    "text": "Name\nType\nDescription\n\n\n\n\n\nfloat\nThe calculated Mean Absolute Percentage Error (in percentage).",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_mape"
+    ]
+  },
+  {
+    "objectID": "reference/get_mape.html#examples",
+    "href": "reference/get_mape.html#examples",
+    "title": "get_mape",
+    "section": "",
+    "text": "&gt;&gt;&gt; y_true = [100.0, 200.0, 300.0]\n&gt;&gt;&gt; y_pred = [90.0, 210.0, 330.0]\n&gt;&gt;&gt; get_mape(y_true, y_pred)\n8.333333333333332",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_mape"
+    ]
+  },
+  {
+    "objectID": "reference/get_mse_rmse.html",
+    "href": "reference/get_mse_rmse.html",
+    "title": "get_mse_rmse",
+    "section": "",
+    "text": "get_mse_rmse(y_true, y_pred, *, sample_weight=None)\nCompute Mean Squared Error (MSE) and Root Mean Squared Error (RMSE).\nThis function is a convenience wrapper that returns both Mean Squared Error (MSE) and Root Mean Squared Error (RMSE) in a single call for streamlined regression model evaluation.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ny_true\narray-like of shape (n_samples,)\nTrue target values (e.g., list, NumPy array, or pandas Series).\nrequired\n\n\ny_pred\narray-like of shape (n_samples,)\nPredicted target values (same shape as y_true).\nrequired\n\n\nsample_weight\narray-like of shape (n_samples,)\nSample weights (e.g., list, NumPy array, or pandas Series). If provided, errors are aggregated using a weighted mean.\nNone\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\nmetrics\ndict\nDictionary with: - \"mse\" : float Mean Squared Error computed as the mean of squared residuals. - \"rmse\" : float Root Mean Squared Error computed as the square root of MSE.\n\n\n\n\n\n\n\nMSE is defined as: mean((y_true - y_pred)**2).\nRMSE is defined as: sqrt(MSE).\nInputs are expected to be one-dimensional (1D) and of equal length.\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nValueError\nIf y_true and y_pred have different lengths, are empty, or cannot be converted into compatible numeric arrays.\n\n\n\n\n\n\n&gt;&gt;&gt; from reportrabbit import mse_rmse as mr\n&gt;&gt;&gt; y_true = [3.0, -0.5, 2.0, 7.0]\n&gt;&gt;&gt; y_pred = [2.5, 0.0, 2.0, 8.0]\n&gt;&gt;&gt; mr.get_mse_rmse(y_true, y_pred)\n{'mse': 0.375, 'rmse': 0.6123724357}\nUsing NumPy arrays:\n&gt;&gt;&gt; import numpy as np\n&gt;&gt;&gt; y_true = np.array([1.0, 2.0, 3.0])\n&gt;&gt;&gt; y_pred = np.array([1.5, 1.8, 2.2])\n&gt;&gt;&gt; mr.get_mse_rmse(y_true, y_pred)\n{'mse': 0.31, 'rmse': 0.556776436283}",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_mse_rmse"
+    ]
+  },
+  {
+    "objectID": "reference/get_mse_rmse.html#parameters",
+    "href": "reference/get_mse_rmse.html#parameters",
+    "title": "get_mse_rmse",
+    "section": "",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ny_true\narray-like of shape (n_samples,)\nTrue target values (e.g., list, NumPy array, or pandas Series).\nrequired\n\n\ny_pred\narray-like of shape (n_samples,)\nPredicted target values (same shape as y_true).\nrequired\n\n\nsample_weight\narray-like of shape (n_samples,)\nSample weights (e.g., list, NumPy array, or pandas Series). If provided, errors are aggregated using a weighted mean.\nNone",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_mse_rmse"
+    ]
+  },
+  {
+    "objectID": "reference/get_mse_rmse.html#returns",
+    "href": "reference/get_mse_rmse.html#returns",
+    "title": "get_mse_rmse",
+    "section": "",
+    "text": "Name\nType\nDescription\n\n\n\n\nmetrics\ndict\nDictionary with: - \"mse\" : float Mean Squared Error computed as the mean of squared residuals. - \"rmse\" : float Root Mean Squared Error computed as the square root of MSE.",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_mse_rmse"
+    ]
+  },
+  {
+    "objectID": "reference/get_mse_rmse.html#notes",
+    "href": "reference/get_mse_rmse.html#notes",
+    "title": "get_mse_rmse",
+    "section": "",
+    "text": "MSE is defined as: mean((y_true - y_pred)**2).\nRMSE is defined as: sqrt(MSE).\nInputs are expected to be one-dimensional (1D) and of equal length.",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_mse_rmse"
+    ]
+  },
+  {
+    "objectID": "reference/get_mse_rmse.html#raises",
+    "href": "reference/get_mse_rmse.html#raises",
+    "title": "get_mse_rmse",
+    "section": "",
+    "text": "Name\nType\nDescription\n\n\n\n\n\nValueError\nIf y_true and y_pred have different lengths, are empty, or cannot be converted into compatible numeric arrays.",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_mse_rmse"
+    ]
+  },
+  {
+    "objectID": "reference/get_mse_rmse.html#examples",
+    "href": "reference/get_mse_rmse.html#examples",
+    "title": "get_mse_rmse",
+    "section": "",
+    "text": "&gt;&gt;&gt; from reportrabbit import mse_rmse as mr\n&gt;&gt;&gt; y_true = [3.0, -0.5, 2.0, 7.0]\n&gt;&gt;&gt; y_pred = [2.5, 0.0, 2.0, 8.0]\n&gt;&gt;&gt; mr.get_mse_rmse(y_true, y_pred)\n{'mse': 0.375, 'rmse': 0.6123724357}\nUsing NumPy arrays:\n&gt;&gt;&gt; import numpy as np\n&gt;&gt;&gt; y_true = np.array([1.0, 2.0, 3.0])\n&gt;&gt;&gt; y_pred = np.array([1.5, 1.8, 2.2])\n&gt;&gt;&gt; mr.get_mse_rmse(y_true, y_pred)\n{'mse': 0.31, 'rmse': 0.556776436283}",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_mse_rmse"
+    ]
+  },
+  {
+    "objectID": "reference/index.html",
+    "href": "reference/index.html",
+    "title": "Function reference",
+    "section": "",
+    "text": "Functions in ReportRabbit.\n\n\n\nget_accuracy\nCalculates the accuracy of predictions and returns the result.\n\n\nget_f1\nCalculates the F1 score of predictions and returns the result.\n\n\nget_precision\nCalculates the precision of predictions and returns the result.\n\n\nget_recall\nCalculates the recall of predictions and returns the result.\n\n\nget_mae\nCalculates the Mean Absolute Error (MAE) and returns the result.\n\n\nget_mape\nCalculates the Mean Absolute Percentage Error (MAPE) and returns the result.\n\n\nget_mse\nCompute Mean Squared Error (MSE).\n\n\nget_rmse\nCompute Root Mean Squared Error (RMSE).\n\n\nget_mse_rmse\nCompute Mean Squared Error (MSE) and Root Mean Squared Error (RMSE).\n\n\nget_r\nCalculates the Pearson correlation coefficient (R)\n\n\nget_r2\nCalculates the R^2 statistic (coefficient of determination)",
+    "crumbs": [
+      "Reference",
+      "Function reference"
+    ]
+  },
+  {
+    "objectID": "reference/index.html#functions",
+    "href": "reference/index.html#functions",
+    "title": "Function reference",
+    "section": "",
+    "text": "Functions in ReportRabbit.\n\n\n\nget_accuracy\nCalculates the accuracy of predictions and returns the result.\n\n\nget_f1\nCalculates the F1 score of predictions and returns the result.\n\n\nget_precision\nCalculates the precision of predictions and returns the result.\n\n\nget_recall\nCalculates the recall of predictions and returns the result.\n\n\nget_mae\nCalculates the Mean Absolute Error (MAE) and returns the result.\n\n\nget_mape\nCalculates the Mean Absolute Percentage Error (MAPE) and returns the result.\n\n\nget_mse\nCompute Mean Squared Error (MSE).\n\n\nget_rmse\nCompute Root Mean Squared Error (RMSE).\n\n\nget_mse_rmse\nCompute Mean Squared Error (MSE) and Root Mean Squared Error (RMSE).\n\n\nget_r\nCalculates the Pearson correlation coefficient (R)\n\n\nget_r2\nCalculates the R^2 statistic (coefficient of determination)",
+    "crumbs": [
+      "Reference",
+      "Function reference"
+    ]
+  },
+  {
+    "objectID": "reference/get_rmse.html",
+    "href": "reference/get_rmse.html",
+    "title": "get_rmse",
+    "section": "",
+    "text": "get_rmse(y_true, y_pred, *, sample_weight=None)\nCompute Root Mean Squared Error (RMSE).\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ny_true\narray-like of shape (n_samples,)\nTrue target values.\nrequired\n\n\ny_pred\narray-like of shape (n_samples,)\nPredicted target values.\nrequired\n\n\nsample_weight\narray-like of shape (n_samples,)\nSample weights.\nNone\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\nrmse\nfloat\nRoot Mean Squared Error.",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_rmse"
+    ]
+  },
+  {
+    "objectID": "reference/get_rmse.html#parameters",
+    "href": "reference/get_rmse.html#parameters",
+    "title": "get_rmse",
+    "section": "",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ny_true\narray-like of shape (n_samples,)\nTrue target values.\nrequired\n\n\ny_pred\narray-like of shape (n_samples,)\nPredicted target values.\nrequired\n\n\nsample_weight\narray-like of shape (n_samples,)\nSample weights.\nNone",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_rmse"
+    ]
+  },
+  {
+    "objectID": "reference/get_rmse.html#returns",
+    "href": "reference/get_rmse.html#returns",
+    "title": "get_rmse",
+    "section": "",
+    "text": "Name\nType\nDescription\n\n\n\n\nrmse\nfloat\nRoot Mean Squared Error.",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_rmse"
+    ]
+  },
+  {
+    "objectID": "reference/get_recall.html",
+    "href": "reference/get_recall.html",
+    "title": "get_recall",
+    "section": "",
+    "text": "get_recall(y_true, y_pred)\nCalculates the recall of predictions and returns the result. Recall is the proportion of actual positive cases that were correctly identified. It answers: “Of all the items that were actually positive, how many did we catch?” Recall = True Positives / (True Positives + False Negatives). Scoring is between 0 and 1 with a perfect recall being 1.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ny_true\narray\nThe actual observed values (ground truth).\nrequired\n\n\ny_pred\narray\nThe model predicted values.\nrequired\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nfloat\nThe calculated recall score, ranging from 0.0 to 1.0.\n\n\n\n\n\n\n&gt;&gt;&gt; # Perfect recall\n&gt;&gt;&gt; y_true = [0, 1, 1, 0]\n&gt;&gt;&gt; y_pred = [0, 1, 1, 0]\n&gt;&gt;&gt; get_recall(y_true, y_pred)\n1.0\n&gt;&gt;&gt; # Partial recall\n&gt;&gt;&gt; y_true = [0, 1, 1, 0]\n&gt;&gt;&gt; y_pred = [0, 1, 0, 0]\n&gt;&gt;&gt; get_recall(y_true, y_pred)\n0.5",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_recall"
+    ]
+  },
+  {
+    "objectID": "reference/get_recall.html#parameters",
+    "href": "reference/get_recall.html#parameters",
+    "title": "get_recall",
+    "section": "",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ny_true\narray\nThe actual observed values (ground truth).\nrequired\n\n\ny_pred\narray\nThe model predicted values.\nrequired",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_recall"
+    ]
+  },
+  {
+    "objectID": "reference/get_recall.html#returns",
+    "href": "reference/get_recall.html#returns",
+    "title": "get_recall",
+    "section": "",
+    "text": "Name\nType\nDescription\n\n\n\n\n\nfloat\nThe calculated recall score, ranging from 0.0 to 1.0.",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_recall"
+    ]
+  },
+  {
+    "objectID": "reference/get_recall.html#examples",
+    "href": "reference/get_recall.html#examples",
+    "title": "get_recall",
+    "section": "",
+    "text": "&gt;&gt;&gt; # Perfect recall\n&gt;&gt;&gt; y_true = [0, 1, 1, 0]\n&gt;&gt;&gt; y_pred = [0, 1, 1, 0]\n&gt;&gt;&gt; get_recall(y_true, y_pred)\n1.0\n&gt;&gt;&gt; # Partial recall\n&gt;&gt;&gt; y_true = [0, 1, 1, 0]\n&gt;&gt;&gt; y_pred = [0, 1, 0, 0]\n&gt;&gt;&gt; get_recall(y_true, y_pred)\n0.5",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_recall"
+    ]
+  },
+  {
+    "objectID": "reference/get_f1.html",
+    "href": "reference/get_f1.html",
+    "title": "get_f1",
+    "section": "",
+    "text": "get_f1(y_true, y_pred)\nCalculates the F1 score of predictions and returns the result. The F1 score is the harmonic mean of precision and recall. It provides a balanced measure between precision and recall, useful when you want to balance the trade-off between false positives and false negatives. F1 = 2 * ((Precision * Recall) / (Precision + Recall)). Scoring is between 0 and 1 with a perfect F1 score being 1.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ny_true\narray\nThe actual observed values (ground truth).\nrequired\n\n\ny_pred\narray\nThe model predicted values.\nrequired\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nfloat\nThe calculated F1 score, ranging from 0.0 to 1.0.\n\n\n\n\n\n\n&gt;&gt;&gt; # Perfect F1 score\n&gt;&gt;&gt; y_true = [0, 1, 1, 0]\n&gt;&gt;&gt; y_pred = [0, 1, 1, 0]\n&gt;&gt;&gt; get_f1(y_true, y_pred)\n1.0\n&gt;&gt;&gt; # Partial F1 score\n&gt;&gt;&gt; y_true = [0, 1, 1, 0]\n&gt;&gt;&gt; y_pred = [0, 1, 0, 0]\n&gt;&gt;&gt; get_f1(y_true, y_pred)\n0.6666666666666666",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_f1"
+    ]
+  },
+  {
+    "objectID": "reference/get_f1.html#parameters",
+    "href": "reference/get_f1.html#parameters",
+    "title": "get_f1",
+    "section": "",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ny_true\narray\nThe actual observed values (ground truth).\nrequired\n\n\ny_pred\narray\nThe model predicted values.\nrequired",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_f1"
+    ]
+  },
+  {
+    "objectID": "reference/get_f1.html#returns",
+    "href": "reference/get_f1.html#returns",
+    "title": "get_f1",
+    "section": "",
+    "text": "Name\nType\nDescription\n\n\n\n\n\nfloat\nThe calculated F1 score, ranging from 0.0 to 1.0.",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_f1"
+    ]
+  },
+  {
+    "objectID": "reference/get_f1.html#examples",
+    "href": "reference/get_f1.html#examples",
+    "title": "get_f1",
+    "section": "",
+    "text": "&gt;&gt;&gt; # Perfect F1 score\n&gt;&gt;&gt; y_true = [0, 1, 1, 0]\n&gt;&gt;&gt; y_pred = [0, 1, 1, 0]\n&gt;&gt;&gt; get_f1(y_true, y_pred)\n1.0\n&gt;&gt;&gt; # Partial F1 score\n&gt;&gt;&gt; y_true = [0, 1, 1, 0]\n&gt;&gt;&gt; y_pred = [0, 1, 0, 0]\n&gt;&gt;&gt; get_f1(y_true, y_pred)\n0.6666666666666666",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_f1"
+    ]
+  },
+  {
+    "objectID": "CONDUCT.html",
+    "href": "CONDUCT.html",
+    "title": "Code of Conduct: DSCI 524: Group 11",
+    "section": "",
+    "text": "Code of Conduct: DSCI 524: Group 11\n\n\nIntroduction\nOur team is dedicated to fostering a collaborative, inclusive, and respectful environment where ideas can be shared openly and learning is encouraged. All participants, whether contributing through discussions, code, documentation, or reviews are expected to support a positive and constructive atmosphere.\nThis Code of Conduct applies to all project-related interactions.\n\n\nCommitment to Diversity and Inclusion\nOur project is open to people of all backgrounds, regardless of age, gender identity or expression, sexual orientation, disability, physical appearance, body size, ethnicity, nationality, race, religion, education, or any other personal characteristic. We are committed to creating an environment where everyone feels respected, valued, and comfortable contributing without fear of discrimination or exclusion.\n\n\nExpected Behaviour\nAll members of this project community are expected to act with professionalism, integrity, and openness. This includes: - Communicating with respect and consideration at all times - Being open to others’ perspectives and acknowledging their contributions - Offering and accepting feedback in a constructive and professional way - Participating in discussions that encourage teamwork and shared understanding\n\n\nInappropriate Behavior\n\nAny form of harassment toward participants\nIntentional intimidation, stalking, or persistent following\nThreatening or violent language directed at others\nSharing or displaying offensive, explicit, or inappropriate content\nUse of slurs, excessive profanity, or aggressive and hostile language\n\nAll members are expected to refrain from all forms of unacceptable conduct to maintain a respectful environment.\n\n\nConsequences for Unacceptable Behavior\nIf a participant engages in inappropriate behavior, they will be asked to stop and comply immediately. If the behavior persists or the issue is severe, it may be referred to the teaching team or course faculty. Ongoing violations may lead to removal from the project.\n\n\nReporting Concerns and Guidelines\nIf a participant violates this Code of Conduct, the incident may be reported by contacting Raghav Gupta at raghav90@student.ubc.ca. All reports will be treated seriously and handled with discretion. The Group 11 team will review the situation and take actions it considers appropriate given the circumstances.\nAdaptation Notes: Adapted from the Python Community Code of Conduct (https://policies.python.org/python.org/code-of-conduct/) and the UBC MDS 522 course."
   }
 ]
