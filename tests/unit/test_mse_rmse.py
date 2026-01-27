@@ -32,7 +32,7 @@ import numpy as np
     ],
 )
 def test_get_mse_rmse_outputs(y_true, y_pred, expected_mse, expected_rmse):
-    """Test that get_mse_rmse returns correct MSE and RMSE for valid numeric inputs."""
+    """Test: get_mse_rmse returns correct MSE and RMSE for valid numeric inputs."""
     out = mr.get_mse_rmse(y_true, y_pred)
     assert np.isclose(out["mse"], expected_mse)
     assert np.isclose(out["rmse"], expected_rmse)
@@ -43,7 +43,7 @@ def test_get_mse_rmse_outputs(y_true, y_pred, expected_mse, expected_rmse):
     [mr.get_mse, mr.get_rmse],
 )
 def test_helpers_perfect_prediction(func):
-    """Test that helper functions return 0.0 for perfect prediction."""
+    """Test: helper functions return 0.0 for perfect prediction."""
     y_true = [1, 2, 3]
     y_pred = [1, 2, 3]
     out = func(y_true, y_pred)
@@ -51,7 +51,7 @@ def test_helpers_perfect_prediction(func):
 
 
 def test_get_mse_rmse_with_weights():
-    """Test that get_mse_rmse supports sample weights using a weighted mean."""
+    """Test: get_mse_rmse supports sample weights using a weighted mean."""
     y_true = [1, 2, 3]
     y_pred = [1, 2, 4]
     sample_weight = [1, 1, 2]
@@ -81,7 +81,6 @@ def test_get_mse_rmse_with_weights():
     ],
 )
 def test_length_mismatch_raises_value_error(func, args):
-    """Test that MSE/RMSE helper functions reject mismatched input lengths."""
     y_true, y_pred = args
     with pytest.raises(ValueError):
         func(y_true, y_pred)
@@ -89,7 +88,7 @@ def test_length_mismatch_raises_value_error(func, args):
 
 @pytest.mark.parametrize("func", [mr.get_mse, mr.get_rmse, mr.get_mse_rmse])
 def test_sample_weight_length_mismatch_raises_value_error(func):
-    """Test that ValueError raised when sample_weight length mismatches y_true/y_pred."""
+    """Test: ValueError raised when sample_weight length mismatches y_true/y_pred."""
     y_true = [1.0, 2.0, 3.0]
     y_pred = [1.0, 2.0, 3.0]
     sample_weight = [1.0, 2.0]  # incorrect length
@@ -102,7 +101,7 @@ def test_sample_weight_length_mismatch_raises_value_error(func):
     [mr.get_mse, mr.get_rmse, mr.get_mse_rmse],
 )
 def test_empty_inputs_raises_value_error(func):
-    """Test that ValueError raised for empty inputs."""
+    """Test: ValueError raised for empty inputs."""
     with pytest.raises(ValueError):
         func([], [])
 
@@ -112,14 +111,14 @@ def test_empty_inputs_raises_value_error(func):
     [mr.get_mse, mr.get_rmse, mr.get_mse_rmse],
 )
 def test_non_numeric_inputs_raises_value_error(func):
-    """Test that ValueError raised when inputs contain non-numeric values."""
+    """Test: ValueError raised when inputs contain non-numeric values."""
     with pytest.raises(ValueError):
         func([1, 2, "a"], [1, 2, 3])
 
 
 def test_get_mse_rmse_non_numeric_sample_weight_raises_value_error():
     """
-    Test that get_mse_rmse raises ValueError when sample_weight contains
+    Test: get_mse_rmse raises ValueError when sample_weight contains
     non-numeric values.
     """
     y_true = [1.0, 2.0, 3.0]
@@ -131,7 +130,7 @@ def test_get_mse_rmse_non_numeric_sample_weight_raises_value_error():
 
 def test_get_mse_scalar_input_raises_value_error():
     """
-    Test that get_mse raises ValueError when given scalar input
+    Test: get_mse raises ValueError when given scalar input
     instead of array-like.
     """
     with pytest.raises(ValueError):
@@ -140,7 +139,7 @@ def test_get_mse_scalar_input_raises_value_error():
 
 def test_get_mse_rmse_2d_inputs_are_flattened():
     """
-    Test that get_mse_rmse flattens 2D inputs and computes metrics correctly.
+    Test: get_mse_rmse flattens 2D inputs and computes metrics correctly.
     """
     y_true = [[1, 2, 3]]
     y_pred = [[1, 2, 4]]
@@ -154,7 +153,7 @@ def test_get_mse_rmse_2d_inputs_are_flattened():
 
 
 def test_get_mse_rmse_scalar_sample_weight_raises_value_error():
-    """Test that get_mse_rmse raises ValueError when sample_weight is a scalar."""
+    """Test: get_mse_rmse raises ValueError when sample_weight is a scalar."""
     y_true = [1.0, 2.0, 3.0]
     y_pred = [1.0, 2.0, 3.0]
     with pytest.raises(ValueError):
