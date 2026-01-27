@@ -1,5 +1,7 @@
 # ReportRabbit
 
+[![codecov](https://codecov.io/github/UBC-MDS/reportrabbit/graph/badge.svg?token=PZN85qt3F8)](https://codecov.io/github/UBC-MDS/reportrabbit)
+
 ReportRabbit is a Python package that calculates model performance metrics.
 It is a one-stop-shop for all the common metrics used for model evaluation.
 All functions require two primary inputs: `y_true` (actual observed values) and `y_pred` (model predicted values).
