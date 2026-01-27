@@ -1,6 +1,6 @@
 """
 Unit tests for get_mae().
-
+A test module that tests the get_mae() function in the mae.py file.
 Note: these tests & comments are written with the assistance of LLMs.
 """
 

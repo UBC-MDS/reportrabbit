@@ -1,6 +1,6 @@
 """
 Unit tests for get_mape().
-
+A test module that tests the get_mape() function in the mape.py file.
 Note: these tests & comments are written with the assistance of LLMs.
 """
 
