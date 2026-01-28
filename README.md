@@ -67,7 +67,6 @@ To use `reportrabbit` in your code:
 >>> 
 >>> y_true = [0, 1, 1, 0]
 >>> y_pred = [0, 1, 0, 0]
->>> accuracy = 0
 >>> 
 >>> accuracy = rr.get_accuracy(y_true, y_pred)
 ```
@@ -94,6 +93,11 @@ Interested in contributing?
 Check out the contributing guidelines [here](https://github.com/UBC-MDS/reportrabbit/blob/main/CONTRIBUTING.md).
 Please note that this project is released with a [Code of Conduct](https://github.com/UBC-MDS/reportrabbit/blob/main/CONDUCT.md).
 By contributing to this project, you agree to abide by its terms.
+
+### GitHub Workflow, tools, and framework utilization
+
+In the collaborative team effort of creating the reportRabbit python package we utilized a high percentage of the development tools available through GitHub.
+Each team memeber responsibly created issues to identify the tasks ahead and the scope of work required. This gave each member accountability and an organized structure to keep track of todos and progress. While contributing work to the project each team member created separate branches to push commits of their recent work and accomplishments, then created pull-requests which required a review by each member in order to authorize a merge to the main branch. Issues and pull requests were, tagged, labelled, and assigned using the convenient drop-menus provided by GitHub. The GitHub Project board was utilized to view open issues, todos, and the progress of completed tasks by each member. The GitHub Actions feature has been used in combination with Ruff to lint the commits for formatting errors on submission, as well as with Quarto to automatically update and publish documentation. GitHub Actions was also implemented to link to CodeCov providing a convenient updated 3rd party code covereage (percentage) review as well as to deploy and update the package on TestPyPi. 
 
 ## Copyright
 
