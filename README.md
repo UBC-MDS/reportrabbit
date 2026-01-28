@@ -3,7 +3,9 @@
 [![codecov](https://codecov.io/github/UBC-MDS/reportrabbit/graph/badge.svg?token=PZN85qt3F8)](https://codecov.io/github/UBC-MDS/reportrabbit)
 
 ReportRabbit is a Python package that calculates model performance metrics.
-It is a one-stop-shop for all the common metrics used for model evaluation. ReportRabbit is a simplified version of the [sklearn.metrics](https://scikit-learn.org/stable/api/sklearn.metrics.html) package that prioritizes readability and ease of use. It is model-agnostic and can evaluate results of models from any framework. It is an ideal package for students, analysts, and non-technical users who need standard metrics without the overhead of the full [Scikit-learn](https://scikit-learn.org/stable/) API.
+It is a one-stop-shop for all the common metrics used for model evaluation. 
+
+ReportRabbit is a simplified version of the [sklearn.metrics](https://scikit-learn.org/stable/api/sklearn.metrics.html) package that prioritizes readability and ease of use. It is model-agnostic and can evaluate results of models from any framework. It is an ideal package for students, analysts, and non-technical users who need standard metrics without the overhead of the full [Scikit-learn](https://scikit-learn.org/stable/) API.
 
 All functions require two primary inputs: `y_true` (actual observed values) and `y_pred` (model predicted values). This package contains the following nine methods:
 
