@@ -18,7 +18,10 @@ dynamic = ["version"]
 
 description = "ReportRabbit is a diagnostic utility that automates the generation of performance metrics to turn raw model outputs into comprehensive evaluation reports."
 authors = [
-    { name = "Jennifer Tsang", email = "jennifer.tsang8919@gmail.com" },
+    { name = "Jennifer Tsang", email = "jennifer.tsang8919@gmail.com", url = "https://jentsang.github.io/" },
+    { name = "Ruth Yankson", email = "ruthyankson357@gmail.com", url = "https://ruthyankson.github.io/" },
+    { name = "Joel Peterson", email = "j031nich0145@gmail.com", url = "https://github.com/j031nich0145" },
+    { name = "Raghav Gupta", email = "raghav9048@gmail.com", url = "https://github.com/raghav9048" }
 ]
 license = "MIT"
 requires-python = ">= 3.10" # Adjust based on the minimum version of Python that you support
