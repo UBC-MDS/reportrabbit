@@ -75,16 +75,24 @@ To use `reportrabbit` in your code:
 The following instructions are intended for developers and contributors
 who want to run tests, build documentation, or contribute to the package.
 
-## Set up development environment
+### Set up development environment
 
 Create the environment directly from `environment.yml`:
 
 ```bash
 conda env create -f environment.yml
 conda activate reportrabbit
+
+pip install -e ".[dev,tests,docs]"
+
+pytest
+pytest --cov=reportrabbit --cov-report=term-missing --cov-branch
+
+quartodoc build
+quarto preview
 ```
 
-## How to run unit tests
+### How to run unit tests
 From root directory, run all test files in terminal:
 
 ```bash
