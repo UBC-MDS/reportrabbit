@@ -1,8 +1,8 @@
 # ReportRabbit
 
-[![Build Status](https://github.com/UBC-MDS/reportrabbit/actions/workflows/build.yml/badge.svg)](https://github.com/UBC-MDS/reportrabbit/actions/workflows/build.yml)
+[![Build Status](https://github.com/UBC-MDS/reportrabbit/actions/workflows/build.yml/badge.svg)](https://github.com/UBC-MDS/reportrabbit/actions/workflows/build.yml)+
 [![codecov](https://codecov.io/github/UBC-MDS/reportrabbit/graph/badge.svg?token=PZN85qt3F8)](https://codecov.io/github/UBC-MDS/reportrabbit)
-[![Python 3.10+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/UBC-MDS/reportrabbit/blob/main/LICENSE)
 [![Documentation](https://img.shields.io/badge/docs-GitHub%20Pages-blue)](https://ubc-mds.github.io/reportrabbit/)
 
