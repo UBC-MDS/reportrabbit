@@ -1,6 +1,6 @@
 # ReportRabbit
 
-[![Build Status](https://github.com/UBC-MDS/reportrabbit/actions/workflows/build.yml/badge.svg)](https://github.com/UBC-MDS/reportrabbit/actions/workflows/build.yml)+
+[![Build Status](https://github.com/UBC-MDS/reportrabbit/actions/workflows/build.yml/badge.svg)](https://github.com/UBC-MDS/reportrabbit/actions/workflows/build.yml)
 [![codecov](https://codecov.io/github/UBC-MDS/reportrabbit/graph/badge.svg?token=PZN85qt3F8)](https://codecov.io/github/UBC-MDS/reportrabbit)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/UBC-MDS/reportrabbit/blob/main/LICENSE)
@@ -61,26 +61,26 @@ pip install git+https://github.com/UBC-MDS/reportrabbit.git
 To use `reportrabbit` in your code:
 
 ```python
->>> from reportrabbit.accuracy import get_accuracy
->>>
->>> # Can predefine y_true & y_pred 
->>> # or pass arrays directly
->>>
->>> y_true = [0, 1, 1, 0]
->>> y_pred = [0, 1, 0, 0]
->>>
->>> get_accuracy(y_true, y_pred)
+from reportrabbit.accuracy import get_accuracy
+
+# Can predefine y_true & y_pred 
+# or pass arrays directly
+
+y_true = [0, 1, 1, 0]
+y_pred = [0, 1, 0, 0]
+
+get_accuracy(y_true, y_pred)
 ```
 
 OR: 
 
 ```python
->>> import reportrabbit as rr
->>> 
->>> accuracy = rr.get_accuracy(y_true, y_pred)
->>>
->>> # Call the function 
->>> accuracy([0, 1, 1, 0],[0, 1, 0, 0])
+import reportrabbit as rr
+
+accuracy = rr.get_accuracy(y_true, y_pred)
+
+# Call the function 
+accuracy([0, 1, 1, 0],[0, 1, 0, 0])
 ```
 
 ## Developer Guide
@@ -90,13 +90,16 @@ who want to run tests, build documentation, or contribute to the package.
 
 ### Set up development environment
 
-Create the environment directly from `environment.yml`:
+1. Create the environment directly from `environment.yml`:
 
 ```bash
 conda env create -f environment.yml
 conda activate reportrabbit
+```
 
-# Install the package in editable mode with all developer dependencies
+2. Install the package in editable mode with all developer dependencies:
+
+```bash
 pip install -e ".[dev,tests,docs]"
 ```
 
@@ -123,6 +126,7 @@ quarto preview
 ```
 ## Documentation
 - The documentation for ReportRabbit can be viewed [here](https://ubc-mds.github.io/reportrabbit/).
+- More details about each function can be found [here](https://ubc-mds.github.io/reportrabbit/reference/).
 - The package project page and release history are available on [TestPyPI](https://test.pypi.org/project/reportrabbit/).
 
 ## Contributing
