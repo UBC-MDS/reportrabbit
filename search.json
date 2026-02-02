@@ -339,32 +339,32 @@
     "text": "Contributors\nRaghav Gupta, Joel Peterson, Jennifer Tsang, and Ruth Adwowa Yankson"
   },
   {
-    "objectID": "index.html#set-up-environment",
-    "href": "index.html#set-up-environment",
-    "title": "Welcome to ReportRabbit!",
-    "section": "Set up environment",
-    "text": "Set up environment\nCreate the environment directly from environment.yml:\nconda env create -f environment.yml\nconda activate reportrabbit"
-  },
-  {
     "objectID": "index.html#get-started",
     "href": "index.html#get-started",
     "title": "Welcome to ReportRabbit!",
     "section": "Get started",
-    "text": "Get started\nYou can install this package into your preferred Python environment using pip:\npip install git+https://github.com/UBC-MDS/reportrabbit.git\nTo use reportrabbit in your code:\n&gt;&gt;&gt; from reportrabbit.accuracy import get_accuracy\n&gt;&gt;&gt; get_accuracy(y_true, y_pred)\n&gt;&gt;&gt; import reportrabbit as rr\n&gt;&gt;&gt; \n&gt;&gt;&gt; y_true = [0, 1, 1, 0]\n&gt;&gt;&gt; y_pred = [0, 1, 0, 0]\n&gt;&gt;&gt; \n&gt;&gt;&gt; accuracy = rr.get_accuracy(y_true, y_pred)"
+    "text": "Get started\n\nInstall from TestPyPI\nYou can install the latest pre-release version of ReportRabbit from TestPyPI. This version is intended for testing and validation before the official PyPI release.\npip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple reportrabbit\n\n\nInstall from GitHub (development version)\nIf you prefer installing directly from the source repository:\npip install git+https://github.com/UBC-MDS/reportrabbit.git\nTo use reportrabbit in your code:\nfrom reportrabbit.accuracy import get_accuracy\n\n# Can predefine y_true & y_pred \n# or pass arrays directly\n\ny_true = [0, 1, 1, 0]\ny_pred = [0, 1, 0, 0]\n\nget_accuracy(y_true, y_pred)\nOR:\nimport reportrabbit as rr\n\naccuracy = rr.get_accuracy(y_true, y_pred)\n\n# Call the function \naccuracy([0, 1, 1, 0],[0, 1, 0, 0])"
+  },
+  {
+    "objectID": "index.html#developer-guide",
+    "href": "index.html#developer-guide",
+    "title": "Welcome to ReportRabbit!",
+    "section": "Developer Guide",
+    "text": "Developer Guide\nThe following instructions are intended for developers and contributors who want to run tests, build documentation, or contribute to the package.\n\nSet up development environment\n\nCreate the environment directly from environment.yml:\n\nconda env create -f environment.yml\nconda activate reportrabbit\n\nInstall the package in editable mode with all developer dependencies:\n\npip install -e \".[dev,tests,docs]\"\n\n\nHow to run unit tests\nFrom root directory, run all test files in terminal:\npytest\nYou also have the option to run individual test files by referencing its path. For example:\npytest tests/unit/test_get_accuracy.py\nTo check code coverage and branch details:\npytest --cov=reportrabbit --cov-report=term-missing --cov-branch\n\n\nLocal Documentation Development\nquartodoc build --watch\nquarto preview"
   },
   {
     "objectID": "index.html#documentation",
     "href": "index.html#documentation",
     "title": "Welcome to ReportRabbit!",
     "section": "Documentation",
-    "text": "Documentation\nThe documentation for ReportRabbit can be viewed here."
+    "text": "Documentation\n\nThe documentation for ReportRabbit can be viewed here.\nMore details about each function can be found here.\nThe package project page and release history are available on TestPyPI."
   },
   {
     "objectID": "index.html#contributing",
     "href": "index.html#contributing",
     "title": "Welcome to ReportRabbit!",
     "section": "Contributing",
-    "text": "Contributing\nInterested in contributing? Check out the contributing guidelines here. Please note that this project is released with a Code of Conduct. By contributing to this project, you agree to abide by its terms.\n\nGitHub Workflow, tools, and framework utilization\nIn the collaborative team effort of creating the reportRabbit python package we utilized a high percentage of the development tools available through GitHub. Each team member responsibly created issues to identify the tasks ahead and the scope of work required. This gave each member accountability and an organized structure to keep track of todos and progress. While contributing work to the project each team member created separate branches to push commits of their recent work and accomplishments, then created pull-requests which required a review by each member in order to authorize a merge to the main branch. Issues and pull requests were tagged, labelled, and assigned, using the convenient drop-menus provided by GitHub. The GitHub Project board was utilized to create a variety of views (project board, table, roadmap) to view open issues, todos, and the progress of completed tasks by each member. The GitHub Actions feature has been used in combination with Ruff to lint the commits for formatting errors on submission, as well as with Quarto to automatically update and publish documentation. GitHub Actions was also implemented to link to CodeCov providing convenient updated 3rd party code-covereage (percentage) reviews, as well as to deploy and update the package on TestPyPi."
+    "text": "Contributing\nInterested in contributing? Check out the contributing guidelines here. Please note that this project is released with a Code of Conduct. By contributing to this project, you agree to abide by its terms.\n\nGitHub Workflow, tools, and framework utilization\n\nThe GitHub collaborative team effort of creating the reportRabbitp python package:\n\nutilized a high percentage of the development tools available through GitHub\nEach team member responsibly created issues to identify the tasks ahead and the scope of work required. This gave each member accountability and an organized structure to keep track of todos and progress. While contributing work to the project each team member created separate branches to push commits of their recent work and accomplishments, then created pull-requests which required a review by each member in order to authorize a merge to the main branch. Issues and pull requests were tagged, labelled, and assigned, using the convenient drop-menus provided by GitHub.\nThe GitHub Project board was utilized to create a variety of views (project board, table, roadmap) to view open issues, todos, and the progress of completed tasks by each member.\nThe GitHub Actions feature has been used in combination with Ruff to lint the commits for formatting errors on submission, as well as with Quarto to automatically update and publish documentation.\nGitHub Actions was also implemented to link to CodeCov providing convenient updated 3rd party code-covereage (percentage) reviews, as well as to deploy and update the package on TestPyPi."
   },
   {
     "objectID": "index.html#copyright",
@@ -378,14 +378,14 @@
     "href": "CHANGELOG.html",
     "title": "Changelog",
     "section": "",
-    "text": "First release of reportrabbit!"
+    "text": "Docstrings updates to test functions (TA feedback): https://github.com/UBC-MDS/reportrabbit/pull/81/changes\nFull author contributions & address (Peer Review) Issue #88: https://github.com/UBC-MDS/reportrabbit/pull/94/changes\nImprove README usage info, and add Badges (Peer Review) Issue #74: https://github.com/UBC-MDS/reportrabbit/pull/96/changes\nAdd TestPyPI install instructions & address (Peer Review) Issue #73: https://github.com/UBC-MDS/reportrabbit/pull/95/changes"
   },
   {
-    "objectID": "CHANGELOG.html#v0.1.0-06012026",
-    "href": "CHANGELOG.html#v0.1.0-06012026",
+    "objectID": "CHANGELOG.html#v1.0.2-30012026",
+    "href": "CHANGELOG.html#v1.0.2-30012026",
     "title": "Changelog",
     "section": "",
-    "text": "First release of reportrabbit!"
+    "text": "Docstrings updates to test functions (TA feedback): https://github.com/UBC-MDS/reportrabbit/pull/81/changes\nFull author contributions & address (Peer Review) Issue #88: https://github.com/UBC-MDS/reportrabbit/pull/94/changes\nImprove README usage info, and add Badges (Peer Review) Issue #74: https://github.com/UBC-MDS/reportrabbit/pull/96/changes\nAdd TestPyPI install instructions & address (Peer Review) Issue #73: https://github.com/UBC-MDS/reportrabbit/pull/95/changes"
   },
   {
     "objectID": "CONTRIBUTING.html",

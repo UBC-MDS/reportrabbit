@@ -185,13 +185,10 @@ window.Quarto = {
 </section>
 <section id="reportrabbit" class="level1">
 <h1>ReportRabbit</h1>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://codecov.io/github/UBC-MDS/reportrabbit"><img src="https://codecov.io/github/UBC-MDS/reportrabbit/graph/badge.svg?token=PZN85qt3F8" class="img-fluid figure-img"></a></p>
-<figcaption>codecov</figcaption>
-</figure>
-</div>
-<p>ReportRabbit is a Python package that calculates model performance metrics. It is a one-stop-shop for all the common metrics used for model evaluation. All functions require two primary inputs: <code>y_true</code> (actual observed values) and <code>y_pred</code> (model predicted values). This package contains the following nine methods:</p>
+<p><a href="https://github.com/UBC-MDS/reportrabbit/actions/workflows/build.yml"><img src="https://github.com/UBC-MDS/reportrabbit/actions/workflows/build.yml/badge.svg" class="img-fluid" alt="Build Status"></a> <a href="https://codecov.io/github/UBC-MDS/reportrabbit"><img src="https://codecov.io/github/UBC-MDS/reportrabbit/graph/badge.svg?token=PZN85qt3F8" class="img-fluid" alt="codecov"></a> <a href="https://www.python.org/downloads/"><img src="https://img.shields.io/badge/python-3.10+-blue.svg" class="img-fluid" alt="Python 3.10+"></a> <a href="https://github.com/UBC-MDS/reportrabbit/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" class="img-fluid" alt="License: MIT"></a> <a href="https://ubc-mds.github.io/reportrabbit/"><img src="https://img.shields.io/badge/docs-GitHub%20Pages-blue.png" class="img-fluid" alt="Documentation"></a></p>
+<p>ReportRabbit is a Python package that calculates model performance metrics. It is a one-stop-shop for all the common metrics used for model evaluation.</p>
+<p>ReportRabbit is a simplified version of the <a href="https://scikit-learn.org/stable/api/sklearn.metrics.html">sklearn.metrics</a> package that prioritizes readability and ease of use. It is model-agnostic and can evaluate results of models from any framework. It is an ideal package for students, analysts, and non-technical users who need standard metrics without the overhead of the full <a href="https://scikit-learn.org/stable/">Scikit-learn</a> API.</p>
+<p>All functions require two primary inputs: <code>y_true</code> (actual observed values) and <code>y_pred</code> (model predicted values). This package contains the following nine methods:</p>
 <p><strong>Classification metrics:</strong></p>
 <ul>
 <li><p><code>get_accuracy(y_true, y_pred)</code>: Returns the <strong>Accuracy score</strong>, the proportion of correct predictions out of all predictions made.</p></li>
@@ -207,48 +204,93 @@ window.Quarto = {
 <li><p><code>get_mae(y_true, y_pred)</code>: Returns the <strong>Mean Absolute Error</strong>, the average absolute difference between the observed values and the predicted values.</p></li>
 <li><p><code>get_mape(y_true, y_pred)</code>: Returns the <strong>Mean Absolute Percentage Error</strong>, the average absolute percentage difference between the observed values and the predicted values.</p></li>
 </ul>
-<p>ReportRabbit is a simplified version of the <a href="https://scikit-learn.org/stable/api/sklearn.metrics.html">sklearn.metrics</a> package that prioritizes readability and ease of use. It is model-agnostic and can evaluate results of models from any framework. It is an ideal package for students, analysts, and non-technical users who need standard metrics without the overhead of the full <a href="https://scikit-learn.org/stable/">Scikit-learn</a> API.</p>
 <section id="contributors" class="level2">
 <h2 class="anchored" data-anchor-id="contributors">Contributors</h2>
 <p>Raghav Gupta, Joel Peterson, Jennifer Tsang, and Ruth Adwowa Yankson</p>
 </section>
-<section id="set-up-environment" class="level2">
-<h2 class="anchored" data-anchor-id="set-up-environment">Set up environment</h2>
-<p>Create the environment directly from <code>environment.yml</code>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> env create <span class="at">-f</span> environment.yml</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate reportrabbit</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
 <section id="get-started" class="level2">
 <h2 class="anchored" data-anchor-id="get-started">Get started</h2>
-<p>You can install this package into your preferred Python environment using pip:</p>
+<section id="install-from-testpypi" class="level3">
+<h3 class="anchored" data-anchor-id="install-from-testpypi">Install from TestPyPI</h3>
+<p>You can install the latest pre-release version of <strong>ReportRabbit</strong> from TestPyPI. This version is intended for testing and validation before the official PyPI release.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="at">--index-url</span> https://test.pypi.org/simple/ <span class="at">--extra-index-url</span> https://pypi.org/simple reportrabbit</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="install-from-github-development-version" class="level3">
+<h3 class="anchored" data-anchor-id="install-from-github-development-version">Install from GitHub (development version)</h3>
+<p>If you prefer installing directly from the source repository:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install git+https://github.com/UBC-MDS/reportrabbit.git</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>To use <code>reportrabbit</code> in your code:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">from</span> reportrabbit.accuracy <span class="im">import</span> get_accuracy</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> get_accuracy(y_true, y_pred)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> reportrabbit <span class="im">as</span> rr</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> </span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> y_true <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>]</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> y_pred <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>]</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> </span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> accuracy <span class="op">=</span> rr.get_accuracy(y_true, y_pred)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> reportrabbit.accuracy <span class="im">import</span> get_accuracy</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Can predefine y_true &amp; y_pred </span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># or pass arrays directly</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>y_true <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>]</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>y_pred <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>]</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>get_accuracy(y_true, y_pred)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>OR:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> reportrabbit <span class="im">as</span> rr</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>accuracy <span class="op">=</span> rr.get_accuracy(y_true, y_pred)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Call the function </span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>accuracy([<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>],[<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
-<section id="how-to-run-unit-tests" class="level1">
-<h1>How to run unit tests</h1>
+<section id="developer-guide" class="level2">
+<h2 class="anchored" data-anchor-id="developer-guide">Developer Guide</h2>
+<p>The following instructions are intended for developers and contributors who want to run tests, build documentation, or contribute to the package.</p>
+<section id="set-up-development-environment" class="level3">
+<h3 class="anchored" data-anchor-id="set-up-development-environment">Set up development environment</h3>
+<ol type="1">
+<li>Create the environment directly from <code>environment.yml</code>:</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> env create <span class="at">-f</span> environment.yml</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate reportrabbit</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="2" type="1">
+<li>Install the package in editable mode with all developer dependencies:</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="at">-e</span> <span class="st">".[dev,tests,docs]"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="how-to-run-unit-tests" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-run-unit-tests">How to run unit tests</h3>
 <p>From root directory, run all test files in terminal:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pytest</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pytest</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>You also have the option to run individual test files by referencing its path. For example:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pytest</span> tests/unit/test_get_accuracy.py</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pytest</span> tests/unit/test_get_accuracy.py</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>To check code coverage and branch details:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pytest</span> <span class="at">--cov</span><span class="op">=</span>reportrabbit <span class="at">--cov-report</span><span class="op">=</span>term-missing <span class="at">--cov-branch</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="local-documentation-development" class="level3">
+<h3 class="anchored" data-anchor-id="local-documentation-development">Local Documentation Development</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quartodoc</span> build <span class="at">--watch</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
 <section id="documentation" class="level2">
 <h2 class="anchored" data-anchor-id="documentation">Documentation</h2>
-<p>The documentation for ReportRabbit can be viewed <a href="https://ubc-mds.github.io/reportrabbit/">here</a>.</p>
+<ul>
+<li>The documentation for ReportRabbit can be viewed <a href="https://ubc-mds.github.io/reportrabbit/">here</a>.</li>
+<li>More details about each function can be found <a href="https://ubc-mds.github.io/reportrabbit/reference/">here</a>.</li>
+<li>The package project page and release history are available on <a href="https://test.pypi.org/project/reportrabbit/">TestPyPI</a>.</li>
+</ul>
 </section>
 <section id="contributing" class="level2">
 <h2 class="anchored" data-anchor-id="contributing">Contributing</h2>
 <p>Interested in contributing? Check out the contributing guidelines <a href="https://github.com/UBC-MDS/reportrabbit/blob/main/CONTRIBUTING.md">here</a>. Please note that this project is released with a <a href="https://github.com/UBC-MDS/reportrabbit/blob/main/CONDUCT.md">Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
 <section id="github-workflow-tools-and-framework-utilization" class="level3">
 <h3 class="anchored" data-anchor-id="github-workflow-tools-and-framework-utilization">GitHub Workflow, tools, and framework utilization</h3>
-<p>In the collaborative team effort of creating the reportRabbit python package we utilized a high percentage of the development tools available through GitHub. Each team member responsibly created issues to identify the tasks ahead and the scope of work required. This gave each member accountability and an organized structure to keep track of todos and progress. While contributing work to the project each team member created separate branches to push commits of their recent work and accomplishments, then created pull-requests which required a review by each member in order to authorize a merge to the main branch. Issues and pull requests were tagged, labelled, and assigned, using the convenient drop-menus provided by GitHub. The GitHub Project board was utilized to create a variety of views (project board, table, roadmap) to view open issues, todos, and the progress of completed tasks by each member. The GitHub Actions feature has been used in combination with Ruff to lint the commits for formatting errors on submission, as well as with Quarto to automatically update and publish documentation. GitHub Actions was also implemented to link to CodeCov providing convenient updated 3rd party code-covereage (percentage) reviews, as well as to deploy and update the package on TestPyPi.</p>
+<section id="the-github-collaborative-team-effort-of-creating-the-reportrabbitp-python-package" class="level4">
+<h4 class="anchored" data-anchor-id="the-github-collaborative-team-effort-of-creating-the-reportrabbitp-python-package">The GitHub collaborative team effort of creating the reportRabbitp python package:</h4>
+<ul>
+<li>utilized a high percentage of the development tools available through GitHub</li>
+<li>Each team member responsibly created issues to identify the tasks ahead and the scope of work required. This gave each member accountability and an organized structure to keep track of todos and progress. While contributing work to the project each team member created separate branches to push commits of their recent work and accomplishments, then created pull-requests which required a review by each member in order to authorize a merge to the main branch. Issues and pull requests were tagged, labelled, and assigned, using the convenient drop-menus provided by GitHub.</li>
+<li>The GitHub Project board was utilized to create a variety of views (project board, table, roadmap) to view open issues, todos, and the progress of completed tasks by each member.</li>
+<li>The GitHub Actions feature has been used in combination with Ruff to lint the commits for formatting errors on submission, as well as with Quarto to automatically update and publish documentation.</li>
+<li>GitHub Actions was also implemented to link to CodeCov providing convenient updated 3rd party code-covereage (percentage) reviews, as well as to deploy and update the package on TestPyPi.</li>
+</ul>
+</section>
 </section>
 </section>
 <section id="copyright" class="level2">
