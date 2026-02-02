@@ -1,6 +1,10 @@
 # ReportRabbit
 
+[![Build Status](https://github.com/UBC-MDS/reportrabbit/actions/workflows/build.yml/badge.svg)](https://github.com/UBC-MDS/reportrabbit/actions/workflows/build.yml)
 [![codecov](https://codecov.io/github/UBC-MDS/reportrabbit/graph/badge.svg?token=PZN85qt3F8)](https://codecov.io/github/UBC-MDS/reportrabbit)
+[![Python 3.10+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/UBC-MDS/reportrabbit/blob/main/LICENSE)
+[![Documentation](https://img.shields.io/badge/docs-GitHub%20Pages-blue)](https://ubc-mds.github.io/reportrabbit/)
 
 ReportRabbit is a Python package that calculates model performance metrics.
 It is a one-stop-shop for all the common metrics used for model evaluation. 
@@ -58,16 +62,25 @@ To use `reportrabbit` in your code:
 
 ```python
 >>> from reportrabbit.accuracy import get_accuracy
+>>>
+>>> # Can predefine y_true & y_pred 
+>>> # or pass arrays directly
+>>>
+>>> y_true = [0, 1, 1, 0]
+>>> y_pred = [0, 1, 0, 0]
+>>>
 >>> get_accuracy(y_true, y_pred)
 ```
+
+OR: 
 
 ```python
 >>> import reportrabbit as rr
 >>> 
->>> y_true = [0, 1, 1, 0]
->>> y_pred = [0, 1, 0, 0]
->>> 
 >>> accuracy = rr.get_accuracy(y_true, y_pred)
+>>>
+>>> # Call the function 
+>>> accuracy([0, 1, 1, 0],[0, 1, 0, 0])
 ```
 
 ## Developer Guide
@@ -121,8 +134,12 @@ By contributing to this project, you agree to abide by its terms.
 
 ### GitHub Workflow, tools, and framework utilization
 
-In the collaborative team effort of creating the reportRabbit python package we utilized a high percentage of the development tools available through GitHub.
-Each team member responsibly created issues to identify the tasks ahead and the scope of work required. This gave each member accountability and an organized structure to keep track of todos and progress. While contributing work to the project each team member created separate branches to push commits of their recent work and accomplishments, then created pull-requests which required a review by each member in order to authorize a merge to the main branch. Issues and pull requests were tagged, labelled, and assigned, using the convenient drop-menus provided by GitHub. The GitHub Project board was utilized to create a variety of views (project board, table, roadmap) to view open issues, todos, and the progress of completed tasks by each member. The GitHub Actions feature has been used in combination with Ruff to lint the commits for formatting errors on submission, as well as with Quarto to automatically update and publish documentation. GitHub Actions was also implemented to link to CodeCov providing convenient updated 3rd party code-covereage (percentage) reviews, as well as to deploy and update the package on TestPyPi. 
+#### The GitHub collaborative team effort of creating the reportRabbitp python package:
+-  utilized a high percentage of the development tools available through GitHub
+- Each team member responsibly created issues to identify the tasks ahead and the scope of work required. This gave each member accountability and an organized structure to keep track of todos and progress. While contributing work to the project each team member created separate branches to push commits of their recent work and accomplishments, then created pull-requests which required a review by each member in order to authorize a merge to the main branch. Issues and pull requests were tagged, labelled, and assigned, using the convenient drop-menus provided by GitHub.
+- The GitHub Project board was utilized to create a variety of views (project board, table, roadmap) to view open issues, todos, and the progress of completed tasks by each member.
+- The GitHub Actions feature has been used in combination with Ruff to lint the commits for formatting errors on submission, as well as with Quarto to automatically update and publish documentation.
+- GitHub Actions was also implemented to link to CodeCov providing convenient updated 3rd party code-covereage (percentage) reviews, as well as to deploy and update the package on TestPyPi. 
 
 ## Copyright
 
