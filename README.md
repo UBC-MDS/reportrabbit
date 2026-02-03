@@ -1,5 +1,5 @@
 
-<img width="1200" height="300" alt="reportRabbit" src="https://github.com/user-attachments/assets/f4606d1e-55a7-48df-aec3-f7d9264fe873" />
+<img width="1200" alt="reportRabbit" src="https://github.com/user-attachments/assets/f4606d1e-55a7-48df-aec3-f7d9264fe873" />
 
 
 # ReportRabbit
